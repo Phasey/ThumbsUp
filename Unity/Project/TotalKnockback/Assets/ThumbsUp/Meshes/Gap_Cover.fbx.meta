@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3862a2a4baad86646bf4b401253d5918
-timeCreated: 1505868698
+guid: 2cd00c761f90c8944bddfa3c3e0965c6
+timeCreated: 1506923863
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: GapCover1
+    4300000: Gap_Cover
     9500000: //RootNode
   materials:
     importMaterials: 1
