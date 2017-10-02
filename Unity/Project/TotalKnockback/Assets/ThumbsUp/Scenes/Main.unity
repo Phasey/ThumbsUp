@@ -6078,6 +6078,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1857057714441960, guid: b58b871371d83cd4298bd28a83c3e0a9, type: 2}
+      propertyPath: m_Name
+      value: MoveBox_001_Standard_001_Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58b871371d83cd4298bd28a83c3e0a9, type: 2}
   m_IsPrefabParent: 0
