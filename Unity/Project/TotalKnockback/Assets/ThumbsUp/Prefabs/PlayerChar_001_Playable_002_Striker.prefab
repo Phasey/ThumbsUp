@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 33179712352528704}
   - component: {fileID: 23984696342694446}
   - component: {fileID: 95790483400829084}
+  - component: {fileID: 64230019637212510}
   m_Layer: 0
   m_Name: Striker_Player (1)
   m_TagString: Untagged
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376429358176014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -1.7801453, y: 0.0034050122, z: 12.936824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4803341790367152}
@@ -182,6 +183,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066717057865400}
   m_Mesh: {fileID: 4300000, guid: 8a17ec9778b105a49b4870956627f7bf, type: 3}
+--- !u!64 &64230019637212510
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301523539504516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: bb5eefd265384614398233af8e29b4a0, type: 3}
 --- !u!95 &95666109207707990
 Animator:
   serializedVersion: 3
