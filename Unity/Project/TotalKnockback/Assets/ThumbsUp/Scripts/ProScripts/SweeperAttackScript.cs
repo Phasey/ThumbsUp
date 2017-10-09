@@ -6,13 +6,11 @@ using XboxCtrlrInput;
 public class SweeperAttackScript : MonoBehaviour
 {
     public XboxController Controller;
-    public Animation anim;
 
     // Use this for initialization
     void Awake()
     {
-        anim = GetComponent<Animation>();
-        anim["New Animation"].speed = 5.0f;
+       
 	}
 	
 	// Update is called once per frame
@@ -27,7 +25,7 @@ public class SweeperAttackScript : MonoBehaviour
 
         if (attackButton > 0.15f)
         {
-            anim.Play("New Animation");
+            print("Sweeper!!");
         }
     }
 }

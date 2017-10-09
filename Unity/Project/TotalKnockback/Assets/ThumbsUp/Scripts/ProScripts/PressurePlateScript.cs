@@ -6,31 +6,23 @@ public class PressurePlateScript : MonoBehaviour
 {
     public Rigidbody rigidBodyCube;
     public Animation anim;
+    public GameObject door;
 
 	// Use this for initialization
-	void Start ()
+	void Start()
     {
         
 	}
 
     // Update is called once per frame
-	void Update ()
+	void Update()
     {
 		
 	}
 
-    private void PressurePlate()
+    void OnTriggerEnter(Collider other)
     {
-        GameObject[] plate = GameObject.FindGameObjectsWithTag("Switch");
-
-        foreach (GameObject collide in plate)
-        {
-            rigidBodyCube = collide.GetComponent<Rigidbody>();
-
-            if (GameObject.FindGameObjectWithTag("Box"))
-            {
-                anim.Play("DoorAnimation");
-            }
-        }
+        if (other.gameObject.tag == "Player")
+            Destroy(door);
     }
 }

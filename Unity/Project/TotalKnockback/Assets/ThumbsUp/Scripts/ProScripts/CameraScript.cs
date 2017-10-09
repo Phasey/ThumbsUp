@@ -6,6 +6,8 @@ public class CameraScript : MonoBehaviour
 {
     public Transform player1;
     public Transform player2;
+    public float xMaxDistApart = 15f;
+    public float zMaxDistApart = 15f;
 
     private float prevPlayer1x;
     private float prevPlayer1z;
@@ -14,8 +16,8 @@ public class CameraScript : MonoBehaviour
 
     private Vector3 centre;
     private Vector3 offset;
-    private Vector3 player1Pos;
-    private Vector3 player2Pos;
+    //private Vector3 player1Pos;
+    //private Vector3 player2Pos;
 
     // Use this for initialization
     void Start()
@@ -28,18 +30,26 @@ public class CameraScript : MonoBehaviour
         centre = ((player2.position + player1.position) * 0.5f);
         offset = transform.position - centre;
 
-        player1Pos = new Vector3(player1.position.x, player1.position.y, player1.position.z);
-        player2Pos = new Vector3(player2.position.x, player2.position.y, player2.position.z);
+        //player1Pos = new Vector3(player1.position.x, 
+        //                         player1.position.y, 
+        //                         player1.position.z);
+
+        //player2Pos = new Vector3(player2.position.x, 
+        //                         player2.position.y, 
+        //                         player2.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 player1Pos = player1.position;
+        Vector3 player2Pos = player2.position;
+
         centre = ((player2.position + player1.position) * 0.5f);
         transform.position = centre + offset;
 
-        if (player1.position.x - player2.position.x >= 15f || 
-            player1.position.x - player2.position.x <= -15f)
+        if (player1.position.x - player2.position.x >= xMaxDistApart || 
+            player1.position.x - player2.position.x <= -xMaxDistApart)
         {
             player1Pos.x = prevPlayer1x;
             player2Pos.x = prevPlayer2x;
@@ -50,8 +60,8 @@ public class CameraScript : MonoBehaviour
             prevPlayer2x = player2Pos.x;
         }
 
-        if (player1.position.z - player2.position.z >= 15f ||
-            player1.position.z - player2.position.z <= -15f)
+        if (player1.position.z - player2.position.z >= zMaxDistApart ||
+            player1.position.z - player2.position.z <= -zMaxDistApart)
         {
             player1Pos.z = prevPlayer1z;
             player2Pos.z = prevPlayer2z;
@@ -62,5 +72,7 @@ public class CameraScript : MonoBehaviour
             prevPlayer2z = player2Pos.z;
         }
 
+        player1.position = player1Pos;
+        player2.position = player2Pos;
     }
 }
