@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalKnockback", "TotalKnockback.csproj", "{B1B54305-02D4-EF8A-58E7-703B48AF53B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalKnockback.Editor", "TotalKnockback.Editor.csproj", "{B1395B67-790F-C857-47F3-3F8B768F2BAE}"
