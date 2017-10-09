@@ -1,15 +1,25 @@
 fileFormatVersion: 2
-guid: 7788378aeb51d9544aeefc052f91cad2
-timeCreated: 1505868698
+guid: 9408848d8dbca714ba4a64a104981d4f
+timeCreated: 1507522313
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Sweeper_Shoulderpads
+    100004: Sweeper_Skirt
     400000: //RootNode
+    400002: Sweeper_Shoulderpads
+    400004: Sweeper_Skirt
     2300000: //RootNode
+    2300002: Sweeper_Shoulderpads
+    2300004: Sweeper_Skirt
     3300000: //RootNode
+    3300002: Sweeper_Shoulderpads
+    3300004: Sweeper_Skirt
     4300000: Sweeper_Player
+    4300002: Sweeper_Skirt
+    4300004: Sweeper_Shoulderpads
     9500000: //RootNode
   materials:
     importMaterials: 1
