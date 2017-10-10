@@ -15,14 +15,12 @@ public class BasicAIScript : MonoBehaviour
     public float AttackVision = 1f;
     public Transform Player1;
     public Transform Player2;
+    public GameObject sweeperPlayer;
+    public GameObject strikerPlayer;
     public Transform[] Points;
     private int Dest = 0;
     private NavMeshAgent Agent;
-    private Renderer renderer;
 
-    public float CooldownTimer = .5f;
-    private float AttackTime;
-    private bool CoolDown = false;
 
     // Use this for initialization
     void Start()
@@ -78,39 +76,18 @@ public class BasicAIScript : MonoBehaviour
         }
     }
 
-    void PlayerFlash()
+    private void OnCollisionEnter()
     {
-        renderer.material.color = Color.red;
+        GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
 
-        CoolDown = true;
-        if (CoolDown)
+        foreach (GameObject hit in Players)
         {
-            AttackTime -= Time.deltaTime;
-            if (AttackTime <= 0)
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+            if (rb != null)
             {
-                CoolDown = false;
-                ResetCoolDown();
-                renderer.material.color = Color.black;
+                // Take Damage for players
             }
         }
-
     }
-
-    void OnTriggerEnter(Collider Other)
-    {
-        if(Other.gameObject == Player1)
-        {
-            PlayerFlash();
-        }
-        if (Other.gameObject == Player2)
-        {
-            PlayerFlash();
-        }
-    }
-
-    private void ResetCoolDown()
-    {
-        AttackTime = CooldownTimer;
-    }
-
 }
