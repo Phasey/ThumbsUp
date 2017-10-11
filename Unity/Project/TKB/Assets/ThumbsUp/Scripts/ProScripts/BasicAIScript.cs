@@ -76,18 +76,22 @@ public class BasicAIScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter(Collision other)
     {
-        GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
-
-        foreach (GameObject hit in Players)
+        if(other.gameObject.tag == "Player")
         {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-
-            if (rb != null)
-            {
-                // Take Damage for players
-            }
+            //other.gameObject.GetComponent<HealthScript>().DoDamage(100);
         }
+        //GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
+
+        //foreach (GameObject hit in Players)
+        //{
+        //    Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+        //    if (rb != null)
+        //    {
+        //        // Take Damage for players
+        //    }
+        //}
     }
 }

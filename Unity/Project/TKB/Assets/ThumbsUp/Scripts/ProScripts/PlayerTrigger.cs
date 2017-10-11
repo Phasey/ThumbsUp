@@ -32,6 +32,8 @@ public class PlayerTrigger : MonoBehaviour
 	private void Explode()
 	{
 		Vector3 explosionPos = transform.position;
+        //Physics.OverlapSphere() //Use for Sweeper Special Attack (Create seperate script)
+        //Physics.OverlapCapsule() //Use for Striker Special Attack (Create seperate script)
         GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
 		foreach (GameObject hit in Enemies)
