@@ -7,9 +7,6 @@ using UnityEngine.AI;
 public class BasicAIScript : MonoBehaviour
 {
 	// Initialises public floats for Designers to adjust
-    public float radius = 2.0F;
-    public float power = 20.0f;
-    public float UpPower = 1.5f;
     public float enemyMovementSpeed = 10f;
 	public float vision = 10f;
 	public float AttackVision = 1f;
@@ -66,17 +63,21 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
 	void NextPoint()
 	{
-		// Ignores function if the length to the points equals zero
-		if (Points.Length == 0)
+
+        // Agents destination refers to indexed point in points array
+        Agent.destination = Points[Dest].position;
+
+        // Ignores function if the length to the points equals zero
+        if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
 		{
-			return;
+            // Dest equals the Dest + 1 then the modulus of length in points 
+            Dest = (Dest + 1) % Points.Length;
+            return;
 		}
 
-		// Agents destination refers to indexed point in points array
-		Agent.destination = Points[Dest].position;
+		
 
-		// Dest equals the Dest + 1 then the modulus of length in points 
-		Dest = (Dest + 1) % Points.Length;
+		
 	}
 
 	//------------------------------------------------------------
