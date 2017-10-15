@@ -175,6 +175,8 @@ GameObject:
   - component: {fileID: 5518710}
   - component: {fileID: 5518713}
   - component: {fileID: 5518714}
+  - component: {fileID: 5518717}
+  - component: {fileID: 5518718}
   m_Layer: 0
   m_Name: Striker_Player (1)
   m_TagString: Untagged
@@ -309,6 +311,36 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5518708}
+  m_Mesh: {fileID: 4300000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
+--- !u!114 &5518717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5518708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  player: {fileID: 100000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
+  rend: {fileID: 0}
+  FlashColour: {r: 0.070177354, g: 0.10867595, b: 0.86764705, a: 0}
+--- !u!64 &5518718
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5518708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
 --- !u!1001 &7008651
 Prefab:
