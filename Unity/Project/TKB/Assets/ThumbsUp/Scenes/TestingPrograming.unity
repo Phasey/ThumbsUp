@@ -159,11 +159,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4553162333687946, guid: f2f323c1ab4dab34aa192cee25b96e73,
     type: 2}
   m_PrefabInternal: {fileID: 2026507}
---- !u!4 &5518709 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4793799106886874, guid: 3e4aa054aafdff44dbd63a1d8225a5bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 453507199}
 --- !u!1001 &7008651
 Prefab:
   m_ObjectHideFlags: 0
@@ -2562,6 +2557,31 @@ Prefab:
       propertyPath: m_Name
       value: EnemyChar_001_Standard_001_Pusher (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114531929556241280, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: Player1
+      value: 
+      objectReference: {fileID: 2004454009}
+    - target: {fileID: 114531929556241280, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: Player2
+      value: 
+      objectReference: {fileID: 1309613714}
+    - target: {fileID: 114531929556241280, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: Points.Array.data[0]
+      value: 
+      objectReference: {fileID: 536718666}
+    - target: {fileID: 114531929556241280, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: Points.Array.data[1]
+      value: 
+      objectReference: {fileID: 953808479}
+    - target: {fileID: 114531929556241280, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: Points.Array.data[2]
+      value: 
+      objectReference: {fileID: 1866972962}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
   m_IsPrefabParent: 0
@@ -3369,69 +3389,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4775577368906296, guid: c2d0487e7603f894fbb02bcfaa2bd654,
     type: 2}
   m_PrefabInternal: {fileID: 989787912}
---- !u!1 &1012048163 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1953977781930488, guid: 377dc4d6c3622a14eac48d143727e4c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 733503262}
---- !u!114 &1012048164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1012048163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36535094956406f488217b1d51349637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMovementSpeed: 10
-  vision: 5
-  AttackVision: 1
-  Player1: {fileID: 0}
-  Player2: {fileID: 5518709}
-  sweeperPlayer: {fileID: 0}
-  strikerPlayer: {fileID: 0}
-  Points:
-  - {fileID: 536718666}
-  - {fileID: 953808479}
-  - {fileID: 1866972962}
---- !u!54 &1012048166
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1012048163}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!195 &1012048167
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1012048163}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1043614749
 Prefab:
   m_ObjectHideFlags: 0

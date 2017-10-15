@@ -97,7 +97,17 @@ public class HealthScript : MonoBehaviour
         {
             // If so, it decreases AttackTime by real time is seconds
             FlashTime -= Time.deltaTime;
+            if(FlashTime <= 1)
+            {
+                // Gets renderer component and stores it into rend
+                rend = GetComponent<Renderer>();
 
+                // Finds the shader the player will use and stores it into rend
+                rend.material.shader = Shader.Find("lambert1");
+
+                // Sets the rend colour to be whatever the FlashColour is set to
+                rend.material.color = Color.black;
+            }
             // Checks if AttackTime gets down to zero or below
             if (FlashTime <= 0)
             {
