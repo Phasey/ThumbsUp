@@ -171,11 +171,6 @@ GameObject:
   - component: {fileID: 5518716}
   - component: {fileID: 5518712}
   - component: {fileID: 5518711}
-  - component: {fileID: 5518715}
-  - component: {fileID: 5518710}
-  - component: {fileID: 5518713}
-  - component: {fileID: 5518714}
-  - component: {fileID: 5518717}
   - component: {fileID: 5518718}
   m_Layer: 0
   m_Name: Striker_Player (1)
@@ -194,23 +189,10 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0.089, z: -1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1849802334}
-  - {fileID: 1703824049}
+  m_Children: []
   m_Father: {fileID: 1309613714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5518710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5518708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa1ce0726fc9944a8e8111e0c135b56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &5518711
 Animator:
   serializedVersion: 3
@@ -262,48 +244,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &5518713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5518708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ff779938518214fb0e53b11ab306b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  maxSpeed: 10
-  strikerBody: {fileID: 0}
-  Controller: 2
---- !u!114 &5518714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5518708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7728d33bb1396dd4bab72f6cdd35ad60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: 2
---- !u!54 &5518715
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5518708}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
 --- !u!33 &5518716
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -312,22 +252,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5518708}
   m_Mesh: {fileID: 4300000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
---- !u!114 &5518717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5518708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  player: {fileID: 100000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
-  rend: {fileID: 0}
-  FlashColour: {r: 0.070177354, g: 0.10867595, b: 0.86764705, a: 0}
 --- !u!64 &5518718
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1878,8 +1802,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMaxDistApart: 10
   zMaxDistApart: 10
-  player1: {fileID: 694199761}
-  player2: {fileID: 5518709}
+  player1: {fileID: 2004454009}
+  player2: {fileID: 1309613714}
 --- !u!1001 &440953321
 Prefab:
   m_ObjectHideFlags: 0
@@ -2658,13 +2582,9 @@ GameObject:
   - component: {fileID: 694199768}
   - component: {fileID: 694199764}
   - component: {fileID: 694199763}
-  - component: {fileID: 694199767}
-  - component: {fileID: 694199762}
-  - component: {fileID: 694199765}
-  - component: {fileID: 694199766}
   m_Layer: 0
   m_Name: Sweeper_Player (1)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2679,23 +2599,10 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1556058240}
-  - {fileID: 1265866860}
+  m_Children: []
   m_Father: {fileID: 2004454009}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &694199762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694199760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa1ce0726fc9944a8e8111e0c135b56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &694199763
 Animator:
   serializedVersion: 3
@@ -2747,48 +2654,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &694199765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694199760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a7ffbf7a18a5346a548165b301edaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  maxSpeed: 10
-  SweeperBody: {fileID: 694199767}
-  Controller: 1
---- !u!114 &694199766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694199760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 613693f4cf8f62b4dbfe01c145ee4d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: 1
---- !u!54 &694199767
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694199760}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
 --- !u!33 &694199768
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3780,7 +3645,7 @@ MonoBehaviour:
   enemyMovementSpeed: 10
   vision: 5
   AttackVision: 1
-  Player1: {fileID: 694199761}
+  Player1: {fileID: 0}
   Player2: {fileID: 5518709}
   sweeperPlayer: {fileID: 0}
   strikerPlayer: {fileID: 0}
@@ -4538,12 +4403,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265866859}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.0439439, z: -0.07917973}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.0439439, z: -0.079179764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 694199761}
-  m_RootOrder: 1
+  m_Father: {fileID: 2004454009}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1265866861
 MeshRenderer:
@@ -4858,9 +4723,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1309613714}
+  - component: {fileID: 1309613718}
+  - component: {fileID: 1309613717}
+  - component: {fileID: 1309613716}
+  - component: {fileID: 1309613715}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_002_Striker
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4877,9 +4746,69 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5518709}
+  - {fileID: 1849802334}
+  - {fileID: 1703824049}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309613715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309613713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  player: {fileID: 100000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
+  rend: {fileID: 0}
+  FlashColour: {r: 0.070177354, g: 0.10867595, b: 0.86764705, a: 0}
+--- !u!114 &1309613716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309613713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7728d33bb1396dd4bab72f6cdd35ad60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: 2
+--- !u!114 &1309613717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309613713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ff779938518214fb0e53b11ab306b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 10
+  maxSpeed: 10
+  strikerBody: {fileID: 0}
+  Controller: 2
+--- !u!54 &1309613718
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309613713}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!1001 &1314266417
 Prefab:
   m_ObjectHideFlags: 0
@@ -5513,12 +5442,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556058239}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000076293944, y: 2.1402457, z: 0.01785942}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.1402457, z: 0.017859459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 694199761}
-  m_RootOrder: 0
+  m_Father: {fileID: 2004454009}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1556058241
 MeshRenderer:
@@ -6097,12 +6026,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703824048}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.67698216, z: -0.047530524}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.67698216, z: -0.047530174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5518709}
-  m_RootOrder: 1
+  m_Father: {fileID: 1309613714}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1703824050
 MeshRenderer:
@@ -6519,12 +6448,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1849802333}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.6351209, z: -0.36524397}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6351209, z: -0.3652439}
   m_LocalScale: {x: 0.053546894, y: 0.33076778, z: 0.056511506}
   m_Children: []
-  m_Father: {fileID: 5518709}
-  m_RootOrder: 0
+  m_Father: {fileID: 1309613714}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1849802335
 MeshRenderer:
@@ -6820,9 +6749,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2004454009}
+  - component: {fileID: 2004454013}
+  - component: {fileID: 2004454012}
+  - component: {fileID: 2004454011}
+  - component: {fileID: 2004454010}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_001_Sweeper
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6839,9 +6772,69 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 694199761}
+  - {fileID: 1556058240}
+  - {fileID: 1265866860}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004454010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004454008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  player: {fileID: 0}
+  rend: {fileID: 0}
+  FlashColour: {r: 1, g: 0, b: 0, a: 0}
+--- !u!114 &2004454011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004454008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613693f4cf8f62b4dbfe01c145ee4d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: 1
+--- !u!114 &2004454012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004454008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a7ffbf7a18a5346a548165b301edaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 10
+  maxSpeed: 10
+  SweeperBody: {fileID: 0}
+  Controller: 1
+--- !u!54 &2004454013
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004454008}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!1001 &2025100382
 Prefab:
   m_ObjectHideFlags: 0
