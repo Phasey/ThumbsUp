@@ -6,7 +6,7 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
 	// Creates public integers for both the max health and current health
-    public int maxHealth;
+    public int maxHealth = 50;
     public int currentHealth;
 
 	// Creates public GameObject so Designers can assign both players to use this script
