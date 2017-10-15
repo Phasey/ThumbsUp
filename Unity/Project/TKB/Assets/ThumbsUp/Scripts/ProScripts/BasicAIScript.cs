@@ -129,7 +129,7 @@ public class BasicAIScript : MonoBehaviour
 		// Checks for collision with any player
         if (other.gameObject.tag == "Player")
         {
-            //other.gameObject.GetComponent<HealthScript>().DoDamage(100);
+            other.gameObject.GetComponent<HealthScript>().TakeDamage(100);
         }
     }
 }
