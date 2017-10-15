@@ -30,10 +30,19 @@ public class BasicAIScript : MonoBehaviour
 
 	// Sets a private NavMeshAgent for use in script 
     private NavMeshAgent Agent;
+    
+    //sets the cooldown timer for use in attacking
+    public float CoolDownTimer = 2f;
+
+    // Initialises CoolDown boolean to be false
+    private bool CoolDown = false;
+
+    // Sets AttackTime variable to be private
+    private float AttackTime;
 
     //------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
+    // Function is called when script first runs
+    //------------------------------------------------------------
     void Awake()
     {
 		// Gets a RigidBody component and stores it into rigidBody
@@ -130,7 +139,35 @@ public class BasicAIScript : MonoBehaviour
 		// Checks for collision with any player
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<HealthScript>().TakeDamage(100);
+            if (!CoolDown)
+            {
+                other.gameObject.GetComponent<HealthScript>().TakeDamage(100);
+                CoolDown = true;
+                print("hit");
+            }
+            
+            // If CoolDown boolean is true
+            if (CoolDown)
+            {
+                // If so, it decreases AttackTime by real time is seconds
+                AttackTime -= Time.deltaTime;
+
+                // Checks if AttackTime gets down to zero or below
+                if (AttackTime <= 0)
+                {
+                    // If so, CoolDown is set to false and it cools ResetCoolDown function
+                    CoolDown = false;
+                    ResetCoolDown();
+                }
+            }
         }
+    }
+
+    //------------------------------------------------------------
+    // Function sets ActiveTime to equal CoolDownTimer float
+    //------------------------------------------------------------
+    private void ResetCoolDown()
+    {
+        AttackTime = CoolDownTimer;
     }
 }

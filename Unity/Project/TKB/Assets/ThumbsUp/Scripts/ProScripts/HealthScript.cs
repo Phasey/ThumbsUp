@@ -20,10 +20,18 @@ public class HealthScript : MonoBehaviour
     bool dead;
     bool damaged;
 
-	//------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
-	void Awake()
+    //sets the cooldown timer for use in attacking
+    public float CoolDownTimer = 2f;
+
+    // Initialises CoolDown boolean to be false
+    private bool CoolDown = false;
+
+    // Sets AttackTime variable to be private
+    private float FlashTime;
+    //------------------------------------------------------------
+    // Function is called when script first runs
+    //------------------------------------------------------------
+    void Awake()
     {
 		// Sets current health to equal the max health upon startup
         currentHealth = maxHealth;
@@ -71,16 +79,33 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void Flash()
     {
-		// Gets renderer component and stores it into rend
-        rend = GetComponent<Renderer>();
+		if(!CoolDown)
+        {
+            // Gets renderer component and stores it into rend
+            rend = GetComponent<Renderer>();
 
-		// Finds the shader the player will use and stores it into rend
-        rend.material.shader = Shader.Find("lambert1");
+            // Finds the shader the player will use and stores it into rend
+            rend.material.shader = Shader.Find("lambert1");
 
-		// Sets the rend colour to be whatever the FlashColour is set to
-        rend.material.color = FlashColour;
+            // Sets the rend colour to be whatever the FlashColour is set to
+            rend.material.color = FlashColour;
+        }
 
         //After timer, renderer sets colour back
+        // If CoolDown boolean is true
+        if (CoolDown)
+        {
+            // If so, it decreases AttackTime by real time is seconds
+            FlashTime -= Time.deltaTime;
+
+            // Checks if AttackTime gets down to zero or below
+            if (FlashTime <= 0)
+            {
+                // If so, CoolDown is set to false and it cools ResetCoolDown function
+                CoolDown = false;
+                ResetCoolDown();
+            }
+        }
     }
 
 	//------------------------------------------------------------
@@ -97,5 +122,13 @@ public class HealthScript : MonoBehaviour
         {
             Flash();
         }
+    }
+
+    //------------------------------------------------------------
+    // Function sets ActiveTime to equal CoolDownTimer float
+    //------------------------------------------------------------
+    private void ResetCoolDown()
+    {
+        FlashTime = CoolDownTimer;
     }
 }
