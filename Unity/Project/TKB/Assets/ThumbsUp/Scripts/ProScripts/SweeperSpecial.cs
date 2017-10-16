@@ -39,25 +39,25 @@ public class SweeperSpecial : MonoBehaviour
 
         if (attackButton)
         {
-            //int layerMask = 1 << LayerMask.NameToLayer("Enemy");
-            //CapsuleCollider box = HitBox.GetComponent<CapsuleCollider>();
+            int layerMask = 1 << LayerMask.NameToLayer("Enemy");
+            CapsuleCollider box = HitBox.GetComponent<CapsuleCollider>();
 
-            //Collider[] hitEnemies = Physics.OverlapCapsule(HitBox.transform.position, box.radius * 0.5, HitBox.transform.rotation, layerMask);
-            //for (int i = 0; i < hitEnemies.Length; ++i)
-            //{
-            //    GameObject enemy = hitEnemies[i].gameObject;
-            //    Rigidbody rb = enemy.GetComponent<Rigidbody>();
-            //    NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-            //    BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
+            Collider[] hitEnemies = Physics.OverlapCapsule(HitBox.transform.position, HitBox.transform.position, box.radius,  layerMask);
+            for (int i = 0; i < hitEnemies.Length; ++i)
+            {
+                GameObject enemy = hitEnemies[i].gameObject;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+                BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
 
-            //    AI.enabled = false;
-            //    agent.enabled = false;
-            //    rb.isKinematic = false;
+                AI.enabled = false;
+                agent.enabled = false;
+                rb.isKinematic = false;
 
-            //    Vector3 direction = enemy.transform.position - transform.position;
-            //    direction.Normalize();
-            //    rb.AddForce(direction * hitForce, ForceMode.Impulse);
-            //}
+                Vector3 direction = enemy.transform.position - transform.position;
+                direction.Normalize();
+                rb.AddForce(direction * hitForce, ForceMode.Impulse);
+            }
         }
     }
 }
