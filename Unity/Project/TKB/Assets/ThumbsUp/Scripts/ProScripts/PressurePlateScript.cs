@@ -26,13 +26,8 @@ public class PressurePlateScript : MonoBehaviour
 	//------------------------------------------------------------
     void OnTriggerEnter(Collider other)
     {
-        // If a GameObject with tag player is triggering function, then destroy door object
-        //if (other.gameObject.tag == "Player")
-        //    Destroy(door);
-
         // If a GameObject with tag crate is triggering function, then destroy door object
         if (other.gameObject.tag == "Crate")
-            Destroy(door);
-    }
-  
+            Destroy(door); // Animation for door goes here
+    }  
 }

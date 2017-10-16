@@ -19,8 +19,9 @@ public class PlayerMove : MonoBehaviour
 	// Creates two private floats that record the previous x and z rotation
 	private float prevRotateX;
 	private float prevRotateZ;
+    private bool holding = false;
 
-    public bool doingSpecial = false;
+    public bool strikerDoingSpecial = false;
 
 	//------------------------------------------------------------
 	// Function is called when script first runs
@@ -50,7 +51,7 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
     private void MoveStriker()
     {
-        if (!doingSpecial)
+        if (!strikerDoingSpecial)
         {
             // Both floats get direction of the Xbox controller's left stick
             float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
@@ -72,7 +73,7 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
     private void RotateStriker()
     {
-        if (!doingSpecial)
+        if (!strikerDoingSpecial)
         {
             // Both floats get direction of the Xbox controller's right stick
             float rotateAxisX = XCI.GetAxisRaw(XboxAxis.RightStickX, Controller);
@@ -108,6 +109,23 @@ public class PlayerMove : MonoBehaviour
 
             // Sets the angular velocity of the Striker to be zero
             rigidBody.angularVelocity = Vector3.zero;
+        }
+    }
+
+    //------------------------------------------------------------
+    // Function runs when collision is first detected
+    //
+    // Param:
+    // 		other: Refers to object of which Agent is colliding
+    // 		with
+    //------------------------------------------------------------
+    private void OnCollisionEnter(Collision other)
+    {
+        bool aButton = XCI.GetButtonDown(XboxButton.A, Controller);
+
+        if (other.gameObject.tag == "Crate" && aButton)
+        {
+            other.transform.parent = transform;
         }
     }
 }

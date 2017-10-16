@@ -42,10 +42,6 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
 	void Update()
     {
-        // If player is dead, then destroy the player from game
-        //if (dead)
-        // Destroy(player);
-
         Flash();
     }
 

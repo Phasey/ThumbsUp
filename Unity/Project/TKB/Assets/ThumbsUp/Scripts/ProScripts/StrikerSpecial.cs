@@ -60,14 +60,14 @@ public class StrikerSpecial : MonoBehaviour
         {
             PlayerMove pm = gameObject.GetComponent<PlayerMove>();
             pm.movementSpeed = 30;
-            pm.doingSpecial = true;
+            pm.strikerDoingSpecial = true;
             specialTimer -= Time.deltaTime;
             GetComponent<Rigidbody>().velocity = transform.forward * pm.movementSpeed;
 
             if (specialTimer <= 0)
             {
                 strikerSpecial = false;
-                pm.doingSpecial = false;
+                pm.strikerDoingSpecial = false;
                 pm.movementSpeed = 10;
                 ResetCoolDown();
             }

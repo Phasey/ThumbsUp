@@ -76,21 +76,19 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
 	void NextPoint()
 	{
+        if (Points.Length != 0)
+        {
+            // Agents destination refers to indexed point in points array
+            Agent.destination = Points[Dest].position;
 
-        // Agents destination refers to indexed point in points array
-        Agent.destination = Points[Dest].position;
-
-        // Ignores function if the length to the points equals zero
-        if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
-		{
-            // Dest equals the Dest + 1 then the modulus of length in points 
-            Dest = (Dest + 1) % Points.Length;
-            return;
-		}
-
-		
-
-		
+            // Ignores function if the length to the points equals zero
+            if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
+            {
+                // Dest equals the Dest + 1 then the modulus of length in points 
+                Dest = (Dest + 1) % Points.Length;
+                return;
+            }
+        }
 	}
 
 	//------------------------------------------------------------
