@@ -61,7 +61,6 @@ public class PlayerAttack : MonoBehaviour
                 direction.Normalize();
                 rb.AddForce(direction * hitForce, ForceMode.Impulse);
             }
-            //print("Striker!!");
         }
     }
 }

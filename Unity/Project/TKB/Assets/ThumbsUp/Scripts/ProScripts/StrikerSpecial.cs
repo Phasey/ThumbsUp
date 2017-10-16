@@ -9,11 +9,12 @@ public class StrikerSpecial : MonoBehaviour
     public int hitForce = 10;
     public float specialTimer = 0.5f;
 
-    private bool attacking = false;
+    private bool strikerSpecial = false;
     private float resetTimer;
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
+    public GameObject HitBox;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -41,22 +42,51 @@ public class StrikerSpecial : MonoBehaviour
     {
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
 
-        if (attackButton && !attacking)
+        if (attackButton && !strikerSpecial)
         {
-            attacking = true;
+            strikerSpecial = true;
         }
 
-        if (attacking)
+        if (strikerSpecial)
         {
             PlayerMove pm = gameObject.GetComponent<PlayerMove>();
             pm.movementSpeed = 30;
+            pm.doingSpecial = true;
             specialTimer -= Time.deltaTime;
+            GetComponent<Rigidbody>().velocity = transform.forward * pm.movementSpeed;
 
             if (specialTimer <= 0)
             {
-                attacking = false;
+                strikerSpecial = false;
+                pm.doingSpecial = false;
                 pm.movementSpeed = 10;
                 ResetCoolDown();
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision Other)
+    {
+        if (strikerSpecial)
+        {
+            int layerMask = 1 << LayerMask.NameToLayer("Enemy");
+            BoxCollider box = HitBox.GetComponent<BoxCollider>();
+
+            Collider[] hitEnemies = Physics.OverlapBox(HitBox.transform.position, box.size * 0.5f, HitBox.transform.rotation, layerMask);
+            for (int i = 0; i < hitEnemies.Length; ++i)
+            {
+                GameObject enemy = hitEnemies[i].gameObject;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+                BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
+
+                AI.enabled = false;
+                agent.enabled = false;
+                rb.isKinematic = false;
+
+                Vector3 direction = enemy.transform.position - transform.position;
+                direction.Normalize();
+                rb.AddForce(direction * hitForce, ForceMode.Impulse);
             }
         }
     }

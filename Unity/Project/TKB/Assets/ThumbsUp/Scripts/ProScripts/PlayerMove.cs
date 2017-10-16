@@ -20,6 +20,8 @@ public class PlayerMove : MonoBehaviour
 	private float prevRotateX;
 	private float prevRotateZ;
 
+    public bool doingSpecial = false;
+
 	//------------------------------------------------------------
 	// Function is called when script first runs
 	//------------------------------------------------------------
@@ -48,18 +50,22 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
     private void MoveStriker()
     {
-		// Both floats get direction of the Xbox controller's left stick
-        float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
-        float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
+        if (!doingSpecial)
+        {
 
-		// Creates a "new" Vector3 to allow movement
-        Vector3 movement = new Vector3(axisX, 0, axisZ);
+            // Both floats get direction of the Xbox controller's left stick
+            float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
+            float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
-		// Equation used to allow Striker to move
-        rigidBody.MovePosition(rigidBody.position + movement * movementSpeed * Time.deltaTime);
+            // Creates a "new" Vector3 to allow movement
+            Vector3 movement = new Vector3(axisX, 0, axisZ);
 
-		// Sets the Striker's velocity to be zero
-        rigidBody.velocity = Vector3.zero;
+            // Equation used to allow Striker to move
+            rigidBody.MovePosition(rigidBody.position + movement * movementSpeed * Time.deltaTime);
+
+            // Sets the Striker's velocity to be zero
+            rigidBody.velocity = Vector3.zero;
+        }
     }
 
 	//------------------------------------------------------------
