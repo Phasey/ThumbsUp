@@ -7,6 +7,8 @@ using XboxCtrlrInput;
 // Creates a class for the Striker Attack Script 
 public class PlayerAttack : MonoBehaviour
 {
+    public int hitForce = 10;
+
 	// Allows access to xbox controller buttons
     private XboxController Controller;
     public GameObject HitBox;
@@ -57,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
 
                 Vector3 direction = enemy.transform.position - transform.position;
                 direction.Normalize();
-                rb.AddForce(direction * 10, ForceMode.Impulse);
+                rb.AddForce(direction * hitForce, ForceMode.Impulse);
             }
             //print("Striker!!");
         }
