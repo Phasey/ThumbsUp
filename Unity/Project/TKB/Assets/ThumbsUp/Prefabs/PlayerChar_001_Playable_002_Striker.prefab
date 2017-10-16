@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 33675131631342256}
   - component: {fileID: 65671718717566188}
   - component: {fileID: 23868134218176030}
-  - component: {fileID: 114175062959522580}
   m_Layer: 0
   m_Name: SweeperAOE (1)
   m_TagString: Player
@@ -73,10 +72,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4023630408441396}
   - component: {fileID: 54509142817827334}
-  - component: {fileID: 114807567357359144}
-  - component: {fileID: 114494797598767294}
   - component: {fileID: 114703776338867532}
   - component: {fileID: 136777002190481836}
+  - component: {fileID: 114084789857888780}
+  - component: {fileID: 114134295152089768}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_002_Striker
   m_TagString: Player
@@ -109,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760067829285644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.075, y: 0, z: 13}
+  m_LocalPosition: {x: 3.075, y: 0, z: 13.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4793799106886874}
@@ -340,7 +339,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &65671718717566188
 BoxCollider:
@@ -371,24 +370,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114175062959522580
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1462601983685968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2a867a25d856b479ca17d790deee6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: 1
-  radius: 1
-  power: 10
-  UpPower: 1.5
-  CoolDownTimer: 2
-  explodeParticles: {fileID: 0}
---- !u!114 &114494797598767294
+--- !u!114 &114084789857888780
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -396,10 +378,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1760067829285644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7728d33bb1396dd4bab72f6cdd35ad60, type: 3}
+  m_Script: {fileID: 11500000, guid: e3d764c4bb1981c4c92217ecc08dd255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 10
+  maxSpeed: 10
   Controller: 2
+--- !u!114 &114134295152089768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760067829285644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb42a346f2343641bf537730e7a9378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitBox: {fileID: 1462601983685968}
 --- !u!114 &114703776338867532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,21 +412,7 @@ MonoBehaviour:
   player: {fileID: 100000, guid: 96b50d982cb9e7245bd3d14b30b639bf, type: 3}
   rend: {fileID: 0}
   FlashColour: {r: 0.070177354, g: 0.10867595, b: 0.86764705, a: 0}
---- !u!114 &114807567357359144
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1760067829285644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ff779938518214fb0e53b11ab306b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  maxSpeed: 10
-  strikerBody: {fileID: 0}
-  Controller: 2
+  CoolDownTimer: 2
 --- !u!136 &136777002190481836
 CapsuleCollider:
   m_ObjectHideFlags: 1

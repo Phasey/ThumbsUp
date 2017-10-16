@@ -72,10 +72,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4253824256016984}
   - component: {fileID: 54036445748301936}
-  - component: {fileID: 114977350008644216}
-  - component: {fileID: 114497989696123602}
   - component: {fileID: 114723689398678062}
   - component: {fileID: 136456539862906586}
+  - component: {fileID: 114043220555533156}
+  - component: {fileID: 114918746210508582}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_001_Sweeper
   m_TagString: Player
@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 33228848635549046}
   - component: {fileID: 65662911536165662}
   - component: {fileID: 23489630778519722}
-  - component: {fileID: 114481641078353318}
   m_Layer: 0
   m_Name: SweeperAOE
   m_TagString: Player
@@ -135,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606711820912758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.525, y: 0, z: 13}
+  m_LocalPosition: {x: -0.525, y: 0, z: 13.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4928068405188656}
@@ -340,7 +339,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &65662911536165662
 BoxCollider:
@@ -371,24 +370,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114481641078353318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738516284488492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2a867a25d856b479ca17d790deee6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: 1
-  radius: 2
-  power: 10
-  UpPower: 1.5
-  CoolDownTimer: 2
-  explodeParticles: {fileID: 0}
---- !u!114 &114497989696123602
+--- !u!114 &114043220555533156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -396,9 +378,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606711820912758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 613693f4cf8f62b4dbfe01c145ee4d5a, type: 3}
+  m_Script: {fileID: 11500000, guid: e3d764c4bb1981c4c92217ecc08dd255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 10
+  maxSpeed: 10
   Controller: 1
 --- !u!114 &114723689398678062
 MonoBehaviour:
@@ -416,7 +400,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rend: {fileID: 0}
   FlashColour: {r: 1, g: 0, b: 0, a: 0}
---- !u!114 &114977350008644216
+  CoolDownTimer: 2
+--- !u!114 &114918746210508582
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -424,13 +409,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606711820912758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a7ffbf7a18a5346a548165b301edaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eb42a346f2343641bf537730e7a9378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  maxSpeed: 10
-  SweeperBody: {fileID: 0}
-  Controller: 1
+  HitBox: {fileID: 1738516284488492}
 --- !u!136 &136456539862906586
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -2582,6 +2582,30 @@ Prefab:
       propertyPath: Points.Array.data[2]
       value: 
       objectReference: {fileID: 1866972962}
+    - target: {fileID: 195042396392499610, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114531929556241280, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953977781930488, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
   m_IsPrefabParent: 0
