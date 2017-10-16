@@ -8,8 +8,9 @@ using XboxCtrlrInput;
 public class PlayerAttack : MonoBehaviour
 {
     public int hitForce = 10;
+    public float upForce = 0.5f;
 
-	// Allows access to xbox controller buttons
+    // Allows access to xbox controller buttons
     private XboxController Controller;
     public GameObject HitBox;
 
@@ -59,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
 
                 Vector3 direction = enemy.transform.position - transform.position;
                 direction.Normalize();
-                rb.AddForce(direction * hitForce, ForceMode.Impulse);
+                rb.AddForce(direction * hitForce + Vector3.up * upForce, ForceMode.Impulse);
             }
         }
     }

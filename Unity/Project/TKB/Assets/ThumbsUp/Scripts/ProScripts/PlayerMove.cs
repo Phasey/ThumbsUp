@@ -52,7 +52,6 @@ public class PlayerMove : MonoBehaviour
     {
         if (!doingSpecial)
         {
-
             // Both floats get direction of the Xbox controller's left stick
             float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
@@ -73,39 +72,42 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
     private void RotateStriker()
     {
-		// Both floats get direction of the Xbox controller's right stick
-        float rotateAxisX = XCI.GetAxisRaw(XboxAxis.RightStickX, Controller);
-        float rotateAxisZ = XCI.GetAxisRaw(XboxAxis.RightStickY, Controller);
-
-		// Checks if the right stick is at default position on the x axis
-		if (rotateAxisX == 0f)
-			// If so, set the rotation x to be the previous frame's rotation x
-			rotateAxisX = prevRotateX;
-		
-		else
-			// Otherwise store current rotate x into the previous frame rotate x
-			prevRotateX = rotateAxisX;
-
-		// Checks if the right stick is at default position on the y axis
-		if (rotateAxisZ == 0f)
-			// If so, set the rotation z to be the previous frame's rotation z
-			rotateAxisZ = prevRotateZ;
-		
-		else
-			// Otherwise store current rotate z into the previous frame rotate z
-			prevRotateZ = rotateAxisZ;
-
-		// Checks if either rotate x isn't zero or rotate z isn't zero
-        if (rotateAxisX != 0 || rotateAxisZ != 0)
+        if (!doingSpecial)
         {
-			// If one variable isn't zero, create a "new" Vector3 refering to looking direction
-            Vector3 directionVector = new Vector3(rotateAxisX, 0, rotateAxisZ);
+            // Both floats get direction of the Xbox controller's right stick
+            float rotateAxisX = XCI.GetAxisRaw(XboxAxis.RightStickX, Controller);
+            float rotateAxisZ = XCI.GetAxisRaw(XboxAxis.RightStickY, Controller);
 
-			// Allows for the striker to look in same direction as right stick's position
-            transform.rotation = Quaternion.LookRotation(directionVector);
+            // Checks if the right stick is at default position on the x axis
+            if (rotateAxisX == 0f)
+                // If so, set the rotation x to be the previous frame's rotation x
+                rotateAxisX = prevRotateX;
+
+            else
+                // Otherwise store current rotate x into the previous frame rotate x
+                prevRotateX = rotateAxisX;
+
+            // Checks if the right stick is at default position on the y axis
+            if (rotateAxisZ == 0f)
+                // If so, set the rotation z to be the previous frame's rotation z
+                rotateAxisZ = prevRotateZ;
+
+            else
+                // Otherwise store current rotate z into the previous frame rotate z
+                prevRotateZ = rotateAxisZ;
+
+            // Checks if either rotate x isn't zero or rotate z isn't zero
+            if (rotateAxisX != 0 || rotateAxisZ != 0)
+            {
+                // If one variable isn't zero, create a "new" Vector3 refering to looking direction
+                Vector3 directionVector = new Vector3(rotateAxisX, 0, rotateAxisZ);
+
+                // Allows for the striker to look in same direction as right stick's position
+                transform.rotation = Quaternion.LookRotation(directionVector);
+            }
+
+            // Sets the angular velocity of the Striker to be zero
+            rigidBody.angularVelocity = Vector3.zero;
         }
-
-		// Sets the angular velocity of the Striker to be zero
-        rigidBody.angularVelocity = Vector3.zero;
     }
 }

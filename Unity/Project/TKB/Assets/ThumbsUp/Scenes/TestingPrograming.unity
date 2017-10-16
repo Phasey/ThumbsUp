@@ -349,7 +349,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4073871938480332, guid: 95d2660b9a8ff2c468ffb4f4823770f8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.7
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4073871938480332, guid: 95d2660b9a8ff2c468ffb4f4823770f8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2617,7 +2617,7 @@ Prefab:
     - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
         type: 2}
       propertyPath: m_Constraints
-      value: 84
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
@@ -3050,7 +3050,7 @@ Prefab:
     - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
         type: 2}
       propertyPath: m_Constraints
-      value: 84
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
@@ -3277,7 +3277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitForce: 10
   specialTimer: 0.4
-  HitBox: {fileID: 0}
+  dist: 25
+  width: 5
+  upForce: 0.5
 --- !u!1001 &940121815
 Prefab:
   m_ObjectHideFlags: 0
@@ -3662,7 +3664,7 @@ Prefab:
     - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
         type: 2}
       propertyPath: m_Constraints
-      value: 84
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
@@ -3934,7 +3936,7 @@ Prefab:
     - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
         type: 2}
       propertyPath: m_Constraints
-      value: 84
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
@@ -5473,7 +5475,7 @@ Prefab:
     - target: {fileID: 54919624569479744, guid: 377dc4d6c3622a14eac48d143727e4c3,
         type: 2}
       propertyPath: m_Constraints
-      value: 84
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 377dc4d6c3622a14eac48d143727e4c3, type: 2}
@@ -6447,6 +6449,16 @@ Prefab:
         type: 2}
       propertyPath: FlashColour.g
       value: 0.09277679
+      objectReference: {fileID: 0}
+    - target: {fileID: 114918746210508582, guid: bd2e1947208a2d34bafee5d96bfaf317,
+        type: 2}
+      propertyPath: upForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114358000496500516, guid: bd2e1947208a2d34bafee5d96bfaf317,
+        type: 2}
+      propertyPath: upForce
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd2e1947208a2d34bafee5d96bfaf317, type: 2}

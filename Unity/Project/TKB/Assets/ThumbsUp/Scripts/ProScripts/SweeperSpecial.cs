@@ -7,11 +7,10 @@ using XboxCtrlrInput;
 public class SweeperSpecial : MonoBehaviour
 {
     public int hitForce = 10;
+    public float upForce = 0.5f;
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
-    
-
     public float radius = 5f;
 
     //------------------------------------------------------------
@@ -58,7 +57,7 @@ public class SweeperSpecial : MonoBehaviour
 
                 Vector3 direction = enemy.transform.position - transform.position;
                 direction.Normalize();
-                rb.AddForce(direction * hitForce, ForceMode.Impulse);
+                rb.AddForce(direction * hitForce + Vector3.up * upForce, ForceMode.Impulse);
             }
         }
     }

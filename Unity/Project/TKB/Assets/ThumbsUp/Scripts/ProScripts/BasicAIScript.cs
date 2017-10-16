@@ -41,6 +41,9 @@ public class BasicAIScript : MonoBehaviour
     // Sets AttackTime variable to be private
     private float AttackTime;
 
+    //Add dead bool
+    //put If(!dead) around all AI code
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------

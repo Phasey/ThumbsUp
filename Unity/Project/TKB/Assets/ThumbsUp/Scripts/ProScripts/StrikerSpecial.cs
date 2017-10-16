@@ -6,7 +6,7 @@ using XboxCtrlrInput;
 
 public class StrikerSpecial : MonoBehaviour
 {
-    public int hitForce = 10;
+    public int hitForce = 1;
     public float specialTimer = 0.5f;
 
     private bool strikerSpecial = false;
@@ -14,7 +14,13 @@ public class StrikerSpecial : MonoBehaviour
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
-    public GameObject HitBox;
+    //public GameObject HitBox;
+
+    private Vector3 startPos;
+    private Vector3 endPos;
+    public float dist = 25;
+    public float width = 5;
+    public float upForce = 0.5f;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -42,9 +48,12 @@ public class StrikerSpecial : MonoBehaviour
     {
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
 
-        if (attackButton && !strikerSpecial)
+        if (attackButton)
         {
             strikerSpecial = true;
+            startPos = transform.position;
+            endPos = startPos + transform.forward * dist;
+            Knockback();
         }
 
         if (strikerSpecial)
@@ -65,29 +74,39 @@ public class StrikerSpecial : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision Other)
+    private void Knockback()
     {
-        if (strikerSpecial)
+        int layerMask = 1 << LayerMask.NameToLayer("Enemy");
+        //BoxCollider box = HitBox.GetComponent<BoxCollider>();
+
+        Vector3 dashDir = endPos - startPos;
+        dashDir.Normalize();
+        Vector3 centre = (startPos + endPos) * 0.5f;
+        Vector3 halfSize = new Vector3(width * 0.5f, 2, dist * 0.5f);
+
+        Collider[] hitEnemies = Physics.OverlapBox(centre, halfSize, transform.rotation, layerMask);
+        for (int i = 0; i < hitEnemies.Length; ++i)
         {
-            int layerMask = 1 << LayerMask.NameToLayer("Enemy");
-            BoxCollider box = HitBox.GetComponent<BoxCollider>();
+            GameObject enemy = hitEnemies[i].gameObject;
+            Rigidbody rb = enemy.GetComponent<Rigidbody>();
+            NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+            BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
 
-            Collider[] hitEnemies = Physics.OverlapBox(HitBox.transform.position, box.size * 0.5f, HitBox.transform.rotation, layerMask);
-            for (int i = 0; i < hitEnemies.Length; ++i)
-            {
-                GameObject enemy = hitEnemies[i].gameObject;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-                BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
+            AI.enabled = false;
+            agent.enabled = false;
+            rb.isKinematic = false;
+            rb.useGravity = true;
 
-                AI.enabled = false;
-                agent.enabled = false;
-                rb.isKinematic = false;
+            Vector3 enemyDir = enemy.transform.position - startPos;
+            enemyDir.Normalize();
 
-                Vector3 direction = enemy.transform.position - transform.position;
-                direction.Normalize();
-                rb.AddForce(direction * hitForce, ForceMode.Impulse);
-            }
+            Vector3 rightAngle = new Vector3(dashDir.z, 0, -dashDir.x);
+            float dot = Vector3.Dot(rightAngle, enemyDir);
+
+            if(dot > 0.0f)
+                rb.AddForce(rightAngle * hitForce + Vector3.up * upForce, ForceMode.Impulse);
+            else
+                rb.AddForce(-rightAngle * hitForce + Vector3.up * upForce, ForceMode.Impulse);
         }
     }
 
