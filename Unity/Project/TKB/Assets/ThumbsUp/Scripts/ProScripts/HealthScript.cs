@@ -82,8 +82,8 @@ public class HealthScript : MonoBehaviour
 		if(!CoolDown)
         {
             // Gets renderer component and stores it into rend
-            rend = GetComponent<Renderer>();
-
+            rend = GetComponentInChildren<Renderer>();
+           
             // Finds the shader the player will use and stores it into rend
             rend.material.shader = Shader.Find("lambert1");
 

@@ -10,6 +10,7 @@ public class BasicAIScript : MonoBehaviour
     public float enemyMovementSpeed = 10f;
 	public float vision = 10f;
 	public float AttackVision = 1f;
+    public int enemyDamage = 5;
 
 	// Gets access to a RigidBody
     Rigidbody rigidBody;
@@ -141,7 +142,7 @@ public class BasicAIScript : MonoBehaviour
         {
             if (!CoolDown)
             {
-                other.gameObject.GetComponent<HealthScript>().TakeDamage(100);
+                other.gameObject.GetComponent<HealthScript>().TakeDamage(enemyDamage);
                 CoolDown = true;
                 print("hit");
             }
