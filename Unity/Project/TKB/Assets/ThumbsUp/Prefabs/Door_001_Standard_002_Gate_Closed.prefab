@@ -9,19 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1792759857978646}
+  m_RootGameObject: {fileID: 1811384316007408}
   m_IsPrefabParent: 1
---- !u!1 &1184315359561520
+--- !u!1 &1623107199244874
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4471420682225674}
-  - component: {fileID: 33578348420511894}
-  - component: {fileID: 23490864705636850}
-  - component: {fileID: 95918589482701212}
+  - component: {fileID: 4225097529681070}
+  - component: {fileID: 33776531751617922}
+  - component: {fileID: 23864130057838044}
+  - component: {fileID: 95608954152384178}
   m_Layer: 0
   m_Name: Gate_Main_Closed
   m_TagString: Untagged
@@ -29,14 +29,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1792759857978646
+--- !u!1 &1811384316007408
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4612025347236136}
+  - component: {fileID: 4720449525643268}
   m_Layer: 0
   m_Name: Door_001_Standard_002_Gate_Closed
   m_TagString: Door
@@ -44,39 +44,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4471420682225674
+--- !u!4 &4225097529681070
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184315359561520}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.842171e-16, y: 0, z: 7.105427e-17}
+  m_GameObject: {fileID: 1623107199244874}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4612025347236136}
+  m_Father: {fileID: 4720449525643268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4612025347236136
+--- !u!4 &4720449525643268
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1792759857978646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 0, z: 0}
+  m_GameObject: {fileID: 1811384316007408}
+  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: -1.0000235, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4471420682225674}
+  - {fileID: 4225097529681070}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23490864705636850
+--- !u!23 &23864130057838044
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184315359561520}
+  m_GameObject: {fileID: 1623107199244874}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,7 +84,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1bf7aa3dd7f1d45448656a1fe423f5bb, type: 2}
+  - {fileID: 2100000, guid: 9f41ee5e029bc4047a3821c7cdfbe4f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,22 +103,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33578348420511894
+--- !u!33 &33776531751617922
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184315359561520}
-  m_Mesh: {fileID: 4300000, guid: e6bb6239099406641ba36c62bd131041, type: 3}
---- !u!95 &95918589482701212
+  m_GameObject: {fileID: 1623107199244874}
+  m_Mesh: {fileID: 4300000, guid: 386b8d6e244b25d4fafe4c9651fcff31, type: 3}
+--- !u!95 &95608954152384178
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184315359561520}
+  m_GameObject: {fileID: 1623107199244874}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e6bb6239099406641ba36c62bd131041, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 386b8d6e244b25d4fafe4c9651fcff31, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
