@@ -21,13 +21,13 @@ public class HealthScript : MonoBehaviour
     bool damaged;
 
     //sets the cooldown timer for use in attacking
-    public float CoolDownTimer = 2f;
+    public float CoolDownTimer = 0.5f;
 
     // Initialises CoolDown boolean to be false
     private bool CoolDown = false;
 
     // Sets AttackTime variable to be private
-    private float FlashTime;
+    private float FlashTime = 0.0f;
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -42,9 +42,11 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
 	void Update()
     {
-		// If player is dead, then destroy the player from game
+        // If player is dead, then destroy the player from game
         //if (dead)
-           // Destroy(player);
+        // Destroy(player);
+
+        Flash();
     }
 
 	//------------------------------------------------------------
@@ -79,16 +81,21 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void Flash()
     {
+        if (FlashTime <= 0.0f)
+            return;
+
 		if(!CoolDown)
         {
             // Gets renderer component and stores it into rend
             rend = GetComponentInChildren<Renderer>();
            
             // Finds the shader the player will use and stores it into rend
-            rend.material.shader = Shader.Find("Black");
+            //rend.material.shader = Shader.Find("Black");
 
             // Sets the rend colour to be whatever the FlashColour is set to
-            rend.material.SetColor("_SpecColor", FlashColour);
+            rend.material.color = FlashColour;
+
+            CoolDown = true;
         }
 
         //After timer, renderer sets colour back
@@ -99,24 +106,25 @@ public class HealthScript : MonoBehaviour
             FlashTime -= Time.deltaTime;
 
             // Checks if AttackTime gets to exactly 1
-            if (FlashTime == 1)
+            if (FlashTime <= 0)
             {
                 rend = GetComponentInChildren<Renderer>();
 
                 // Finds the shader the player will use and stores it into rend
-                rend.material.shader = Shader.Find("lambert1");
+                //rend.material.shader = Shader.Find("Black");
 
                 // Sets the rend colour to be whatever the FlashColour is set to
-                rend.material.SetColor("_SpecColor", Color.black);
+                rend.material.color = Color.black;
+                CoolDown = false;
             }
 
             // Checks if AttackTime gets down to zero or below
-            if (FlashTime <= 0)
-            {
-                // If so, CoolDown is set to false and it cools ResetCoolDown function
-                CoolDown = false;
-                ResetCoolDown();
-            }
+            //if (FlashTime <= 0)
+            //{
+            //    // If so, CoolDown is set to false and it cools ResetCoolDown function
+            //    CoolDown = false;
+            //    //ResetCoolDown();
+            //}
         }
     }
 
@@ -132,6 +140,7 @@ public class HealthScript : MonoBehaviour
 		// If object collides with an enemy, then call Flash function
         if (other.gameObject.tag == "Enemy")
         {
+            ResetCoolDown();
             Flash();
         }
     }

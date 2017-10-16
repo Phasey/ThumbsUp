@@ -5,12 +5,6 @@ using UnityEngine;
 // Creates a class for the Pressure Plate Script 
 public class PressurePlateScript : MonoBehaviour
 {
-	// Allows access to a Rigidbody
-    public Rigidbody rigidBodyCube;
-
-	// Allows access to an Animation
-    public Animation anim;
-
 	// Allows access to a GameObject
     public GameObject door;
 
@@ -32,8 +26,13 @@ public class PressurePlateScript : MonoBehaviour
 	//------------------------------------------------------------
     void OnTriggerEnter(Collider other)
     {
-		// If a GameObject with tag player is triggering function, then destroy door object
-        if (other.gameObject.tag == "Player")
+        // If a GameObject with tag player is triggering function, then destroy door object
+        //if (other.gameObject.tag == "Player")
+        //    Destroy(door);
+
+        // If a GameObject with tag crate is triggering function, then destroy door object
+        if (other.gameObject.tag == "Crate")
             Destroy(door);
     }
+  
 }

@@ -144,7 +144,7 @@ public class BasicAIScript : MonoBehaviour
             {
                 other.gameObject.GetComponent<HealthScript>().TakeDamage(enemyDamage);
                 CoolDown = true;
-                print("hit");
+                //print("hit");
             }
             
             // If CoolDown boolean is true

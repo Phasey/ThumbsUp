@@ -10,7 +10,9 @@ public class SweeperSpecial : MonoBehaviour
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
-    public GameObject HitBox;
+    
+
+    public float radius = 5f;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -40,9 +42,9 @@ public class SweeperSpecial : MonoBehaviour
         if (attackButton)
         {
             int layerMask = 1 << LayerMask.NameToLayer("Enemy");
-            CapsuleCollider box = HitBox.GetComponent<CapsuleCollider>();
+            
 
-            Collider[] hitEnemies = Physics.OverlapCapsule(HitBox.transform.position, HitBox.transform.position, box.radius,  layerMask);
+            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, radius,  layerMask);
             for (int i = 0; i < hitEnemies.Length; ++i)
             {
                 GameObject enemy = hitEnemies[i].gameObject;
