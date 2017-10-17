@@ -19,9 +19,9 @@ public class PlayerMove : MonoBehaviour
 	// Creates two private floats that record the previous x and z rotation
 	private float prevRotateX;
 	private float prevRotateZ;
-    private bool holding = false;
 
     public bool strikerDoingSpecial = false;
+    private GameObject currentPickUp = null;
 
 	//------------------------------------------------------------
 	// Function is called when script first runs
@@ -44,6 +44,7 @@ public class PlayerMove : MonoBehaviour
 		// Calls both MoveStriker and RotateStriker functions every frame
         MoveStriker();
         RotateStriker();
+        PickUpBox();
     }
 
 	//------------------------------------------------------------
@@ -112,20 +113,31 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    //------------------------------------------------------------
-    // Function runs when collision is first detected
-    //
-    // Param:
-    // 		other: Refers to object of which Agent is colliding
-    // 		with
-    //------------------------------------------------------------
-    private void OnCollisionEnter(Collision other)
+    private void PickUpBox()
     {
         bool aButton = XCI.GetButtonDown(XboxButton.A, Controller);
 
-        if (other.gameObject.tag == "Crate" && aButton)
+        if (aButton)
         {
-            other.transform.parent = transform;
+            if (currentPickUp == null)
+            {
+                int layerMask = 1 << LayerMask.NameToLayer("PickUp");
+                Vector3 boxSize = new Vector3(3, 3, 3);
+
+                Collider[] boxPickUp = Physics.OverlapBox(transform.position + transform.forward, boxSize * 0.5f, transform.rotation, layerMask);
+
+                if (boxPickUp.Length > 0)
+                {
+                    currentPickUp = boxPickUp[0].gameObject;
+                    currentPickUp.transform.parent = transform;
+                }
+            }
+
+            else
+            {
+                currentPickUp = null;
+                currentPickUp.transform.parent = null;
+            }
         }
     }
 }
