@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour {
 
-    public GameObject PLayer1;
-    public GameObject PLayer2;
+    public GameObject Player1;
+    public GameObject Player2;
 
 
     // Use this for initialization
@@ -18,12 +18,12 @@ public class PlayerDeath : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        HealthScript P1Health = PLayer1.GetComponent<HealthScript>();
-        HealthScript P2Health = PLayer2.GetComponent<HealthScript>();
+        HealthScript P1Health = Player1.GetComponent<HealthScript>();
+        HealthScript P2Health = Player2.GetComponent<HealthScript>();
 
         if (P1Health.dead && P2Health.dead)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene(0);
         }
 	}
 }
