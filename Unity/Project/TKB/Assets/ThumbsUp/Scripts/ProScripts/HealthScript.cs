@@ -72,6 +72,7 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void Death()
     {
+        dead = true;
         SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
         StrikerSpecial specialStriker = GetComponent<StrikerSpecial>();
         PlayerMove PlayMove = GetComponent<PlayerMove>();
