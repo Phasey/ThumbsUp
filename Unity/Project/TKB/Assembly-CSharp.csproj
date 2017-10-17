@@ -70,6 +70,7 @@
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\CameraScript.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\HealthScript.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PlayerAttack.cs" />
+     <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PlayerDeath.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PlayerMove.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PlayerTrigger.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PressurePlateScript.cs" />
