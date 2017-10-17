@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ThumbsUp/Scenes/Menu.unity
+    guid: e09d3a2a3265e7541867e216502e73a2
+  - enabled: 1
+    path: Assets/ThumbsUp/Scenes/AlphaLevel.unity
+    guid: 78568d42df01bca46bf63944d35e2181

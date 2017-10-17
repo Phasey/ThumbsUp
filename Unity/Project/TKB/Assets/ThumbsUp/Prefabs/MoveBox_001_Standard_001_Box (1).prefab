@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4472343387302114}
+  - component: {fileID: 65637543618493512}
   m_Layer: 0
   m_Name: MoveBox_001_Standard_001_Box (1)
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857057714441960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6384083, y: -1.6475086, z: -1.2951763}
+  m_LocalPosition: {x: -1.6435242, y: 0.000000018626451, z: -10.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4041221332823336}
@@ -84,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1bad6cc7ca16aa14cbb42b62415b532a, type: 2}
+  - {fileID: 2100000, guid: 9d1a68438b8574e45bbfb6a3976b5501, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,6 +111,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975389724574206}
   m_Mesh: {fileID: 4300002, guid: 9258cbf3acc734740a4592137eae2201, type: 3}
+--- !u!65 &65637543618493512
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857057714441960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
+  m_Center: {x: 0.41, y: 0.4, z: -0.4}
 --- !u!95 &95150947351128050
 Animator:
   serializedVersion: 3
