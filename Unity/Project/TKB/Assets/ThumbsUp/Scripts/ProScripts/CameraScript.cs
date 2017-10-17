@@ -8,6 +8,8 @@ public class CameraScript : MonoBehaviour
 	// Initialises public floats that Designers can adjust
 	public float xMaxDistApart = 15f;
 	public float zMaxDistApart = 15f;
+
+    // Vector3 allows are offset to be set when program starts
     public Vector3 startOffset;
 
 	// Allows the transforms for both players to be accessed
@@ -37,6 +39,8 @@ public class CameraScript : MonoBehaviour
 
 		// Records the centre of the screen upon starting
         centre = ((player2.position + player1.position) * 0.5f);
+
+        // Camera sets up behind players, depending on their location
         transform.position = centre + startOffset;
 
 		// Records the offset upon starting

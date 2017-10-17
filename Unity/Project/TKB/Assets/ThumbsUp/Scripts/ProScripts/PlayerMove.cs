@@ -130,13 +130,29 @@ public class PlayerMove : MonoBehaviour
                 {
                     currentPickUp = boxPickUp[0].gameObject;
                     currentPickUp.transform.parent = transform;
+
+                    Rigidbody rb = currentPickUp.GetComponent<Rigidbody>();
+                    rb.isKinematic = true;
+
+                    currentPickUp.transform.localPosition = Vector3.forward + Vector3.up;
+                    currentPickUp.transform.localRotation = Quaternion.identity;
+                    
+                    BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
+                    bc.enabled = false;
                 }
             }
 
             else
             {
-                currentPickUp = null;
                 currentPickUp.transform.parent = null;
+
+                Rigidbody rb = currentPickUp.GetComponent<Rigidbody>();
+                rb.isKinematic = false;
+
+                BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
+                bc.enabled = true;
+
+                currentPickUp = null;
             }
         }
     }

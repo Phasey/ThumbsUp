@@ -42,7 +42,8 @@ public class BasicAIScript : MonoBehaviour
     private float AttackTime;
 
     //Add dead bool
-   public bool dead = false;
+    public bool dead = false;
+
     //put If(!dead) around all AI code
     public float deadTime = 2f;
 
@@ -51,9 +52,9 @@ public class BasicAIScript : MonoBehaviour
     //------------------------------------------------------------
     void Awake()
     {
-        //checks for dead
+        // Code inside runs if the enemy is not dead
         if(!dead)
-            {
+        {
             // Gets a RigidBody component and stores it into rigidBody
             rigidBody = GetComponent<Rigidbody>();
 
@@ -70,7 +71,7 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
 	void Update()
     {
-        //checks for dead
+        // Code inside runs if the enemy is not dead
         if (!dead)
         {
             // Adds a forward force and speed to the rigidBody 
@@ -79,15 +80,19 @@ public class BasicAIScript : MonoBehaviour
             // Calls Seek function every frame
             Seek();
         }
+
+        // Code inside runs if the enemy is dead
         if (dead)
         {
+            // Timer begins to count down
             deadTime -= Time.deltaTime;
+
+            // If the timer hits zero or below, then the enemy gets destroyed
             if (deadTime <= 0)
             {
                 Destroy(enemy);
             }
         }
-
     }
 
 	//------------------------------------------------------------
@@ -95,9 +100,10 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
 	void NextPoint()
 	{
-        //checks for dead
+        // Code inside runs if the enemy is not dead
         if (!dead)
         {
+            // Code inside only runs 
             if (Points.Length != 0)
             {
                 // Agents destination refers to indexed point in points array
@@ -161,7 +167,7 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
     private void OnCollisionEnter(Collision other)
     {
-        //checks for dead
+        // Code inside runs if the enemy is not dead
         if (!dead)
         {
             // Checks for collision with any player

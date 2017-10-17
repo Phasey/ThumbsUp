@@ -9,9 +9,6 @@ public class HealthScript : MonoBehaviour
     public int maxHealth = 50;
     public int currentHealth;
 
-	// Creates public GameObject so Designers can assign both players to use this script
-    public GameObject player;
-
 	// Both variables used to make players flash red when on low health
     public Renderer rend;
     public Color FlashColour;
@@ -69,17 +66,22 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void Death()
     {
+        SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
+        StrikerSpecial specialStriker = GetComponent<StrikerSpecial>();
+        PlayerMove PlayMove = GetComponent<PlayerMove>();
+        PlayerAttack playAttack = GetComponent<PlayerAttack>();
 
-        //    SweeperSpecial specialSweeper = player.GetComponent<SweeperSpecial>();
-        //    StrikerSpecial specialStriker = player.GetComponent<StrikerSpecial>();
-        //    PlayerMove PlayMove = player.GetComponent<PlayerMove>();
-        //    PlayerAttack playAttack = player.GetComponent<PlayerAttack>();
+        if(specialStriker)
+            specialStriker.enabled = false;
 
-        //    specialStriker.enabled = false;
-        //    specialSweeper.enabled = false;
-        //    PlayMove.enabled = false;
-        //    playAttack.enabled = false;
-        
+        if(specialSweeper)
+            specialSweeper.enabled = false;
+
+        if(PlayMove)
+            PlayMove.enabled = false;
+
+        if(playAttack)
+            playAttack.enabled = false;
     }
 
 	//------------------------------------------------------------
@@ -87,6 +89,7 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void Flash()
     {
+        // Ignores following code if the flash time is less than zero
         if (FlashTime <= 0.0f)
             return;
 
@@ -104,8 +107,7 @@ public class HealthScript : MonoBehaviour
             CoolDown = true;
         }
 
-        //After timer, renderer sets colour back
-        // If CoolDown boolean is true
+        // Checks if CoolDown boolean is true
         if (CoolDown)
         {
             // If so, it decreases AttackTime by real time is seconds
@@ -116,21 +118,10 @@ public class HealthScript : MonoBehaviour
             {
                 rend = GetComponentInChildren<Renderer>();
 
-                // Finds the shader the player will use and stores it into rend
-                //rend.material.shader = Shader.Find("Black");
-
                 // Sets the rend colour to be whatever the FlashColour is set to
                 rend.material.color = Color.black;
                 CoolDown = false;
             }
-
-            // Checks if AttackTime gets down to zero or below
-            //if (FlashTime <= 0)
-            //{
-            //    // If so, CoolDown is set to false and it cools ResetCoolDown function
-            //    CoolDown = false;
-            //    //ResetCoolDown();
-            //}
         }
     }
 
