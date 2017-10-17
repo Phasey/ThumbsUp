@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using XboxCtrlrInput;
 
 public class StrikerSpecial : MonoBehaviour
 {
     public int hitForce = 1;
     public float specialTimer = 0.5f;
+    public float coolDownTimerMax = 5f;
+    public Slider powerBar;
 
     private bool strikerSpecial = false;
     private float resetTimer;
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
+    private bool coolDown = false;
+    private float coolDownTimer;
     //public GameObject HitBox;
 
     private Vector3 startPos;
@@ -30,6 +35,9 @@ public class StrikerSpecial : MonoBehaviour
         PlayerMove move = GetComponent<PlayerMove>();
         Controller = move.Controller;
         resetTimer = specialTimer;
+
+        coolDownTimer = coolDownTimerMax;
+        powerBar.value = coolDownTimerMax;
     }
 
     //------------------------------------------------------------
@@ -39,6 +47,8 @@ public class StrikerSpecial : MonoBehaviour
     {
         // Calls Special function every frame
         Special();
+
+        powerBar.value = coolDownTimer;
     }
 
     //------------------------------------------------------------
@@ -48,12 +58,25 @@ public class StrikerSpecial : MonoBehaviour
     {
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
 
-        if (attackButton)
+        if (attackButton && !coolDown)
         {
             strikerSpecial = true;
             startPos = transform.position;
             endPos = startPos + transform.forward * dist;
             Knockback();
+
+            coolDown = true;
+            coolDownTimer = 0f;
+        }
+
+        if (coolDown)
+        {
+            coolDownTimer += Time.deltaTime;
+
+            if (coolDownTimer >= coolDownTimerMax)
+            {
+                coolDown = false;
+            }
         }
 
         if (strikerSpecial)
