@@ -60,7 +60,7 @@ public class HealthScript : MonoBehaviour
         currentHealth -= damage;
 
 		// If players health is zero or less and they aren't dead yet, then call Death function
-        if (currentHealth <= 0 && !dead)
+        if (currentHealth <= 0)
             Death();
     }
 
@@ -69,7 +69,17 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void Death()
     {
-        dead = true;
+
+        //    SweeperSpecial specialSweeper = player.GetComponent<SweeperSpecial>();
+        //    StrikerSpecial specialStriker = player.GetComponent<StrikerSpecial>();
+        //    PlayerMove PlayMove = player.GetComponent<PlayerMove>();
+        //    PlayerAttack playAttack = player.GetComponent<PlayerAttack>();
+
+        //    specialStriker.enabled = false;
+        //    specialSweeper.enabled = false;
+        //    PlayMove.enabled = false;
+        //    playAttack.enabled = false;
+        
     }
 
 	//------------------------------------------------------------
