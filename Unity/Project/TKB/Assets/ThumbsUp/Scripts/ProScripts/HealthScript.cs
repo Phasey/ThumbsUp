@@ -14,7 +14,7 @@ public class HealthScript : MonoBehaviour
     public Color FlashColour;
 
 	// Creates booleans to check if players are being damaged or are alive
-    bool dead;
+    public bool dead;
     bool damaged;
 
     //sets the cooldown timer for use in attacking
