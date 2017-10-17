@@ -11,6 +11,9 @@ public class StrikerSpecial : MonoBehaviour
     public float specialTimer = 0.5f;
     public float coolDownTimerMax = 5f;
     public Slider powerBar;
+    public Image powerBarColour;
+    public Color powerFullColour = Color.yellow;
+    public Color powerNotFullColour = Color.blue;
 
     private bool strikerSpecial = false;
     private float resetTimer;
@@ -49,6 +52,11 @@ public class StrikerSpecial : MonoBehaviour
         Special();
 
         powerBar.value = coolDownTimer;
+
+        if (powerBar.value == coolDownTimerMax)
+            powerBarColour.color = powerFullColour;
+        else
+            powerBarColour.color = powerNotFullColour;
     }
 
     //------------------------------------------------------------

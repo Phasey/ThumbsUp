@@ -12,6 +12,9 @@ public class SweeperSpecial : MonoBehaviour
     public float radius = 5f;
     public float coolDownTimerMax = 5f;
     public Slider powerBar;
+    public Image powerBarColour;
+    public Color powerFullColour = Color.yellow;
+    public Color powerNotFullColour = Color.blue;
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
@@ -38,6 +41,11 @@ public class SweeperSpecial : MonoBehaviour
         Special();
 
         powerBar.value = coolDownTimer;
+
+        if (powerBar.value == coolDownTimerMax)
+            powerBarColour.color = powerFullColour;
+        else
+            powerBarColour.color = powerNotFullColour;
     }
 
     //------------------------------------------------------------
