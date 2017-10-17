@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Creates a class for the Health Script 
 public class HealthScript : MonoBehaviour
@@ -25,6 +26,9 @@ public class HealthScript : MonoBehaviour
 
     // Sets AttackTime variable to be private
     private float FlashTime = 0.0f;
+
+    public Slider healthBar;
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -32,7 +36,8 @@ public class HealthScript : MonoBehaviour
     {
 		// Sets current health to equal the max health upon startup
         currentHealth = maxHealth;
-	}
+        healthBar.maxValue = maxHealth;
+    }
 	
 	//------------------------------------------------------------
 	// Function is called once every frame
@@ -40,6 +45,7 @@ public class HealthScript : MonoBehaviour
 	void Update()
     {
         Flash();
+        healthBar.value = currentHealth;
     }
 
 	//------------------------------------------------------------
