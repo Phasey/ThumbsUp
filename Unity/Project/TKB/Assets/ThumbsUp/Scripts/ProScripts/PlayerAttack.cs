@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
                 NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
                 BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
 
-                AI.enabled = false;
+                AI.dead = true;
                 agent.enabled = false;
                 rb.isKinematic = false;
 

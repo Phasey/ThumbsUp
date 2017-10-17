@@ -20,8 +20,8 @@ public class BasicAIScript : MonoBehaviour
     public Transform Player2;
 
 	// Accesses both the Sweeper and Striker as game objects
-    public GameObject sweeperPlayer;
-    public GameObject strikerPlayer;
+    public GameObject enemy;
+
 
 	// Gets the transform of points on the navmesh
     public Transform[] Points;
@@ -42,21 +42,27 @@ public class BasicAIScript : MonoBehaviour
     private float AttackTime;
 
     //Add dead bool
+   public bool dead = false;
     //put If(!dead) around all AI code
+    public float deadTime = 2f;
 
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
     void Awake()
     {
-		// Gets a RigidBody component and stores it into rigidBody
-        rigidBody = GetComponent<Rigidbody>();
+        //checks for dead
+        if(!dead)
+            {
+            // Gets a RigidBody component and stores it into rigidBody
+            rigidBody = GetComponent<Rigidbody>();
 
-		// Gets a NavMeshAgent component and stores it into Agent
-        Agent = GetComponent<NavMeshAgent>();
+            // Gets a NavMeshAgent component and stores it into Agent
+            Agent = GetComponent<NavMeshAgent>();
 
-		// Does not allow Agent to automatically brake
-        Agent.autoBraking = false;
+            // Does not allow Agent to automatically brake
+            Agent.autoBraking = false;
+        }
     }
 	
 	//------------------------------------------------------------
@@ -64,29 +70,46 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
 	void Update()
     {
-		// Adds a forward force and speed to the rigidBody 
-        rigidBody.AddForce(transform.forward * enemyMovementSpeed);
+        //checks for dead
+        if (!dead)
+        {
+            // Adds a forward force and speed to the rigidBody 
+            rigidBody.AddForce(transform.forward * enemyMovementSpeed);
 
-		// Calls Seek function every frame
-        Seek();
-	}
+            // Calls Seek function every frame
+            Seek();
+        }
+        if (dead)
+        {
+            deadTime -= Time.deltaTime;
+            if (deadTime <= 0)
+            {
+                Destroy(enemy);
+            }
+        }
+
+    }
 
 	//------------------------------------------------------------
 	// Function calculates the next point for NavMeshAgent to go
 	//------------------------------------------------------------
 	void NextPoint()
 	{
-        if (Points.Length != 0)
+        //checks for dead
+        if (!dead)
         {
-            // Agents destination refers to indexed point in points array
-            Agent.destination = Points[Dest].position;
-
-            // Ignores function if the length to the points equals zero
-            if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
+            if (Points.Length != 0)
             {
-                // Dest equals the Dest + 1 then the modulus of length in points 
-                Dest = (Dest + 1) % Points.Length;
-                return;
+                // Agents destination refers to indexed point in points array
+                Agent.destination = Points[Dest].position;
+
+                // Ignores function if the length to the points equals zero
+                if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
+                {
+                    // Dest equals the Dest + 1 then the modulus of length in points 
+                    Dest = (Dest + 1) % Points.Length;
+                    return;
+                }
             }
         }
 	}
@@ -138,28 +161,32 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
     private void OnCollisionEnter(Collision other)
     {
-		// Checks for collision with any player
-        if (other.gameObject.tag == "Player")
+        //checks for dead
+        if (!dead)
         {
-            if (!CoolDown)
+            // Checks for collision with any player
+            if (other.gameObject.tag == "Player")
             {
-                other.gameObject.GetComponent<HealthScript>().TakeDamage(enemyDamage);
-                CoolDown = true;
-                //print("hit");
-            }
-            
-            // If CoolDown boolean is true
-            if (CoolDown)
-            {
-                // If so, it decreases AttackTime by real time is seconds
-                AttackTime -= Time.deltaTime;
-
-                // Checks if AttackTime gets down to zero or below
-                if (AttackTime <= 0)
+                if (!CoolDown)
                 {
-                    // If so, CoolDown is set to false and it cools ResetCoolDown function
-                    CoolDown = false;
-                    ResetCoolDown();
+                    other.gameObject.GetComponent<HealthScript>().TakeDamage(enemyDamage);
+                    CoolDown = true;
+                    //print("hit");
+                }
+
+                // If CoolDown boolean is true
+                if (CoolDown)
+                {
+                    // If so, it decreases AttackTime by real time is seconds
+                    AttackTime -= Time.deltaTime;
+
+                    // Checks if AttackTime gets down to zero or below
+                    if (AttackTime <= 0)
+                    {
+                        // If so, CoolDown is set to false and it cools ResetCoolDown function
+                        CoolDown = false;
+                        ResetCoolDown();
+                    }
                 }
             }
         }

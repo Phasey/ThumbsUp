@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953977781930488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.09123, y: -27.381557, z: -60.261074}
+  m_LocalPosition: {x: 3.292, y: 0.0015546232, z: 20.959}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4220635673404224}
@@ -255,10 +255,11 @@ MonoBehaviour:
   enemyDamage: 5
   Player1: {fileID: 0}
   Player2: {fileID: 0}
-  sweeperPlayer: {fileID: 0}
-  strikerPlayer: {fileID: 0}
+  enemy: {fileID: 1953977781930488}
   Points: []
   CoolDownTimer: 2
+  dead: 0
+  deadTime: 2
 --- !u!195 &195042396392499610
 NavMeshAgent:
   m_ObjectHideFlags: 1
