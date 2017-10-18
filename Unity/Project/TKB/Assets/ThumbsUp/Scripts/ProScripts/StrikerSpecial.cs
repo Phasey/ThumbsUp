@@ -29,6 +29,7 @@ public class StrikerSpecial : MonoBehaviour
     public float dist = 25;
     public float width = 5;
     public float upForce = 0.5f;
+    public float speedIncrease = 30;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -90,7 +91,7 @@ public class StrikerSpecial : MonoBehaviour
         if (strikerSpecial)
         {
             PlayerMove pm = gameObject.GetComponent<PlayerMove>();
-            pm.movementSpeed = 30;
+            pm.movementSpeed = speedIncrease;
             pm.strikerDoingSpecial = true;
             specialTimer -= Time.deltaTime;
             GetComponent<Rigidbody>().velocity = transform.forward * pm.movementSpeed;
