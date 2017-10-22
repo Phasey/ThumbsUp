@@ -7,8 +7,8 @@ using XboxCtrlrInput;
 // Creates a class for the Striker Attack Script 
 public class PlayerAttack : MonoBehaviour
 {
-    public int hitForce = 10;
-    public float upForce = 0.5f;
+    public int hitForce = 50;
+    public float upForce = 20;
 
     // Allows access to xbox controller buttons
     private XboxController Controller;

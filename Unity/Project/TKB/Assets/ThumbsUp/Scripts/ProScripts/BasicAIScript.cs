@@ -22,7 +22,6 @@ public class BasicAIScript : MonoBehaviour
 	// Accesses both the Sweeper and Striker as game objects
     public GameObject enemy;
 
-
 	// Gets the transform of points on the navmesh
     public Transform[] Points;
 
@@ -32,7 +31,7 @@ public class BasicAIScript : MonoBehaviour
 	// Sets a private NavMeshAgent for use in script 
     private NavMeshAgent Agent;
     
-    //sets the cooldown timer for use in attacking
+    // Sets the cooldown timer for use in attacking
     public float CoolDownTimer = 2f;
 
     // Initialises CoolDown boolean to be false
@@ -41,10 +40,10 @@ public class BasicAIScript : MonoBehaviour
     // Sets AttackTime variable to be private
     private float AttackTime;
 
-    //Add dead bool
+    // Bool determines if the enemy is dead or not
     public bool dead = false;
 
-    //put If(!dead) around all AI code
+    // Determines how long an enemy will be visible before disappearing
     public float deadTime = 2f;
 
     //------------------------------------------------------------
