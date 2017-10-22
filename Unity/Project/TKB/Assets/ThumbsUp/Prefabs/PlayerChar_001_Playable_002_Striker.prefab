@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760067829285644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.984421, y: 0, z: -48.030544}
+  m_LocalPosition: {x: 17, y: 0, z: 13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4793799106886874}
@@ -416,9 +416,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitForce: 10
   specialTimer: 0.4
+  coolDownTimerMax: 5
+  powerBar: {fileID: 0}
+  powerBarColour: {fileID: 0}
+  powerFullColour: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  powerNotFullColour: {r: 0, g: 0, b: 1, a: 1}
   dist: 25
   width: 5
   upForce: 0.5
+  speedIncrease: 30
 --- !u!114 &114703776338867532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,9 +456,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitForce: 10
   specialTimer: 0.4
+  coolDownTimerMax: 5
+  powerBar: {fileID: 0}
+  powerBarColour: {fileID: 0}
+  powerFullColour: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  powerNotFullColour: {r: 0, g: 0, b: 1, a: 1}
   dist: 25
   width: 2
   upForce: 5
+  speedIncrease: 30
 --- !u!136 &136777002190481836
 CapsuleCollider:
   m_ObjectHideFlags: 1
