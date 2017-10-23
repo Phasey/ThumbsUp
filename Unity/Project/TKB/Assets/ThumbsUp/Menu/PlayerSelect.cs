@@ -20,6 +20,24 @@ public class PlayerSelect : MonoBehaviour
 		
 	}
 
-    
+    public void Player1Sweeper()
+    {
+        SpawnManagerScript.Player1 = CharacterType.Sweeper;
+    }
+
+    public void Player1striker()
+    {
+        SpawnManagerScript.Player1 = CharacterType.Striker;
+    }
+
+    public void Player2Sweeper()
+    {
+        SpawnManagerScript.Player1 = CharacterType.Sweeper;
+    }
+
+    public void Player2striker()
+    {
+        SpawnManagerScript.Player1 = CharacterType.Striker;
+    }
 
 }
