@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 136777002190481836}
   - component: {fileID: 114084789857888780}
   - component: {fileID: 114134295152089768}
-  - component: {fileID: 114800339344992220}
   - component: {fileID: 208305797969966432}
   - component: {fileID: 114487750919300872}
   - component: {fileID: 195009578251302926}
@@ -111,8 +110,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760067829285644}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17, y: 0, z: 13}
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -11.85, y: 0, z: 7.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4793799106886874}
@@ -120,7 +119,7 @@ Transform:
   - {fileID: 4689798040145682}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4224813706030766
 Transform:
   m_ObjectHideFlags: 1
@@ -443,28 +442,6 @@ MonoBehaviour:
   dead: 0
   CoolDownTimer: 2
   healthBar: {fileID: 0}
---- !u!114 &114800339344992220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1760067829285644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e9af53f780f80a4fb393276ea40e491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitForce: 10
-  specialTimer: 0.4
-  coolDownTimerMax: 5
-  powerBar: {fileID: 0}
-  powerBarColour: {fileID: 0}
-  powerFullColour: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  powerNotFullColour: {r: 0, g: 0, b: 1, a: 1}
-  dist: 25
-  width: 2
-  upForce: 5
-  speedIncrease: 30
 --- !u!136 &136777002190481836
 CapsuleCollider:
   m_ObjectHideFlags: 1
