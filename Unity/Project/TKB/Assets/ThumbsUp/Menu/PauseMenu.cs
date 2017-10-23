@@ -11,7 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     private XboxController Controller;
 
-    public Button resumeButton;
+    public GameObject resumeButton;
+    public EventSystem es;
 
 
     //------------------------------------------------------------
@@ -39,7 +40,6 @@ public class PauseMenu : MonoBehaviour
         if (start && !pauseCanvas.activeInHierarchy)
         {
             Paused();
-            resumeButton.Select();
         }
 
         else if (start && pauseCanvas.activeInHierarchy)
@@ -49,6 +49,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+        es.SetSelectedGameObject(null);
         pauseCanvas.SetActive(false);
     }
 
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseCanvas.SetActive(true);
+        es.SetSelectedGameObject(resumeButton);
 
 
         //EventSystem EVRef = EventSystem.current; // get the current event system
