@@ -17,11 +17,9 @@ public class Gravityscript : MonoBehaviour {
 	void Update ()
     {
         BasicAIScript AI = GetComponent<BasicAIScript>();
+
         if (AI.dead)
         {
-            public1 = GetComponent<Rigidbody>();
-            public2 = GetComponent<Rigidbody>();
-
 
             public1.useGravity = true;
             public2.useGravity = true;
