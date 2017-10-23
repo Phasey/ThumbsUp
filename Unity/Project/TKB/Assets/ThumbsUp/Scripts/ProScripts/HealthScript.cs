@@ -27,6 +27,7 @@ public class HealthScript : MonoBehaviour
     // Sets AttackTime variable to be private
     private float FlashTime = 0.0f;
 
+    // Gets access to the health bar so health bar value can decrease according to health
     public Slider healthBar;
 
     //------------------------------------------------------------
@@ -44,7 +45,10 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
 	void Update()
     {
+        // Calls the flash function every frame
         Flash();
+
+        // Makes the value of the health bar equal the player's health
         healthBar.value = currentHealth;
     }
 
@@ -68,26 +72,35 @@ public class HealthScript : MonoBehaviour
     }
 
 	//------------------------------------------------------------
-	// Function sets dead bool to be true when called
+	// Function limits actions for player when called
 	//------------------------------------------------------------
     private void Death()
     {
+        // Dead bool is set to true
         dead = true;
+
+        // Gets Sweeper and Striker's Special components
         SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
         StrikerSpecial specialStriker = GetComponent<StrikerSpecial>();
+
+        // Gets Player Move and Player Attack components
         PlayerMove PlayMove = GetComponent<PlayerMove>();
         PlayerAttack playAttack = GetComponent<PlayerAttack>();
 
-        if(specialStriker)
+        // If there is a Striker Special then disable the component
+        if (specialStriker)
             specialStriker.enabled = false;
 
-        if(specialSweeper)
+        // If there is a Sweeper Special then disable the component
+        if (specialSweeper)
             specialSweeper.enabled = false;
 
-        if(PlayMove)
+        // If there is a Player Move then disable the component
+        if (PlayMove)
             PlayMove.enabled = false;
 
-        if(playAttack)
+        // If there is a Player Attack then disable the component
+        if (playAttack)
             playAttack.enabled = false;
     }
 
@@ -104,9 +117,6 @@ public class HealthScript : MonoBehaviour
         {
             // Gets renderer component and stores it into rend
             rend = GetComponentInChildren<Renderer>();
-           
-            // Finds the shader the player will use and stores it into rend
-            //rend.material.shader = Shader.Find("Black");
 
             // Sets the rend colour to be whatever the FlashColour is set to
             rend.material.color = FlashColour;
@@ -141,7 +151,7 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     private void OnCollisionEnter(Collision other)
     {
-		// If object collides with an enemy, then call Flash function
+		// If object collides with an enemy, then call Flash function and ResetCoolDown
         if (other.gameObject.tag == "Enemy")
         {
             ResetCoolDown();

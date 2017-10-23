@@ -74,6 +74,7 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
     private void RotateStriker()
     {
+        // Only runs if the striker is not performing their special
         if (!strikerDoingSpecial)
         {
             // Both floats get direction of the Xbox controller's right stick
@@ -113,45 +114,73 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //------------------------------------------------------------
+    // Function allows players to pick up boxes
+    //------------------------------------------------------------
     private void PickUpBox()
     {
+        // Bool gets if the A button on an Xbox controller is pushed down
         bool aButton = XCI.GetButtonDown(XboxButton.A, Controller);
 
+        // Checks if the A button has been pressed down
         if (aButton)
         {
+            // Checks if the player does not have anything picked up
             if (currentPickUp == null)
             {
+                // Gets the layer mask of the box
                 int layerMask = 1 << LayerMask.NameToLayer("PickUp");
+
+                // BoxSize Vector3 used to determine the hit box of the player
                 Vector3 boxSize = new Vector3(3, 3, 3);
 
+                // Stores all boxes that are found in the players hit box into a local array
                 Collider[] boxPickUp = Physics.OverlapBox(transform.position + transform.forward, boxSize * 0.5f, transform.rotation, layerMask);
 
+                // Checks if there are any boxes in local array
                 if (boxPickUp.Length > 0)
                 {
+                    // Picks up the first box in the array
                     currentPickUp = boxPickUp[0].gameObject;
+
+                    // Makes the box a child of the parent
                     currentPickUp.transform.parent = transform;
 
+                    // Gets the Rigidbody of the box
                     Rigidbody rb = currentPickUp.GetComponent<Rigidbody>();
+
+                    // Sets Kinematic to be true on Boxes' Rigidbody
                     rb.isKinematic = true;
 
+                    // Positions the box to be in front of the player's chest
                     currentPickUp.transform.localPosition = Vector3.forward + Vector3.up;
+
+                    // Sets the boxes' rotation back to default
                     currentPickUp.transform.localRotation = Quaternion.identity;
                     
+                    // Gets the box collider of the box and disables it
                     BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
                     bc.enabled = false;
                 }
             }
 
+            // Else if the player has something picked up
             else
             {
+                // Sets the pick up to have no parent again
                 currentPickUp.transform.parent = null;
 
+                // Gets the Rigidbody of the box
                 Rigidbody rb = currentPickUp.GetComponent<Rigidbody>();
+
+                // Sets kinematic to be false on the Rigidbody
                 rb.isKinematic = false;
 
+                // Gets the box collider of the box and disables it 
                 BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
                 bc.enabled = true;
 
+                // Sets currentPickUp to be null
                 currentPickUp = null;
             }
         }
