@@ -23,6 +23,8 @@ public class PlayerMove : MonoBehaviour
     public bool strikerDoingSpecial = false;
     private GameObject currentPickUp = null;
 
+    public Animator animator;
+
 	//------------------------------------------------------------
 	// Function is called when script first runs
 	//------------------------------------------------------------
@@ -59,10 +61,12 @@ public class PlayerMove : MonoBehaviour
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
             // Creates a "new" Vector3 to allow movement
-            Vector3 movement = new Vector3(axisX, 0, axisZ);
+            Vector3 movement = new Vector3(axisX, 0, axisZ) * movementSpeed;
 
             // Equation used to allow Striker to move
-            rigidBody.MovePosition(rigidBody.position + movement * movementSpeed * Time.deltaTime);
+            rigidBody.MovePosition(rigidBody.position + movement * Time.deltaTime);
+
+            animator.SetFloat("Speed", movement.magnitude);
 
             // Sets the Striker's velocity to be zero
             rigidBody.velocity = Vector3.zero;

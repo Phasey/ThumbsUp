@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95866193871667098}
   m_Layer: 0
   m_Name: Sweeper_Player (1)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,8 +135,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606711820912758}
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -11.91, y: 0, z: 1.24}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.525, y: 0, z: 5.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4302300494019930}
@@ -364,7 +364,7 @@ Animator:
   m_GameObject: {fileID: 1341337817995614}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9408848d8dbca714ba4a64a104981d4f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e0ffdac2de7ebd45a7b317dc6351859, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -387,6 +387,7 @@ MonoBehaviour:
   maxSpeed: 10
   Controller: 1
   strikerDoingSpecial: 0
+  animator: {fileID: 95866193871667098}
 --- !u!114 &114358000496500516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -417,12 +418,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 100
+  currentHealth: 100
   rend: {fileID: 0}
-  FlashColour: {r: 1, g: 0, b: 0, a: 0}
+  FlashColour: {r: 0.9705882, g: 0.09277679, b: 0.09277679, a: 0}
   dead: 0
-  CoolDownTimer: 2
+  CoolDownTimer: 0.5
   healthBar: {fileID: 0}
 --- !u!114 &114918746210508582
 MonoBehaviour:
@@ -457,7 +458,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606711820912758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
