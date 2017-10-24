@@ -12,8 +12,7 @@ public class PauseMenu : MonoBehaviour
     private XboxController Controller;
 
     public GameObject resumeButton;
-    public EventSystem es;
-
+    public EventSystem eventSystem;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -21,26 +20,18 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         Resume();
-	}
+    }
 
     //------------------------------------------------------------
     // Function is called once every frame
     //------------------------------------------------------------
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    resumeButton.Select();
-        //    Debug.Log("hi");
-        //}
-
         // Bool checks if the start button has been pressed
         bool start = XCI.GetButtonDown(XboxButton.Start, Controller);
 
         if (start && !pauseCanvas.activeInHierarchy)
-        {
             Paused();
-        }
 
         else if (start && pauseCanvas.activeInHierarchy)
             Resume();
@@ -49,7 +40,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-        es.SetSelectedGameObject(null);
+        eventSystem.SetSelectedGameObject(null);
         pauseCanvas.SetActive(false);
     }
 
@@ -57,8 +48,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseCanvas.SetActive(true);
-        es.SetSelectedGameObject(resumeButton);
-
+        eventSystem.SetSelectedGameObject(resumeButton);
 
         //EventSystem EVRef = EventSystem.current; // get the current event system
         //EVRef.SetSelectedGameObject(resumeButton.gameObject);   // set current selected button
