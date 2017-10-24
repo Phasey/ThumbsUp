@@ -5,8 +5,8 @@ using UnityEngine;
 
 public enum CharacterType
 {
-    Sweeper,
-    Striker
+    SWEEPER,
+    STRIKER
 }
 
 public class SpawnManagerScript : MonoBehaviour
@@ -23,7 +23,7 @@ public class SpawnManagerScript : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if (Player1 == CharacterType.Sweeper)
+        if (Player1 == CharacterType.SWEEPER)
         {
 
             GameObject p1 = Instantiate(Sweeper, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
@@ -31,19 +31,19 @@ public class SpawnManagerScript : MonoBehaviour
         }
         else
         {
-            Instantiate(Striker, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
+            GameObject p1 = Instantiate(Striker, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
 
         }
 
-        if (Player2 == CharacterType.Sweeper)
+        if (Player2 == CharacterType.SWEEPER)
         {
 
-            Instantiate(Sweeper, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
+            GameObject p2 = Instantiate(Sweeper, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
             //Get PlayerMove component and set Controller to second
         }
         else
         {
-            Instantiate(Striker, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
+            GameObject p2 = Instantiate(Striker, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
 
         }
     }

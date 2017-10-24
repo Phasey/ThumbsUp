@@ -15,11 +15,12 @@ public class BasicAIScript : MonoBehaviour
 	// Gets access to a RigidBody
     Rigidbody rigidBody;
 
-	// Allows the transform for both players to be accessed
-    public Transform Player1;
-    public Transform Player2;
+    // Allows the transform for both players to be accessed
+    //public Transform Player1;
+    //public Transform Player2;
+    private PlayerMove[] players;
 
-	// Accesses both the Sweeper and Striker as game objects
+    // Accesses both the Sweeper and Striker as game objects
     public GameObject enemy;
 
 	// Gets the transform of points on the navmesh
@@ -63,6 +64,11 @@ public class BasicAIScript : MonoBehaviour
             // Does not allow Agent to automatically brake
             Agent.autoBraking = false;
         }
+    }
+
+    void Start()
+    {
+        players = GameObject.FindObjectsOfType<PlayerMove>();
     }
 	
 	//------------------------------------------------------------
@@ -124,24 +130,26 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
     void Seek()
     {
+        
+         
 		// Calculates distance to Player 1's position
-        float Dist = Vector3.Distance(Player1.position, transform.position);
+        float Dist = Vector3.Distance(players[0].transform.position, transform.position);
 
 		// Calculates distance to Player 2's position
-        float Dist2 = Vector3.Distance(Player2.position, transform.position);
+        float Dist2 = Vector3.Distance(players[1].transform.position, transform.position);
 
 		// Checks if distance to Player 1 is less than the Agent's vision
-        if (Dist < vision)
+        if (Dist < vision && Dist < Dist2)
         {
 			// If so, make the NavMeshAgent seek Player 1
-            GetComponent<NavMeshAgent>().destination = Player1.position;
+            GetComponent<NavMeshAgent>().destination = players[0].transform.position;
         }
 
 		// Checks if distance to Player 2 is less than the Agent's vision
-        if (Dist2 < vision)
+        else if (Dist2 < vision)
         {
-			// If so, make the NavMeshAgent seek Player 1
-            GetComponent<NavMeshAgent>().destination = Player2.position;
+			// If so, make the NavMeshAgent seek Player 2
+            GetComponent<NavMeshAgent>().destination = players[1].transform.position;
         }
 
 		// If vision doesn't exceed distance to player 1 or 2
