@@ -20,10 +20,13 @@ public class BasicAIScript : MonoBehaviour
     //public Transform Player2;
     private PlayerMove[] players;
 
-    // Accesses both the Sweeper and Striker as game objects
+    // Accesses the AI as a game object
     public GameObject enemy;
 
-	// Gets the transform of points on the navmesh
+    public GameObject sweeperObject;
+    public GameObject strikerObject;
+
+    // Gets the transform of points on the navmesh
     public Transform[] Points;
 
 	// Initialises the destination private int to 0
@@ -89,6 +92,12 @@ public class BasicAIScript : MonoBehaviour
         // Code inside runs if the enemy is dead
         if (dead)
         {
+            //GameObject sweeper = Instantiate(sweeperObject);
+            //GameObject striker = Instantiate(strikerObject);
+
+            Physics.IgnoreCollision(players[0].GetComponent<Collider>(), GetComponent<Collider>());
+            Physics.IgnoreCollision(players[1].GetComponent<Collider>(), GetComponent<Collider>());
+
             // Timer begins to count down
             deadTime -= Time.deltaTime;
 
