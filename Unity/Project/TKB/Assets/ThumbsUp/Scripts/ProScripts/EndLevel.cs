@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
     public GameObject[] enemies;
     public GameObject closedDoor;
     public GameObject openDoor;
+
+    public int sceneNumber;
 
 	// Use this for initialization
 	void Awake()
@@ -25,4 +28,10 @@ public class EndLevel : MonoBehaviour
             Destroy(closedDoor);
         }
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+            SceneManager.LoadScene(sceneNumber);
+    }
 }

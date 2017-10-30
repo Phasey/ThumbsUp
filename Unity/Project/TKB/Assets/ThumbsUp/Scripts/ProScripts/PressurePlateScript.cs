@@ -30,14 +30,11 @@ public class PressurePlateScript : MonoBehaviour
         // Checks if a GameObject with tag "Crate" is triggering function
         if (other.gameObject.tag == "Crate")
         {
+            // Instantiates the open door Game Object
+            Instantiate(doorOpen, doorClosed.transform.position, Quaternion.identity);
+
             // Destroys the closed door Game Object
             Destroy(doorClosed);
-
-            // Sets where the open door will appear
-            Vector3 doorPos = new Vector3(-0.5f, 0, 25);
-
-            // Instantiates the open door Game Object
-            Instantiate(doorOpen, doorPos, Quaternion.identity);
         }
     }  
 }
