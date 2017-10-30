@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gravityscript : MonoBehaviour {
-
-
+public class Gravityscript : MonoBehaviour
+{
     public Rigidbody public1;
     public Rigidbody public2;
+
     // Use this for initialization
     void Start ()
     {
@@ -20,10 +20,8 @@ public class Gravityscript : MonoBehaviour {
 
         if (AI.dead)
         {
-
             public1.useGravity = true;
             public2.useGravity = true;
         }
-
     }
 }

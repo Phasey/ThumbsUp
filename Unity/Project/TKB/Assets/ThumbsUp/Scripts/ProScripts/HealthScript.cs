@@ -85,6 +85,7 @@ public class HealthScript : MonoBehaviour
 
         // Gets Player Move and Player Attack components
         PlayerMove PlayMove = GetComponent<PlayerMove>();
+
         PlayerAttack playAttack = GetComponent<PlayerAttack>();
 
         // If there is a Striker Special then disable the component
