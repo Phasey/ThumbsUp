@@ -25,7 +25,7 @@ public class PlayerSelect : MonoBehaviour
         SpawnManagerScript.Player1 = CharacterType.SWEEPER;
     }
 
-    public void Player1striker()
+    public void Player1Striker()
     {
         SpawnManagerScript.Player1 = CharacterType.STRIKER;
     }
@@ -35,7 +35,7 @@ public class PlayerSelect : MonoBehaviour
         SpawnManagerScript.Player1 = CharacterType.SWEEPER;
     }
 
-    public void Player2striker()
+    public void Player2Striker()
     {
         SpawnManagerScript.Player1 = CharacterType.STRIKER;
     }
