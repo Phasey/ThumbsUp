@@ -51,4 +51,10 @@ public class SpawnEnemy : MonoBehaviour
         if (other.tag == "Player")
             isEnabled = true;
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+            isEnabled = false;
+    }
 }
