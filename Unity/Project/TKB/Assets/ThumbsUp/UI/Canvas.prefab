@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224550492751149702}
   - component: {fileID: 114210032901714654}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 1 Power Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 224328501772097676}
   - component: {fileID: 222864932660325156}
   - component: {fileID: 114570458179951550}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 1 Character Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 224964408814597018}
   - component: {fileID: 222872783959399350}
   - component: {fileID: 114399786548963880}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 2 Health Bar Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224124560018467722}
   - component: {fileID: 114306094174445354}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 2 Health Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 224335359328891042}
   - component: {fileID: 222144351080055356}
   - component: {fileID: 114013381797726792}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 224855386097784134}
   - component: {fileID: 222945986294446954}
   - component: {fileID: 114170829927583652}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 2 Character Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 224149788415677836}
   - component: {fileID: 222641741262396962}
   - component: {fileID: 114827912295861528}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 2 Power bar Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224037921417446444}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224506614580380382}
   - component: {fileID: 114978682508991054}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 1 Health Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224198526815815658}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224477448604604480}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 224500875939223774}
   - component: {fileID: 222576601981986726}
   - component: {fileID: 114578425871970456}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 1 Power bar Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224851282124305530}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224365151122447194}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 2 UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 224386896884544366}
   - component: {fileID: 222882668896841912}
   - component: {fileID: 114662220483583154}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 1 Health Bar Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 224355972768646962}
   - component: {fileID: 222764916706589406}
   - component: {fileID: 114109277501929046}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224169134019382720}
   - component: {fileID: 114328954084604950}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 2 Power Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224195098343905138}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player 1 UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 224993602188650718}
   - component: {fileID: 222461898346338194}
   - component: {fileID: 114911369635870828}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 224033285675833854}
   - component: {fileID: 222736508313824248}
   - component: {fileID: 114738876807056860}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 223913222990132696}
   - component: {fileID: 114329727183387578}
   - component: {fileID: 114165404866548550}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

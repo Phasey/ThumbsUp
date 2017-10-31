@@ -135,8 +135,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606711820912758}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.525, y: 0, z: 5.8}
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -10.91, y: 0, z: 3.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4302300494019930}
@@ -399,8 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb54cdc808c67f4c81a286470685041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitForce: 10
-  upForce: 5
+  hitForce: 100
+  upForce: 50
   radius: 5
   coolDownTimerMax: 5
   powerBar: {fileID: 0}
@@ -436,9 +436,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb42a346f2343641bf537730e7a9378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitForce: 10
-  upForce: 5
+  hitForce: 1000
+  upForce: 500
+  coolDownMaxTime: 0.5
+  damage: 1
+  coolDown: 0
   HitBox: {fileID: 1738516284488492}
+  animator: {fileID: 0}
 --- !u!136 &136456539862906586
 CapsuleCollider:
   m_ObjectHideFlags: 1
