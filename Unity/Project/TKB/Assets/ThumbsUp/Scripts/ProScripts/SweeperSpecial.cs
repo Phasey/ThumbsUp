@@ -30,6 +30,8 @@ public class SweeperSpecial : MonoBehaviour
     // Allows access to xbox controller buttons
     private XboxController Controller;
 
+    public Animator animator;
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -79,6 +81,8 @@ public class SweeperSpecial : MonoBehaviour
         // Checks if right bumper has been pressed down and sweeper is not in cool down
         if (attackButton && !coolDown)
         {
+            animator.SetBool("Special", true);
+
             // Gets the layer mask of enemy and stores it in local variable
             int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
@@ -121,6 +125,8 @@ public class SweeperSpecial : MonoBehaviour
             coolDown = true;
             coolDownTimer = 0f;
         }
+        else
+            animator.SetBool("Special", true);
 
         // Checks if cool down bool equals true
         if (coolDown)
