@@ -44,15 +44,15 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
 		// Calls both MoveStriker and RotateStriker functions every frame
-        MoveStriker();
-        RotateStriker();
+        Move();
+        Rotate();
         PickUpBox();
     }
 
 	//------------------------------------------------------------
 	// Function allows for the Striker to move
 	//------------------------------------------------------------
-    private void MoveStriker()
+    private void Move()
     {
         if (!strikerDoingSpecial)
         {
@@ -66,7 +66,7 @@ public class PlayerMove : MonoBehaviour
             // Equation used to allow Striker to move
             rigidBody.MovePosition(rigidBody.position + movement * Time.deltaTime);
 
-            //animator.SetFloat("Speed", movement.magnitude);
+            animator.SetFloat("Speed", movement.magnitude);
 
             // Sets the Striker's velocity to be zero
             rigidBody.velocity = Vector3.zero;
@@ -76,7 +76,7 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
 	// Function allows for the Striker to rotate
 	//------------------------------------------------------------
-    private void RotateStriker()
+    private void Rotate()
     {
         // Only runs if the striker is not performing their special
         if (!strikerDoingSpecial)

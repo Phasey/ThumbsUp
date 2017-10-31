@@ -7,20 +7,29 @@ using XboxCtrlrInput;
 // Creates a class for the Striker Attack Script 
 public class PlayerAttack : MonoBehaviour
 {
-    public int hitForce = 50;
-    public float upForce = 20;
+    public float hitForce = 50f;
+    public float upForce = 20f;
+    public float coolDownMaxTime = 0.5f;
+    public float damage = 50;
+
+    private float timer = 0f;
+    public bool coolDown;
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
     public GameObject HitBox;
 
-	//------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
+    public Animator animator;
+
+    //------------------------------------------------------------
+    // Function is called when script first runs
+    //------------------------------------------------------------
     void Awake()
     {
         PlayerMove move = GetComponent<PlayerMove>();
         Controller = move.Controller;
+
+        coolDown = false;
     }
 
 	//------------------------------------------------------------
@@ -41,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
         float attackButton = XCI.GetAxis(XboxAxis.RightTrigger, Controller);
 
 		// Checks if trigger is down a little bit
-        if (attackButton > 0.15f)
+        if (attackButton > 0.15f && !coolDown)
         {
             // Gets the layer mask of an enemy and stores it in local int
             int layerMask = 1 << LayerMask.NameToLayer("Enemy");
@@ -67,9 +76,6 @@ public class PlayerAttack : MonoBehaviour
                 // Gets the enemy's BasicAIScript
                 BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
 
-                // Sets the dead bool in AI script to be true for enemy
-                AI.dead = true;
-
                 // Disables NavMeshAgent for enemy
                 agent.enabled = false;
 
@@ -84,6 +90,27 @@ public class PlayerAttack : MonoBehaviour
 
                 // Adds a knockback force that gets applied to the enemy's Rigidbody
                 rb.AddForce(direction * hitForce + Vector3.up * upForce, ForceMode.Impulse);
+
+                // Decreases the enemies health by how much damage was dealt
+                AI.enemyHealth -= damage;
+
+                // Checks if enemies health is equal to or goes below zero
+                if (AI.enemyHealth <= 0)
+                    // If so, set the dead bool in AI script to be true for enemy 
+                    AI.dead = true;
+            }
+
+            coolDown = true;
+        }
+
+        if (coolDown)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= coolDownMaxTime)
+            {
+                coolDown = false;
+                timer = 0f;
             }
         }
     }

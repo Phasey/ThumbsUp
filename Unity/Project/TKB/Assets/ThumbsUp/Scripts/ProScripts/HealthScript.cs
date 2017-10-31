@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
 	// Creates public integers for both the max health and current health
-    public int maxHealth = 50;
-    public int currentHealth;
+    public float maxHealth = 50;
+    public float currentHealth;
 
 	// Both variables used to make players flash red when on low health
     public Renderer rend;
@@ -16,7 +16,6 @@ public class HealthScript : MonoBehaviour
 
 	// Creates booleans to check if players are being damaged or are alive
     public bool dead;
-    bool damaged;
 
     //sets the cooldown timer for use in attacking
     public float CoolDownTimer = 0.5f;
@@ -58,11 +57,8 @@ public class HealthScript : MonoBehaviour
 	// Param:
 	// 		damage: Refers to how much damade the players take
 	//------------------------------------------------------------
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-		// Sets damaged bool to be true
-        damaged = true;
-
 		// Deducts health by the amount of damage taken
         currentHealth -= damage;
 

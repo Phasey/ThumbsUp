@@ -10,14 +10,13 @@ public class BasicAIScript : MonoBehaviour
     public float enemyMovementSpeed = 10f;
 	public float vision = 10f;
 	public float AttackVision = 1f;
-    public int enemyDamage = 5;
+    public float enemyHealth = 1f;
+    public float enemyDamage = 5f;
 
-	// Gets access to a RigidBody
+    // Gets access to a RigidBody
     Rigidbody rigidBody;
 
     // Allows the transform for both players to be accessed
-    //public Transform Player1;
-    //public Transform Player2;
     private PlayerMove[] players;
 
     // Accesses the AI as a game object
@@ -71,7 +70,7 @@ public class BasicAIScript : MonoBehaviour
 
     void Start()
     {
-        players = GameObject.FindObjectsOfType<PlayerMove>();
+        players = FindObjectsOfType<PlayerMove>();
     }
 	
 	//------------------------------------------------------------
@@ -92,9 +91,6 @@ public class BasicAIScript : MonoBehaviour
         // Code inside runs if the enemy is dead
         if (dead)
         {
-            //GameObject sweeper = Instantiate(sweeperObject);
-            //GameObject striker = Instantiate(strikerObject);
-
             Physics.IgnoreCollision(players[0].GetComponent<Collider>(), GetComponent<Collider>());
             Physics.IgnoreCollision(players[1].GetComponent<Collider>(), GetComponent<Collider>());
 
@@ -139,8 +135,6 @@ public class BasicAIScript : MonoBehaviour
 	//------------------------------------------------------------
     void Seek()
     {
-        
-         
 		// Calculates distance to Player 1's position
         float Dist = Vector3.Distance(players[0].transform.position, transform.position);
 
@@ -193,7 +187,6 @@ public class BasicAIScript : MonoBehaviour
                 {
                     other.gameObject.GetComponent<HealthScript>().TakeDamage(enemyDamage);
                     CoolDown = true;
-                    //print("hit");
                 }
 
                 // If CoolDown boolean is true

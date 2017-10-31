@@ -3,20 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-enum GameStates
-{
-    MAINMENU,
-    CHARACTERSELECT,
-    GAMEPLAY,
-    PAUSE,
-    DEATH,
-    COMPLETION
-}
-
 public class StartScript : MonoBehaviour
 {
-    GameStates gs;
-    
 	// Use this for initialization
 	void Awake()
     {
