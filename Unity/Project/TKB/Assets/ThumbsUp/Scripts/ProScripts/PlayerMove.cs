@@ -43,7 +43,6 @@ public class PlayerMove : MonoBehaviour
 	//------------------------------------------------------------
     void Update()
     {
-		// Calls both MoveStriker and RotateStriker functions every frame
         Move();
         Rotate();
         PickUpBox();
@@ -60,13 +59,22 @@ public class PlayerMove : MonoBehaviour
             float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
+            if (axisX != 0 || axisZ != 0)
+            {
+                animator.SetBool("Speed", true);
+            }
+            else
+            {
+                animator.SetBool("Speed", false);
+            }
+
             // Creates a "new" Vector3 to allow movement
             Vector3 movement = new Vector3(axisX, 0, axisZ) * movementSpeed;
 
             // Equation used to allow Striker to move
             rigidBody.MovePosition(rigidBody.position + movement * Time.deltaTime);
 
-            animator.SetFloat("Speed", movement.magnitude);
+            
 
             // Sets the Striker's velocity to be zero
             rigidBody.velocity = Vector3.zero;

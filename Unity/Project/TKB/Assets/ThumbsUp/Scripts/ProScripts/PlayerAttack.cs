@@ -49,9 +49,11 @@ public class PlayerAttack : MonoBehaviour
 		// Gets the Right Trigger button from Xbox controller
         float attackButton = XCI.GetAxis(XboxAxis.RightTrigger, Controller);
 
-		// Checks if trigger is down a little bit
+        // Checks if trigger is down a little bit
         if (attackButton > 0.15f && !coolDown)
         {
+            animator.SetBool("Attack", true);
+
             // Gets the layer mask of an enemy and stores it in local int
             int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
@@ -62,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
             Collider[] hitEnemies = Physics.OverlapBox(HitBox.transform.position, box.size * 0.5f, HitBox.transform.rotation, layerMask);
 
             // Runs for loop for all enemies in the local array
-            for(int i = 0; i < hitEnemies.Length; ++i)
+            for (int i = 0; i < hitEnemies.Length; ++i)
             {
                 // Sets the current enemy as a GameObject
                 GameObject enemy = hitEnemies[i].gameObject;
@@ -102,6 +104,8 @@ public class PlayerAttack : MonoBehaviour
 
             coolDown = true;
         }
+        else
+            animator.SetBool("Attack", false);
 
         if (coolDown)
         {

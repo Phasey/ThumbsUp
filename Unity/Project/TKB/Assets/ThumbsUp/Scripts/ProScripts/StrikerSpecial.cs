@@ -42,6 +42,8 @@ public class StrikerSpecial : MonoBehaviour
     // Allows access to xbox controller buttons
     private XboxController Controller;
 
+    public Animator animator;
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -94,6 +96,8 @@ public class StrikerSpecial : MonoBehaviour
         // Checks if right bumper has been pressed down and the striker is not in cool down mode
         if (attackButton && !coolDown)
         {
+            animator.SetBool("Special", true);
+
             // Sets the strikerSpecial bool to be true
             strikerSpecial = true;
 
@@ -110,6 +114,8 @@ public class StrikerSpecial : MonoBehaviour
             coolDown = true;
             coolDownTimer = 0f;
         }
+        else
+            animator.SetBool("Special", false);
 
         // Checks if Cool Down bool is true
         if (coolDown)
