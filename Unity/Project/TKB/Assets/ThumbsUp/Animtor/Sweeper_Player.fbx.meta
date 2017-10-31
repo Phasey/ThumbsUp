@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3a4219096c1cb41429c1dbee1b6f2566
-timeCreated: 1508736615
+guid: 59ebe19bd21554942ba2e2691f44a6f3
+timeCreated: 1509427129
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -61,7 +61,7 @@ ModelImporter:
     100106: RSweeper_Joint_Thumb4
     100108: RSweeper_Joint_Wrist
     100110: RSweeper_Shoulderpad
-    100112: Sweeper_Axe_Template
+    100112: Sweeper_Axe
     100114: Sweeper_Control_Backbone
     100116: Sweeper_Control_Chest
     100118: Sweeper_Control_Global
@@ -135,7 +135,7 @@ ModelImporter:
     400106: RSweeper_Joint_Thumb4
     400108: RSweeper_Joint_Wrist
     400110: RSweeper_Shoulderpad
-    400112: Sweeper_Axe_Template
+    400112: Sweeper_Axe
     400114: Sweeper_Control_Backbone
     400116: Sweeper_Control_Chest
     400118: Sweeper_Control_Global
@@ -155,15 +155,15 @@ ModelImporter:
     400146: Sweeper_Skirt
     2300000: LSweeper_Shoulderpad
     2300002: RSweeper_Shoulderpad
-    2300004: Sweeper_Axe_Template
+    2300004: Sweeper_Axe
     3300000: LSweeper_Shoulderpad
     3300002: RSweeper_Shoulderpad
-    3300004: Sweeper_Axe_Template
+    3300004: Sweeper_Axe
     4300000: Sweeper_Player
     4300002: Sweeper_Skirt
-    4300004: LSweeper_Shoulderpad
-    4300006: RSweeper_Shoulderpad
-    4300008: Sweeper_Axe_Template
+    4300004: Sweeper_Axe
+    4300006: LSweeper_Shoulderpad
+    4300008: RSweeper_Shoulderpad
     9500000: //RootNode
     13700000: Sweeper_Player
     13700002: Sweeper_Skirt

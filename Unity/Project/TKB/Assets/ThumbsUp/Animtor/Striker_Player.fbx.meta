@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 961b3e21cc18eee4d843843cee5bceba
-timeCreated: 1508736616
+guid: 6208ccc13b371254b93dbf7d6b10bca0
+timeCreated: 1509427516
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -77,7 +77,7 @@ ModelImporter:
     100138: Striker_Player
     100140: Striker_Ponytail
     100142: Striker_Skirt
-    100144: Striker_Sword_Template
+    100144: Striker_Sword
     400000: LStriker_Control_Clavical
     400002: LStriker_Control_Elbow
     400004: LStriker_Control_Feet
@@ -150,13 +150,13 @@ ModelImporter:
     400138: Striker_Player
     400140: Striker_Ponytail
     400142: Striker_Skirt
-    400144: Striker_Sword_Template
-    2300000: Striker_Sword_Template
-    3300000: Striker_Sword_Template
+    400144: Striker_Sword
+    2300000: Striker_Sword
+    3300000: Striker_Sword
     4300000: Striker_Player
     4300002: Striker_Skirt
     4300004: Striker_Ponytail
-    4300006: Striker_Sword_Template
+    4300006: Striker_Sword
     9500000: //RootNode
     13700000: Striker_Player
     13700002: Striker_Ponytail
