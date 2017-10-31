@@ -5,14 +5,16 @@ using UnityEngine;
 // Creates a class for the Pressure Plate Script 
 public class PressurePlateScript : MonoBehaviour
 {
-	// Creates two new GameObjects that are used in this script
-    public GameObject doorClosed;
-    public GameObject doorOpen;
+    // Bool used to check for a trigger
+    public bool triggered;
 
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
-    void Awake() {}
+    void Awake()
+    {
+        triggered = false;
+    }
 
 	//------------------------------------------------------------
 	// Function is called once every frame
@@ -30,11 +32,18 @@ public class PressurePlateScript : MonoBehaviour
         // Checks if a GameObject with tag "Crate" is triggering function
         if (other.gameObject.tag == "Crate")
         {
-            // Instantiates the open door Game Object
-            Instantiate(doorOpen, doorClosed.transform.position, Quaternion.identity);
-
-            // Destroys the closed door Game Object
-            Destroy(doorClosed);
+            // If so, set triggered bool to be true
+            triggered = true;
         }
-    }  
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        // Checks if a GameObject with tag "Crate" exits trigger
+        if (other.gameObject.tag == "Crate")
+        {
+            // If so, set triggered bool to be false
+            triggered = false;
+        }
+    }
 }

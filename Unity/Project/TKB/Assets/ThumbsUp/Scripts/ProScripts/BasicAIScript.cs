@@ -22,8 +22,8 @@ public class BasicAIScript : MonoBehaviour
     // Accesses the AI as a game object
     public GameObject enemy;
 
-    public GameObject sweeperObject;
-    public GameObject strikerObject;
+    //public GameObject sweeperObject;
+    //public GameObject strikerObject;
 
     // Gets the transform of points on the navmesh
     public Transform[] Points;
