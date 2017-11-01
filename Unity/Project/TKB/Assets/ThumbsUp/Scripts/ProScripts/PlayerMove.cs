@@ -60,13 +60,10 @@ public class PlayerMove : MonoBehaviour
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
             if (axisX != 0 || axisZ != 0)
-            {
                 animator.SetBool("Speed", true);
-            }
+
             else
-            {
                 animator.SetBool("Speed", false);
-            }
 
             // Creates a "new" Vector3 to allow movement
             Vector3 movement = new Vector3(axisX, 0, axisZ) * movementSpeed;
@@ -171,8 +168,8 @@ public class PlayerMove : MonoBehaviour
                     currentPickUp.transform.localRotation = Quaternion.identity;
                     
                     // Gets the box collider of the box and disables it
-                    BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
-                    bc.enabled = false;
+                    //BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
+                    //bc.enabled = false;
                 }
             }
 

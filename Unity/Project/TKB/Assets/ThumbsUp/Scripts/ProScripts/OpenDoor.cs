@@ -7,21 +7,21 @@ public class OpenDoor : MonoBehaviour
     public List<GameObject> triggers;
     public GameObject closedDoor;
 
+    private int switchTotal;
+
 	// Use this for initialization
 	void Awake()
     {
-	}
+        switchTotal = 0;
+    }
 	
 	// Update is called once per frame
 	void Update()
     {
         bool triggersDown = IsTriggered();
 
-        if (triggersDown)
-        {
-            Destroy(closedDoor);
-        }
-	}
+        closedDoor.SetActive(!triggersDown);
+    }
 
     private bool IsTriggered()
     {

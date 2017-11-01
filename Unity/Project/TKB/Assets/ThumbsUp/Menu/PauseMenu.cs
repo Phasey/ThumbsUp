@@ -45,8 +45,8 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-        eventSystem.SetSelectedGameObject(null);
         pauseCanvas.SetActive(false);
+        eventSystem.SetSelectedGameObject(null);
     }
 
     public void Paused()
