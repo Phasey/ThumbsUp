@@ -47,40 +47,17 @@ public class CameraScript : MonoBehaviour
         Vector3 player1Pos = player1.position;
         Vector3 player2Pos = player2.position;
 
-        if (!p1.dead && !p2.dead)
-        {
-            // Records the centre of the screen for every frame
-            centre = ((player2.position + player1.position) * 0.5f);
+        // Records the centre of the screen for every frame
+        centre = ((player2.position + player1.position) * 0.5f);
 
-            float dist = Vector3.Distance(player1Pos, player2Pos);
-            float halfFOV = Camera.main.fieldOfView * 0.5f;
-            float camDist = Mathf.Abs(Mathf.Tan(halfFOV)) * dist * zoomScale;
+        float dist = Vector3.Distance(player1Pos, player2Pos);
+        float halfFOV = Camera.main.fieldOfView * 0.5f;
+        float camDist = Mathf.Abs(Mathf.Tan(halfFOV)) * dist * zoomScale;
 
-            if (camDist < minZoom)
-                camDist = minZoom;
+        if (camDist < minZoom)
+            camDist = minZoom;
 
-            // Records where the camera should be positioned every frame
-            transform.position = centre + offset * camDist;
-        }
-
-        else if (p1.dead && !p2.dead)
-        {
-            centre = player2.position;
-
-            offset = transform.position - centre;
-            offset.Normalize();
-
-            transform.position = centre + offset;
-        }
-
-        else if (!p1.dead && p2.dead)
-        {
-            centre = player1.position;
-
-            offset = transform.position - centre;
-            offset.Normalize();
-
-            transform.position = centre + offset;
-        }
+        // Records where the camera should be positioned every frame
+        transform.position = centre + offset * camDist;
     }
 }
