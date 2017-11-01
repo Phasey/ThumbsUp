@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4302300494019930}
   - component: {fileID: 33967657512258276}
   - component: {fileID: 23143387848724870}
-  - component: {fileID: 95866193871667098}
   m_Layer: 0
   m_Name: Sweeper_Player (1)
   m_TagString: Untagged
@@ -78,6 +77,7 @@ GameObject:
   - component: {fileID: 114918746210508582}
   - component: {fileID: 114358000496500516}
   - component: {fileID: 195459835419839624}
+  - component: {fileID: 95504373532983952}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_001_Sweeper
   m_TagString: Player
@@ -355,13 +355,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &95866193871667098
+--- !u!95 &95504373532983952
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341337817995614}
+  m_GameObject: {fileID: 1606711820912758}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9408848d8dbca714ba4a64a104981d4f, type: 3}
   m_Controller: {fileID: 9100000, guid: 1e0ffdac2de7ebd45a7b317dc6351859, type: 2}
@@ -387,7 +387,7 @@ MonoBehaviour:
   maxSpeed: 10
   Controller: 1
   strikerDoingSpecial: 0
-  animator: {fileID: 95866193871667098}
+  animator: {fileID: 95504373532983952}
 --- !u!114 &114358000496500516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,7 +442,7 @@ MonoBehaviour:
   damage: 1
   coolDown: 0
   HitBox: {fileID: 1738516284488492}
-  animator: {fileID: 0}
+  animator: {fileID: 95504373532983952}
 --- !u!136 &136456539862906586
 CapsuleCollider:
   m_ObjectHideFlags: 1
