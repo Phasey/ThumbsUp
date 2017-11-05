@@ -98,8 +98,16 @@ public class PlayerAttack : MonoBehaviour
 
                 // Checks if enemies health is equal to or goes below zero
                 if (AI.enemyHealth <= 0)
+                {
                     // If so, set the dead bool in AI script to be true for enemy 
                     AI.dead = true;
+                }
+
+                else
+                {
+                    agent.enabled = true;
+                    rb.isKinematic = true;
+                }
             }
 
             coolDown = true;

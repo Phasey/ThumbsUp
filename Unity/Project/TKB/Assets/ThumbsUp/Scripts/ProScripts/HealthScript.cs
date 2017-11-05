@@ -55,7 +55,7 @@ public class HealthScript : MonoBehaviour
 	// Function allows players to take damage
 	//
 	// Param:
-	// 		damage: Refers to how much damade the players take
+	// 		damage: Refers to how much damage the players take
 	//------------------------------------------------------------
     public void TakeDamage(float damage)
     {
