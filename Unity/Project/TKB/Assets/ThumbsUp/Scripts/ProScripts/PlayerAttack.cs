@@ -56,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
             animator.SetBool("Attack", true);
 
             // Gets the layer mask of an enemy and stores it in local int
-            int layerMask = 1 << LayerMask.NameToLayer("Enemy");
+            //int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
             coolDown = true;
         }

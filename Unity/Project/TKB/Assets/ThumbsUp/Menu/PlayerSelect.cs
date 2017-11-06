@@ -1,20 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
+using UnityEngine.UI;
 
 public class PlayerSelect : MonoBehaviour
 {
-	// Use this for initialization
-	void Awake()
+    public GameObject playerSelectCanvas;
+    private XboxController Controller;
+
+    bool p1selected;
+    bool p2selected;
+
+    // Use this for initialization
+    void Awake()
     {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update()
     {
-		
-	}
+        
+    }
 
     public void Player1Sweeper()
     {
@@ -28,11 +35,11 @@ public class PlayerSelect : MonoBehaviour
 
     public void Player2Sweeper()
     {
-        SpawnManagerScript.Player1 = CharacterType.SWEEPER;
+        SpawnManagerScript.Player2 = CharacterType.SWEEPER;
     }
 
     public void Player2Striker()
     {
-        SpawnManagerScript.Player1 = CharacterType.STRIKER;
+        SpawnManagerScript.Player2 = CharacterType.STRIKER;
     }
 }
