@@ -50,6 +50,9 @@ public class RangedAIScript : MonoBehaviour {
 
     public Rigidbody ProjectedArrow;
 
+
+    private bool folowing = true;
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -144,11 +147,20 @@ public class RangedAIScript : MonoBehaviour {
         float Dist2 = Vector3.Distance(players[1].transform.position, transform.position);
 
         // Checks if distance to Player 1 is less than the Agent's vision
-        if ((Dist < vision && Dist < Dist2) && Dist < DistFromPlayer)
+        if (Dist < vision && Dist < Dist2 && folowing)
         {
             transform.LookAt(players[0].transform.position);
             // If so, make the NavMeshAgent seek Player 1
             GetComponent<NavMeshAgent>().destination = players[0].transform.position;
+  
+            if (Dist2 <= DistFromPlayer)
+            {
+                folowing = false;
+            }
+            else
+            {
+                folowing = true;
+            }
 
             Rigidbody Arrow = (Rigidbody)Instantiate(ProjectedArrow, transform.position + transform.forward, transform.rotation);
             Arrow.AddForce(transform.forward * ArrowImpulse, ForceMode.Impulse);
@@ -157,11 +169,20 @@ public class RangedAIScript : MonoBehaviour {
         }
 
         // Checks if distance to Player 2 is less than the Agent's vision
-        else if ((Dist2 < vision) && Dist < DistFromPlayer)
+        else if (Dist2 < vision && folowing)
         {
             transform.LookAt(players[1].transform.position);
             // If so, make the NavMeshAgent seek Player 2
             GetComponent<NavMeshAgent>().destination = players[1].transform.position;
+
+            if(Dist2 <= DistFromPlayer)
+            {
+               folowing = false;
+            }
+            else
+            {
+                folowing = true;
+            }
 
             Rigidbody Arrow = (Rigidbody)Instantiate(ProjectedArrow, transform.position + transform.forward, transform.rotation);
             Arrow.AddForce(transform.forward * ArrowImpulse, ForceMode.Impulse);
