@@ -79,6 +79,9 @@ public class PlayerAttack : MonoBehaviour
     {
         bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.IsInTransition(0);
 
+        if (other.tag != "Enemy")
+            return;
+
         if (!attacking)
             return;
 
