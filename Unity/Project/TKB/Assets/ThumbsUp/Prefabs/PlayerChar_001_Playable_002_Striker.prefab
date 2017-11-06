@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 33367995874915776}
   - component: {fileID: 65527199303034764}
   - component: {fileID: 23197504193202114}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SweeperAOE (1)
   m_TagString: Player
   m_Icon: {fileID: 0}

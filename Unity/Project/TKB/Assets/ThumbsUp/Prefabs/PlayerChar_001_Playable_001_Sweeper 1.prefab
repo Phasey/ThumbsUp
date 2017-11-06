@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 33622923822760904}
   - component: {fileID: 65395285050329846}
   - component: {fileID: 23407560020588180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SweeperAOE
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d764c4bb1981c4c92217ecc08dd255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 7
   maxSpeed: 10
   Controller: 1
   strikerDoingSpecial: 0
