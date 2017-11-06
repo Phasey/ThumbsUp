@@ -162,7 +162,7 @@ public class PlayerMove : MonoBehaviour
                     rb.isKinematic = true;
 
                     // Positions the box to be in front of the player's chest
-                    currentPickUp.transform.localPosition = Vector3.forward + Vector3.up;
+                    currentPickUp.transform.localPosition = Vector3.forward + Vector3.forward + Vector3.up;
 
                     // Sets the boxes' rotation back to default
                     currentPickUp.transform.localRotation = Quaternion.identity;
