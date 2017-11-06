@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4203476413355692}
   m_Layer: 0
   m_Name: Striker_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 137975463785294532}
   m_Layer: 0
   m_Name: Striker_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 4185353018009688}
   m_Layer: 0
   m_Name: Striker_Control_Global
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1361,8 +1361,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970681873633394}
   m_LocalRotation: {x: -0.9890331, y: -0.1060078, z: 0.092536636, w: -0.044865265}
-  m_LocalPosition: {x: -0.19, y: -0.16, z: -1.11}
-  m_LocalScale: {x: 0.64, y: 0.55, z: 2.02}
+  m_LocalPosition: {x: -0.555, y: 0.128, z: -1.077}
+  m_LocalScale: {x: 1.5336919, y: 1.5557691, z: 2.02}
   m_Children: []
   m_Father: {fileID: 4473357158462332}
   m_RootOrder: 0
@@ -2366,9 +2366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d764c4bb1981c4c92217ecc08dd255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 7.5
   maxSpeed: 10
-  Controller: 1
+  Controller: 2
   strikerDoingSpecial: 0
   animator: {fileID: 95757171403601464}
 --- !u!114 &114134295152089768
@@ -2386,6 +2386,7 @@ MonoBehaviour:
   upForce: 500
   coolDownMaxTime: 0.5
   damage: 50
+  attackTime: 0
   coolDown: 0
   HitBox: {fileID: 1970681873633394}
   animator: {fileID: 95757171403601464}
@@ -2400,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9af53f780f80a4fb393276ea40e491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitForce: 1000
+  hitForce: 500
   specialTimer: 0.5
   coolDownTimerMax: 5
   dist: 25
@@ -2423,8 +2424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
-  currentHealth: 25
+  maxHealth: 100
+  currentHealth: 100
   rend: {fileID: 0}
   FlashColour: {r: 0.070177354, g: 0.10867595, b: 0.86764705, a: 0}
   dead: 0
@@ -2722,7 +2723,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1176367028
+  randomSeed: -1514650852
   InitialModule:
     serializedVersion: 3
     enabled: 1

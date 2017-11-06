@@ -126,7 +126,7 @@ public class SweeperSpecial : MonoBehaviour
             coolDownTimer = 0f;
         }
         else
-            animator.SetBool("Special", true);
+            animator.SetBool("Special", false);
 
         // Checks if cool down bool equals true
         if (coolDown)
