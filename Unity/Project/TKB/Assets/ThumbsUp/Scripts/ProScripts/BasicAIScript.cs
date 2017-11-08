@@ -13,6 +13,9 @@ public class BasicAIScript : MonoBehaviour
     public float enemyHealth = 1f;
     public float enemyDamage = 5f;
 
+	public GameObject boneParticle;
+
+
     // Gets access to a RigidBody
     Rigidbody rigidBody;
 
@@ -64,6 +67,10 @@ public class BasicAIScript : MonoBehaviour
 
             // Gets a NavMeshAgent component and stores it into Agent
             Agent = GetComponent<NavMeshAgent>();
+
+
+			boneParticle.SetActive (true);
+
 
             // Does not allow Agent to automatically brake
             Agent.autoBraking = false;

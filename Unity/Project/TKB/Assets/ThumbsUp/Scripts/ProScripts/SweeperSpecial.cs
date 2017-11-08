@@ -159,7 +159,7 @@ public class SweeperSpecial : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.IsInTransition(0);
+        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
 
         if (other.tag != "Enemy")
             return;

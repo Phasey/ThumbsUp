@@ -102,8 +102,6 @@ public class PlayerAttack : MonoBehaviour
         // Disables NavMeshAgent for enemy
         agent.enabled = false;
 
-        // Plays the particle effect for the enemy getting hit
-        Destroy(Instantiate(particleSystem, other.transform.position, Quaternion.identity), particleTimer);
 
         // Disables Kinematic for the enemies Rigidbody
         rb.isKinematic = false;

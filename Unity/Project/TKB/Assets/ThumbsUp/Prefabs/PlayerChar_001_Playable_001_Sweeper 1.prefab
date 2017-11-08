@@ -418,6 +418,8 @@ GameObject:
   - component: {fileID: 114604878087785924}
   - component: {fileID: 114429329445429744}
   - component: {fileID: 114745772714355400}
+  - component: {fileID: 114350601790253158}
+  - component: {fileID: 114100840979161874}
   - component: {fileID: 114739233117304310}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_001_Sweeper 1
@@ -2404,6 +2406,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114100840979161874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407408396396618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293df55d0be8ef14b99fbffacc537c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathRad: 5
+  DeathTimer: 5
+--- !u!114 &114350601790253158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407408396396618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6243b77fb198c45bf4feb3974c625f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1: {fileID: 1407408396396618}
+  Player2: {fileID: 0}
 --- !u!114 &114429329445429744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2434,12 +2462,12 @@ MonoBehaviour:
   hitForce: 1000
   upForce: 500
   radius: 5
+  damage: 5
   coolDownTimerMax: 5
   powerBar: {fileID: 0}
   powerBarColour: {fileID: 0}
   powerFullColour: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   powerNotFullColour: {r: 0, g: 0, b: 1, a: 1}
-  animator: {fileID: 95921342949215138}
 --- !u!114 &114739233117304310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2456,8 +2484,10 @@ MonoBehaviour:
   coolDownMaxTime: 0.5
   damage: 50
   attackTime: 0
-  coolDown: 0
+  particleTimer: 0
+  coolDown: 1
   HitBox: {fileID: 1130732455841316}
+  particleSystem: {fileID: 0}
   animator: {fileID: 95921342949215138}
 --- !u!114 &114745772714355400
 MonoBehaviour:
@@ -2471,12 +2501,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 100
-  rend: {fileID: 0}
+  currentHealth: 5
   FlashColour: {r: 0.9705882, g: 0.09277679, b: 0.09277679, a: 0}
   dead: 0
   CoolDownTimer: 0.5
   healthBar: {fileID: 0}
+  animator: {fileID: 0}
+  body: {fileID: 0}
 --- !u!136 &136625808305446534
 CapsuleCollider:
   m_ObjectHideFlags: 1
