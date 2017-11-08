@@ -103,7 +103,7 @@ public class PlayerAttack : MonoBehaviour
         agent.enabled = false;
 
         // Plays the particle effect for the enemy getting hit
-        Destroy(Instantiate(particleSystem), particleTimer);
+        Destroy(Instantiate(particleSystem, other.transform.position, Quaternion.identity), particleTimer);
 
         // Disables Kinematic for the enemies Rigidbody
         rb.isKinematic = false;
