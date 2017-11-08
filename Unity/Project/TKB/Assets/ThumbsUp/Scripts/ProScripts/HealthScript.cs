@@ -11,7 +11,7 @@ public class HealthScript : MonoBehaviour
     public float currentHealth;
 
 	// Both variables used to make players flash red when on low health
-    public Renderer rend;
+    private Renderer rend;
     public Color FlashColour;
 
 	// Creates booleans to check if players are being damaged or are alive

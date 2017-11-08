@@ -42,7 +42,7 @@ public class StrikerSpecial : MonoBehaviour
     // Allows access to xbox controller buttons
     private XboxController Controller;
 
-    public Animator animator;
+    private Animator animator;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -51,6 +51,7 @@ public class StrikerSpecial : MonoBehaviour
     {
         // Gets the Player Move component
         PlayerMove move = GetComponent<PlayerMove>();
+        animator = GetComponent<Animator>();
 
         // Sets the controller to be the same as controller used in PlayerMove script
         Controller = move.Controller;
