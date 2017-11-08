@@ -49,6 +49,8 @@ public class BasicAIScript : MonoBehaviour
     // Determines how long an enemy will be visible before disappearing
     public float deadTime = 2f;
 
+    public int CircleRange = 3;
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -105,34 +107,47 @@ public class BasicAIScript : MonoBehaviour
         }
     }
 
-	//------------------------------------------------------------
-	// Function calculates the next point for NavMeshAgent to go
-	//------------------------------------------------------------
-	void NextPoint()
-	{
+    //------------------------------------------------------------
+    // Function calculates the next point for NavMeshAgent to go
+    //------------------------------------------------------------
+    void NextPoint()
+    {
         // Code inside runs if the enemy is not dead
         if (!dead)
         {
             // Code inside only runs 
             if (Points.Length != 0)
             {
+                Vector3 destpos = Points[Dest].position;
+
+
+
+                int angle = Random.Range(0, 360);
                 // Agents destination refers to indexed point in points array
-                Agent.destination = Points[Dest].position;
+
+                destpos.x += CircleRange * Mathf.Cos(angle);
+                destpos.y += CircleRange * Mathf.Sin(angle);
+
+                Agent.destination = destpos;
+
+
 
                 // Ignores function if the length to the points equals zero
-                if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
+                if (Vector3.Distance(Agent.destination, transform.position) < 1)
                 {
                     // Dest equals the Dest + 1 then the modulus of length in points 
                     Dest = (Dest + 1) % Points.Length;
+
+
                     return;
                 }
             }
         }
-	}
+    }
 
-	//------------------------------------------------------------
-	// Function makes the Agent seek the closest player
-	//------------------------------------------------------------
+    //------------------------------------------------------------
+    // Function makes the Agent seek the closest player
+    //------------------------------------------------------------
     void Seek()
     {
 		// Calculates distance to Player 1's position

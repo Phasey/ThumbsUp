@@ -32,7 +32,13 @@ public class ResurrectScript : MonoBehaviour {
                 if (actualTimer >= DeathTimer)
                 {
                     healthPlayer.dead = false;
+                    
                     healthPlayer.currentHealth = healthPlayer.maxHealth;
+                    if(healthPlayer.dead == false)
+                    {
+                        revive();
+                    }
+
                     actualTimer = 0f;
                 }
             }
@@ -43,5 +49,32 @@ public class ResurrectScript : MonoBehaviour {
         }
     }
 
+    void revive()
+    {
+        // Gets Sweeper and Striker's Special components
+        SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
+        StrikerSpecial specialStriker = GetComponent<StrikerSpecial>();
+
+        // Gets Player Move and Player Attack components
+        PlayerMove PlayMove = GetComponent<PlayerMove>();
+
+        PlayerAttack playAttack = GetComponent<PlayerAttack>();
+
+        // If there is a Striker Special then disable the component
+        if (specialStriker)
+            specialStriker.enabled = true;
+
+        // If there is a Sweeper Special then disable the component
+        if (specialSweeper)
+            specialSweeper.enabled = true;
+
+        // If there is a Player Move then disable the component
+        if (PlayMove)
+            PlayMove.enabled = true;
+
+        // If there is a Player Attack then disable the component
+        if (playAttack)
+            playAttack.enabled = true;
+    }
    
 }

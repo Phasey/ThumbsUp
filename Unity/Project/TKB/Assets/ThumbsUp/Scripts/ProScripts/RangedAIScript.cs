@@ -50,6 +50,7 @@ public class RangedAIScript : MonoBehaviour {
 
     public Rigidbody ProjectedArrow;
 
+    public int CircleRange = 3;
 
     private bool folowing = true;
 
@@ -121,14 +122,27 @@ public class RangedAIScript : MonoBehaviour {
             // Code inside only runs 
             if (Points.Length != 0)
             {
+                Vector3 destpos = Points[Dest].position;
+
+
+
+                int angle = Random.Range(0, 360);
                 // Agents destination refers to indexed point in points array
-                Agent.destination = Points[Dest].position;
+
+                destpos.x += CircleRange * Mathf.Cos(angle);
+                destpos.y += CircleRange * Mathf.Sin(angle);
+
+                Agent.destination = destpos;
+
+                
 
                 // Ignores function if the length to the points equals zero
-                if (Vector3.Distance(Points[Dest].position, transform.position) < 1)
+                if (Vector3.Distance(Agent.destination, transform.position) < 1)
                 {
                     // Dest equals the Dest + 1 then the modulus of length in points 
                     Dest = (Dest + 1) % Points.Length;
+
+
                     return;
                 }
             }
