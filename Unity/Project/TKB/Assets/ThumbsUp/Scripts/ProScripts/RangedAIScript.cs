@@ -135,6 +135,40 @@ public class RangedAIScript : MonoBehaviour {
         }
     }
 
+
+
+
+    void AttackArrow()
+    {
+        if (!CoolDown)
+        {
+            Rigidbody Arrow = (Rigidbody)Instantiate(ProjectedArrow, transform.position + transform.forward, transform.rotation);
+            Arrow.AddForce(transform.forward * ArrowImpulse, ForceMode.Impulse);
+
+            Destroy(Arrow.gameObject, 2);
+
+            CoolDown = true;
+        }
+
+        // If CoolDown boolean is true
+        if (CoolDown)
+        {
+            // If so, it decreases AttackTime by real time is seconds
+            AttackTime -= Time.deltaTime;
+
+            // Checks if AttackTime gets down to zero or below
+            if (AttackTime <= 0)
+            {
+                // If so, CoolDown is set to false and it cools ResetCoolDown function
+                CoolDown = false;
+                ResetCoolDown();
+            }
+        }
+
+          
+
+    }
+
     //------------------------------------------------------------
     // Function makes the Agent seek the closest player
     //------------------------------------------------------------
@@ -147,47 +181,47 @@ public class RangedAIScript : MonoBehaviour {
         float Dist2 = Vector3.Distance(players[1].transform.position, transform.position);
 
         // Checks if distance to Player 1 is less than the Agent's vision
-        if (Dist < vision && Dist < Dist2 && folowing)
+        if (Dist < vision && Dist < Dist2 )
         {
             transform.LookAt(players[0].transform.position);
             // If so, make the NavMeshAgent seek Player 1
-            GetComponent<NavMeshAgent>().destination = players[0].transform.position;
-  
-            if (Dist2 <= DistFromPlayer)
+
+            if (Dist >= DistFromPlayer)
             {
-                folowing = false;
+                GetComponent<NavMeshAgent>().destination = players[0].transform.position;
             }
-            else
+            else if(Dist == DistFromPlayer)
             {
-                folowing = true;
+                GetComponent<NavMeshAgent>().destination = enemy.transform.position;
+            }
+            else if (Dist2 < DistFromPlayer)
+            {
+                GetComponent<NavMeshAgent>().destination = players[0].transform.TransformDirection(transform.forward * -1);
             }
 
-            Rigidbody Arrow = (Rigidbody)Instantiate(ProjectedArrow, transform.position + transform.forward, transform.rotation);
-            Arrow.AddForce(transform.forward * ArrowImpulse, ForceMode.Impulse);
-
-            Destroy(Arrow.gameObject, 2);
+            AttackArrow();
         }
 
         // Checks if distance to Player 2 is less than the Agent's vision
-        else if (Dist2 < vision && folowing)
-        {
+        else if (Dist2 < vision)
+        { 
+
             transform.LookAt(players[1].transform.position);
             // If so, make the NavMeshAgent seek Player 2
-            GetComponent<NavMeshAgent>().destination = players[1].transform.position;
-
-            if(Dist2 <= DistFromPlayer)
+            if (Dist2 >= DistFromPlayer)
             {
-               folowing = false;
+                GetComponent<NavMeshAgent>().destination = players[1].transform.position;
             }
-            else
+            else if(Dist2 == DistFromPlayer)
             {
-                folowing = true;
+                GetComponent<NavMeshAgent>().destination = enemy.transform.position;
+            }
+            else if (Dist2 < DistFromPlayer)
+            {
+                GetComponent<NavMeshAgent>().destination = players[1].transform.TransformDirection(transform.forward * -1);
             }
 
-            Rigidbody Arrow = (Rigidbody)Instantiate(ProjectedArrow, transform.position + transform.forward, transform.rotation);
-            Arrow.AddForce(transform.forward * ArrowImpulse, ForceMode.Impulse);
-
-            Destroy(Arrow.gameObject, 2);
+            AttackArrow();
         }
 
         // If vision doesn't exceed distance to player 1 or 2

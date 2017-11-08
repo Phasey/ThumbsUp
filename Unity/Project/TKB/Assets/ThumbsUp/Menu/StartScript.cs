@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using XboxCtrlrInput;
+using UnityEngine.EventSystems;
 
 public class StartScript : MonoBehaviour
 {
-	// Use this for initialization
-	void Awake()
+    private XboxController Controller;
+
+    public EventSystem eventSystem;
+
+
+    // Use this for initialization
+    void Awake()
     {
         
 	}
