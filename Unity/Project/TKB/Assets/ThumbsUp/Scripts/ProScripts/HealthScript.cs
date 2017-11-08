@@ -63,9 +63,11 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     public void TakeDamage(float damage)
     {
-		// Deducts health by the amount of damage taken
-        currentHealth -= damage;
-
+        if(!CoolDown)
+        {
+            // Deducts health by the amount of damage taken
+            currentHealth -= damage;
+        }
 		// If players health is zero or less and they aren't dead yet, then call Death function
         if (currentHealth <= 0)
             Death();
