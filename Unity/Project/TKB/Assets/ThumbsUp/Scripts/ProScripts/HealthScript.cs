@@ -29,6 +29,10 @@ public class HealthScript : MonoBehaviour
     // Gets access to the health bar so health bar value can decrease according to health
     public Slider healthBar;
 
+	public Animator animator;
+	public Rigidbody body;
+
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -74,6 +78,9 @@ public class HealthScript : MonoBehaviour
     {
         // Dead bool is set to true
         dead = true;
+		animator.SetBool("Dead", true);
+
+		body.constraints = RigidbodyConstraints.FreezeAll;
 
         // Gets Sweeper and Striker's Special components
         SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
