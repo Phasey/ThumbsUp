@@ -71,8 +71,6 @@ public class PlayerMove : MonoBehaviour
             // Equation used to allow Striker to move
             rigidBody.MovePosition(rigidBody.position + movement * Time.deltaTime);
 
-            
-
             // Sets the Striker's velocity to be zero
             rigidBody.velocity = Vector3.zero;
         }

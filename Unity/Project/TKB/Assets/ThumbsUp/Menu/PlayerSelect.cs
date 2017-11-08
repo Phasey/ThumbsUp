@@ -15,6 +15,8 @@ public class PlayerSelect : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        p1selected = false;
+        p2selected = false;
     }
 	
 	// Update is called once per frame

@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public float coolDownMaxTime = 0.5f;
     public float damage = 50;
     public float attackTime = 0f;
+    public float particleTimer = 5f;
 
     private float timer = 0f;
     public bool coolDown;
@@ -19,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     // Allows access to xbox controller buttons
     private XboxController Controller;
     public GameObject HitBox;
+    public GameObject particleSystem;
 
     public Animator animator;
 
@@ -99,6 +101,9 @@ public class PlayerAttack : MonoBehaviour
 
         // Disables NavMeshAgent for enemy
         agent.enabled = false;
+
+        // Plays the particle effect for the enemy getting hit
+        Destroy(Instantiate(particleSystem), particleTimer);
 
         // Disables Kinematic for the enemies Rigidbody
         rb.isKinematic = false;
