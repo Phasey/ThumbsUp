@@ -9,7 +9,6 @@ public class RangedAIScript : MonoBehaviour {
     public float enemyMovementSpeed = 10f;
     public float vision = 10f;
     public float DistFromPlayer = 3f;
-    public float AttackVision = 1f;
     public float enemyHealth = 1f;
     public float enemyDamage = 5f;
     public float ArrowImpulse = 20.0f;

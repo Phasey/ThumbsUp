@@ -8,8 +8,7 @@ public class BasicAIScript : MonoBehaviour
 {
 	// Initialises public floats for Designers to adjust
     public float enemyMovementSpeed = 10f;
-	public float vision = 10f;
-	public float AttackVision = 1f;
+    public float vision = 10f;
     public float enemyHealth = 1f;
     public float enemyDamage = 5f;
 
@@ -69,7 +68,7 @@ public class BasicAIScript : MonoBehaviour
             Agent = GetComponent<NavMeshAgent>();
 
 
-			boneParticle.SetActive (true);
+			//boneParticle.SetActive (true);
 
 
             // Does not allow Agent to automatically brake
@@ -197,7 +196,7 @@ public class BasicAIScript : MonoBehaviour
 	// 		other: Refers to object of which Agent is colliding
 	// 		with
 	//------------------------------------------------------------
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         // Code inside runs if the enemy is not dead
         if (!dead)
