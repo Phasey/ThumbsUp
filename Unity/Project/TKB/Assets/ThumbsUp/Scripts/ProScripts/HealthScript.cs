@@ -127,6 +127,8 @@ public class HealthScript : MonoBehaviour
             // Sets the rend colour to be whatever the FlashColour is set to
             rend.material.color = FlashColour;
 
+			animator.SetBool("Damage", true);
+
             CoolDown = true;
         }
 
@@ -143,6 +145,7 @@ public class HealthScript : MonoBehaviour
 
                 // Sets the rend colour to be whatever the FlashColour is set to
                 rend.material.color = Color.black;
+				animator.SetBool("Damage", false);
                 CoolDown = false;
             }
         }
