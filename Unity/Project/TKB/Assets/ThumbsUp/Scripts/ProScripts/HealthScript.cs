@@ -63,11 +63,10 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     public void TakeDamage(float damage)
     {
-        if(!CoolDown)
-        {
+       
             // Deducts health by the amount of damage taken
             currentHealth -= damage;
-        }
+        
 		// If players health is zero or less and they aren't dead yet, then call Death function
         if (currentHealth <= 0)
             Death();
@@ -126,10 +125,10 @@ public class HealthScript : MonoBehaviour
 
             // Sets the rend colour to be whatever the FlashColour is set to
             rend.material.color = FlashColour;
-
+			CoolDown = true;
 			animator.SetBool("Damage", true);
 
-            CoolDown = true;
+            
         }
 
         // Checks if CoolDown boolean is true
@@ -145,8 +144,9 @@ public class HealthScript : MonoBehaviour
 
                 // Sets the rend colour to be whatever the FlashColour is set to
                 rend.material.color = Color.black;
+				CoolDown = false;
 				animator.SetBool("Damage", false);
-                CoolDown = false;
+                
             }
         }
     }
@@ -163,8 +163,8 @@ public class HealthScript : MonoBehaviour
 		// If object collides with an enemy, then call Flash function and ResetCoolDown
         if (other.gameObject.tag == "Enemy")
         {
-            ResetCoolDown();
-            Flash();
+			Flash();
+			ResetCoolDown();            
         }
     }
 
