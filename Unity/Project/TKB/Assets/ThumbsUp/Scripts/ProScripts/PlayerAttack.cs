@@ -102,7 +102,6 @@ public class PlayerAttack : MonoBehaviour
         // Disables NavMeshAgent for enemy
         agent.enabled = false;
 
-
         // Disables Kinematic for the enemies Rigidbody
         rb.isKinematic = false;
 
