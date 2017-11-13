@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResurrectScript : MonoBehaviour {
 
@@ -11,12 +12,16 @@ public class ResurrectScript : MonoBehaviour {
     public float DeathRad = 5f;
     public float DeathTimer = 5f;
     private float actualTimer = 0f;
+    public Image resbar = null;
+
+    public Animator animator;
 
     // Use this for initialization
     void Awake()
     {
         Players = GameObject.FindGameObjectsWithTag("Player");
         healthPlayer = GetComponent<HealthScript>();
+        animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -29,9 +34,13 @@ public class ResurrectScript : MonoBehaviour {
             if (dist < DeathRad)
             {
                 actualTimer += Time.deltaTime;
+
+                resbar.fillAmount = actualTimer * 0.2f;
+
                 if (actualTimer >= DeathTimer)
                 {
                     healthPlayer.dead = false;
+                    
                     
                     healthPlayer.currentHealth = healthPlayer.maxHealth;
                     if(healthPlayer.dead == false)
@@ -39,11 +48,13 @@ public class ResurrectScript : MonoBehaviour {
                         revive();
                     }
 
+                    resbar.fillAmount = 0;
                     actualTimer = 0f;
                 }
             }
             else
             {
+                resbar.fillAmount = 0;
                 actualTimer = 0f;
             }
         }
@@ -75,6 +86,8 @@ public class ResurrectScript : MonoBehaviour {
         // If there is a Player Attack then disable the component
         if (playAttack)
             playAttack.enabled = true;
+
+        animator.SetBool("Dead", false);
     }
    
 }
