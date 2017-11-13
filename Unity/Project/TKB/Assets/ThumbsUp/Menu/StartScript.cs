@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 
 public class StartScript : MonoBehaviour
 {
+    public int sceneNumber = 1;
+
     private XboxController Controller;
 
     public EventSystem eventSystem;
@@ -27,6 +29,6 @@ public class StartScript : MonoBehaviour
 
     public void StartButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneNumber);
     }
 }

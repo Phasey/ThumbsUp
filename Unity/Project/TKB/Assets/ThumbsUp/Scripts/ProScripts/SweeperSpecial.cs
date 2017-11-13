@@ -80,61 +80,17 @@ public class SweeperSpecial : MonoBehaviour
         // Bool checks if the right bumper has been pressed
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
 
+        //HealthScript healthScript = GetComponent<HealthScript>();
+
+        //bool specialInProgress = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
+
+        //if (healthScript)
+        //    healthScript.inSpecial = specialInProgress;
+
         // Checks if right bumper has been pressed down and sweeper is not in cool down
         if (attackButton && !coolDown)
         {
             animator.SetBool("Special", true);
-
-            // Gets the layer mask of enemy and stores it in local variable
-            //int layerMask = 1 << LayerMask.NameToLayer("Enemy");
-
-            // Stores all enemies near sweeper into a local array
-            //Collider[] hitEnemies = Physics.OverlapSphere(transform.position, radius,  layerMask);
-
-            //// Runs for loop for every enemy in local array
-            //for (int i = 0; i < hitEnemies.Length; ++i)
-            //{
-            //    // Stores current enemy as a GameObject
-            //    GameObject enemy = hitEnemies[i].gameObject;
-
-            //    // Gets the Rigidbody component of the current enemy
-            //    Rigidbody rb = enemy.GetComponent<Rigidbody>();
-
-            //    // Gets the NavMeshAgent component of the current enemy
-            //    NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-
-            //    // Gets the AI script of the current enemy
-            //    BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
-
-            //    // Disables the NavMeshAgent of the current enemy
-            //    agent.enabled = false;
-
-            //    // Disables kinematic of the enemy's Rigidbody
-            //    rb.isKinematic = false;
-
-            //    // Vector3 determines the direction the enemy will fly and normalises the variable
-            //    Vector3 direction = enemy.transform.position - transform.position;
-            //    direction.Normalize();
-
-            //    // Adds force to make the enemy fly back
-            //    rb.AddForce(direction * hitForce + Vector3.up * upForce, ForceMode.Impulse);
-
-            //    // Decreases the enemies health by how much damage was dealt
-            //    AI.enemyHealth -= damage;
-
-            //    // Checks if enemies health is equal to or goes below zero
-            //    if (AI.enemyHealth <= 0)
-            //    {
-            //        // If so, set the dead bool in AI script to be true for enemy 
-            //        AI.dead = true;
-            //    }
-
-            //    else
-            //    {
-            //        agent.enabled = true;
-            //        rb.isKinematic = true;
-            //    }
-            //}
 
             // Sets cool down bool to be true and sets timer to equal zero
             coolDown = true;
@@ -155,6 +111,13 @@ public class SweeperSpecial : MonoBehaviour
                 coolDown = false;
             }
         }
+
+        HealthScript healthScript = GetComponent<HealthScript>();
+
+        bool specialInProgress = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
+
+        if (healthScript)
+            healthScript.inSpecial = specialInProgress;
     }
 
     void OnTriggerEnter(Collider other)

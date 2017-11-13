@@ -32,6 +32,7 @@ public class HealthScript : MonoBehaviour
 	public Animator animator;
 	public Rigidbody body;
 
+    public bool inSpecial;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -63,8 +64,7 @@ public class HealthScript : MonoBehaviour
 	//------------------------------------------------------------
     public void TakeDamage(float damage)
     {
-
-        
+        if (!CoolDown && !inSpecial)
             // Deducts health by the amount of damage taken
             currentHealth -= damage;
         
