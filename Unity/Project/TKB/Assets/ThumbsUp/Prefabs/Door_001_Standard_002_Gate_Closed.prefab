@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4720449525643268}
+  - component: {fileID: 65687675911622016}
   m_Layer: 0
   m_Name: Door_001_Standard_002_Gate_Closed
   m_TagString: Door
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811384316007408}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -7.621683, y: 0.0000007674098, z: 15.1560135}
+  m_LocalPosition: {x: -7.62, y: 0.0000007674098, z: 14.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4408244271156432}
@@ -110,6 +111,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136329780945460}
   m_Mesh: {fileID: 4300000, guid: 386b8d6e244b25d4fafe4c9651fcff31, type: 3}
+--- !u!65 &65687675911622016
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811384316007408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 4}
+  m_Center: {x: 0, y: 0, z: -1.65}
 --- !u!95 &95122036166491204
 Animator:
   serializedVersion: 3

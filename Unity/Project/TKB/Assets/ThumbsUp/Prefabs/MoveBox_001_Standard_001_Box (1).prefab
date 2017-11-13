@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4472343387302114}
   - component: {fileID: 65637543618493512}
   - component: {fileID: 54390876564807220}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: MoveBox_001_Standard_001_Box (1)
   m_TagString: Crate
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33997227020557256}
   - component: {fileID: 23172025060213300}
   - component: {fileID: 95150947351128050}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Box_Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,8 +65,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857057714441960}
-  m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.785, y: -4.136, z: 94.74}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.78, y: -4.12, z: 98.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4041221332823336}
