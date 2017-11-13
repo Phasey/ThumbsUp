@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     public float damage = 50;
     public float attackTime = 0f;
     public float particleTimer = 5f;
+    public float animationSpeed = 1.5f;
 
     private float timer = 0f;
     public bool coolDown;
@@ -33,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
         Controller = move.Controller;
 
         coolDown = false;
+        animator.speed = animationSpeed;
     }
 
 	//------------------------------------------------------------

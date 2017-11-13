@@ -166,8 +166,8 @@ public class PlayerMove : MonoBehaviour
                     currentPickUp.transform.localRotation = Quaternion.identity;
                     
                     // Gets the box collider of the box and disables it
-                    //BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
-                    //bc.enabled = false;
+                    BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
+                    bc.enabled = false;
                 }
             }
 
@@ -183,7 +183,7 @@ public class PlayerMove : MonoBehaviour
                 // Sets kinematic to be false on the Rigidbody
                 rb.isKinematic = false;
 
-                // Gets the box collider of the box and disables it 
+                // Gets the box collider of the box and enables it back
                 BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
                 bc.enabled = true;
 
