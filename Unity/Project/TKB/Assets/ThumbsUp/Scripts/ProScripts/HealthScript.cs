@@ -89,6 +89,7 @@ public class HealthScript : MonoBehaviour
 		animator.SetBool("Dead", true);
 
 		body.constraints = RigidbodyConstraints.FreezeAll;
+        
 
         // Gets Sweeper and Striker's Special components
         SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();

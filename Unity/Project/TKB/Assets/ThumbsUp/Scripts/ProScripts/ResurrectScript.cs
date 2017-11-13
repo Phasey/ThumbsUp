@@ -14,7 +14,7 @@ public class ResurrectScript : MonoBehaviour {
     private float actualTimer = 0f;
     public Image resbar = null;
 
-    public Animator animator;
+    private Animator animator;
 
     // Use this for initialization
     void Awake()
@@ -70,6 +70,12 @@ public class ResurrectScript : MonoBehaviour {
         PlayerMove PlayMove = GetComponent<PlayerMove>();
 
         PlayerAttack playAttack = GetComponent<PlayerAttack>();
+
+        healthPlayer.body.constraints = RigidbodyConstraints.None;
+
+        healthPlayer.body.constraints = RigidbodyConstraints.FreezePositionY;
+        healthPlayer.body.constraints = RigidbodyConstraints.FreezeRotationX;
+        healthPlayer.body.constraints = RigidbodyConstraints.FreezeRotationZ;
 
         // If there is a Striker Special then disable the component
         if (specialStriker)
