@@ -11,8 +11,9 @@ public class BasicAIScript : MonoBehaviour
     public float vision = 10f;
     public float enemyHealth = 1f;
     public float enemyDamage = 5f;
-
+	public Animator animator;
 	public GameObject boneParticle;
+	public bool attacking;
 
 
     // Gets access to a RigidBody
@@ -38,7 +39,7 @@ public class BasicAIScript : MonoBehaviour
     
     // Sets the cooldown timer for use in attacking
     public float CoolDownTimer = 2f;
-
+		
     // Initialises CoolDown boolean to be false
     private bool CoolDown = false;
 
@@ -101,7 +102,7 @@ public class BasicAIScript : MonoBehaviour
         {
             Physics.IgnoreCollision(players[0].GetComponent<Collider>(), GetComponent<Collider>());
             Physics.IgnoreCollision(players[1].GetComponent<Collider>(), GetComponent<Collider>());
-
+			animator.SetBool ("Dead", true);
             // Timer begins to count down
             deadTime -= Time.deltaTime;
 
@@ -111,6 +112,22 @@ public class BasicAIScript : MonoBehaviour
                 Destroy(enemy);
             }
         }
+		if (CoolDown)
+		{
+			// If so, it decreases AttackTime by real time is seconds
+			AttackTime -= Time.deltaTime;
+
+			// Checks if AttackTime gets down to zero or below
+			if (AttackTime <= 1.5f) {
+				animator.SetBool ("Attack", false);
+				if (AttackTime <= 0) {
+					// If so, CoolDown is set to false and it cools ResetCoolDown function
+
+					CoolDown = false;
+					ResetCoolDown ();
+				}
+			}
+		}
     }
 
     //------------------------------------------------------------
@@ -167,6 +184,7 @@ public class BasicAIScript : MonoBehaviour
         {
 			// If so, make the NavMeshAgent seek Player 1
             GetComponent<NavMeshAgent>().destination = players[0].transform.position;
+			animator.SetBool ("Speed", true);
         }
 
 		// Checks if distance to Player 2 is less than the Agent's vision
@@ -174,6 +192,7 @@ public class BasicAIScript : MonoBehaviour
         {
 			// If so, make the NavMeshAgent seek Player 2
             GetComponent<NavMeshAgent>().destination = players[1].transform.position;
+			animator.SetBool ("Speed", true);
         }
 
 		// If vision doesn't exceed distance to player 1 or 2
@@ -204,26 +223,17 @@ public class BasicAIScript : MonoBehaviour
             // Checks for collision with any player
             if (other.gameObject.tag == "Player")
             {
-                if (!CoolDown)
+				
+				if (!CoolDown)
                 {
                     other.gameObject.GetComponent<HealthScript>().TakeDamage(enemyDamage);
+					animator.SetBool ("Attack", true);
                     CoolDown = true;
+
                 }
 
                 // If CoolDown boolean is true
-                if (CoolDown)
-                {
-                    // If so, it decreases AttackTime by real time is seconds
-                    AttackTime -= Time.deltaTime;
-
-                    // Checks if AttackTime gets down to zero or below
-                    if (AttackTime <= 0)
-                    {
-                        // If so, CoolDown is set to false and it cools ResetCoolDown function
-                        CoolDown = false;
-                        ResetCoolDown();
-                    }
-                }
+                
             }
         }
     }
@@ -233,6 +243,6 @@ public class BasicAIScript : MonoBehaviour
     //------------------------------------------------------------
     private void ResetCoolDown()
     {
-        AttackTime = CoolDownTimer;
+		AttackTime = CoolDownTimer;
     }
 }
