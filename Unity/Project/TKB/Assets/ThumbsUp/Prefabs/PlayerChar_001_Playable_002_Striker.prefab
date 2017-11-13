@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4203476413355692}
   m_Layer: 0
   m_Name: Striker_Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 137975463785294532}
   m_Layer: 0
   m_Name: Striker_Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 4185353018009688}
   m_Layer: 0
   m_Name: Striker_Control_Global
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1170,7 +1170,7 @@ GameObject:
   - component: {fileID: 23197504193202114}
   m_Layer: 10
   m_Name: SweeperAOE (1)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2425,6 +2425,7 @@ MonoBehaviour:
   damage: 50
   attackTime: 0
   particleTimer: 5
+  animationSpeed: 1.5
   coolDown: 0
   HitBox: {fileID: 1970681873633394}
   particleSystem: {fileID: 0}
@@ -2480,7 +2481,6 @@ MonoBehaviour:
   DeathRad: 5
   DeathTimer: 5
   resbar: {fileID: 114760798094429824}
-  animator: {fileID: 0}
 --- !u!114 &114443040277605086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2842,7 +2842,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1514650852
+  randomSeed: 1785924341
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6172,6 +6172,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.1}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}

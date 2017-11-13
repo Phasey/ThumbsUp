@@ -25,6 +25,8 @@ public class PlayerAttack : MonoBehaviour
 
     public Animator animator;
 
+
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -95,6 +97,7 @@ public class PlayerAttack : MonoBehaviour
         // Gets the Rigidbody of the enemy
         Rigidbody rb = enemy.GetComponent<Rigidbody>();
 
+
         // Gets the NavMeshAgent of the enemy
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
@@ -107,6 +110,7 @@ public class PlayerAttack : MonoBehaviour
         // Disables Kinematic for the enemies Rigidbody
         rb.isKinematic = false;
 
+
         // Direction Vector3 used for direction enemy will be knocked back
         Vector3 direction = enemy.transform.position - transform.position;
 
@@ -118,6 +122,7 @@ public class PlayerAttack : MonoBehaviour
 
         // Decreases the enemies health by how much damage was dealt
         AI.enemyHealth -= damage;
+
 
         // Checks if enemies health is equal to or goes below zero
         if (AI.enemyHealth <= 0)

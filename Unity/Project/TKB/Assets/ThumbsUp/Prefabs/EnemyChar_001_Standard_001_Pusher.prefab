@@ -1701,7 +1701,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953977781930488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.9, y: 38.039505, z: 42.8}
+  m_LocalPosition: {x: -11.06167, y: 0, z: 13.869}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4304519887035700}
@@ -1923,7 +1923,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9aea5f5a7d6255b4aa779b0c7f874246, type: 2}
+  - {fileID: 2100000, guid: 05c7e20e9ebb9744a9181835fcca79eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1955,7 +1955,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9aea5f5a7d6255b4aa779b0c7f874246, type: 2}
+  - {fileID: 2100000, guid: 05c7e20e9ebb9744a9181835fcca79eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1987,7 +1987,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4106b61769f764a4885c79d615563dfb, type: 2}
+  - {fileID: 2100000, guid: 05c7e20e9ebb9744a9181835fcca79eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2104,7 +2104,8 @@ MonoBehaviour:
   enemyHealth: 1
   enemyDamage: 5
   animator: {fileID: 95702098589410606}
-  boneParticle: {fileID: 0}
+  boneParticle: {fileID: 1643394147562364}
+  attacking: 0
   enemy: {fileID: 1953977781930488}
   Points: []
   CoolDownTimer: 2
@@ -2124,7 +2125,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9aea5f5a7d6255b4aa779b0c7f874246, type: 2}
+  - {fileID: 2100000, guid: 1f63e1cbdc33dcd4fa3d40ff60763ca2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2270,7 +2271,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1690202795
+  randomSeed: -866271701
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5492,7 +5493,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: afcde3fedaf7483408ae357555d64414, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

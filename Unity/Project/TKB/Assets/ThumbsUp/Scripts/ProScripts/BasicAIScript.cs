@@ -69,7 +69,7 @@ public class BasicAIScript : MonoBehaviour
             Agent = GetComponent<NavMeshAgent>();
 
 
-			//boneParticle.SetActive (true);
+
 
 
             // Does not allow Agent to automatically brake
@@ -100,6 +100,7 @@ public class BasicAIScript : MonoBehaviour
         // Code inside runs if the enemy is dead
         if (dead)
         {
+			boneParticle.SetActive (true);
             Physics.IgnoreCollision(players[0].GetComponent<Collider>(), GetComponent<Collider>());
             Physics.IgnoreCollision(players[1].GetComponent<Collider>(), GetComponent<Collider>());
 			animator.SetBool ("Dead", true);
