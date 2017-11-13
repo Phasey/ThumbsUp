@@ -13,11 +13,12 @@ public class PlayerAttack : MonoBehaviour
     public float damage = 50;
     public float attackTime = 0f;
     public float particleTimer = 5f;
-    public float animationSpeed = 1.5f;
+	public AudioSource Swing;
+    //public float animationSpeed = 1.5f;
 
     private float timer = 0f;
     public bool coolDown;
-
+	public bool soundPlayed;
     // Allows access to xbox controller buttons
     private XboxController Controller;
     public GameObject HitBox;
@@ -36,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
         Controller = move.Controller;
 
         coolDown = false;
-        animator.speed = animationSpeed;
+        //animator.speed = animationSpeed;
     }
 
 	//------------------------------------------------------------
@@ -61,10 +62,17 @@ public class PlayerAttack : MonoBehaviour
         {
             animator.SetBool("Attack", true);
 
+			if (!Swing.isPlaying && !coolDown) {
+				
+				Swing.Play ();
+			}
+
+
             // Gets the layer mask of an enemy and stores it in local int
             //int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
             coolDown = true;
+
         }
         else
             animator.SetBool("Attack", false);
@@ -76,7 +84,9 @@ public class PlayerAttack : MonoBehaviour
             if (timer >= coolDownMaxTime)
             {
                 coolDown = false;
+
                 timer = 0f;
+
             }
         }
     }

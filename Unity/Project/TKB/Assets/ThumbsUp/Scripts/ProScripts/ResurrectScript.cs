@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class ResurrectScript : MonoBehaviour {
 
 
-    private GameObject[] Players;
+	public GameObject[] Players;
     private HealthScript healthPlayer;
 
     public float DeathRad = 5f;
     public float DeathTimer = 5f;
     private float actualTimer = 0f;
     public Image resbar = null;
+	public float dist;
 
     private Animator animator;
 
@@ -29,7 +30,7 @@ public class ResurrectScript : MonoBehaviour {
     {
         if (healthPlayer.dead)
         {
-            float dist = Vector3.Distance(Players[0].transform.position, Players[1].transform.position);
+            float dist = Vector3.Distance(Players[1].transform.position, Players[2].transform.position);
 
             if (dist < DeathRad)
             {
