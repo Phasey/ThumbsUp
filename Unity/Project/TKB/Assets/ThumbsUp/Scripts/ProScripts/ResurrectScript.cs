@@ -71,11 +71,14 @@ public class ResurrectScript : MonoBehaviour {
 
         PlayerAttack playAttack = GetComponent<PlayerAttack>();
 
-        healthPlayer.body.constraints = RigidbodyConstraints.None;
+        
 
-        healthPlayer.body.constraints = RigidbodyConstraints.FreezePositionY;
-        healthPlayer.body.constraints = RigidbodyConstraints.FreezeRotationX;
-        healthPlayer.body.constraints = RigidbodyConstraints.FreezeRotationZ;
+        
+        healthPlayer.body.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        
+
+        //Players[0].transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        //Players[1].transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 
         // If there is a Striker Special then disable the component
         if (specialStriker)
