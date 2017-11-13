@@ -15,20 +15,14 @@ public class StartScript : MonoBehaviour
     public EventSystem eventSystem;
 
 
-    // Use this for initialization
-    void Awake()
-    {
-        
-	}
-	
-	// Update is called once per frame
-	void Update()
-    {
-    
-    }
 
-    public void StartButtonClicked()
+	public void StartButtonClicked()
     {
         SceneManager.LoadScene(sceneNumber);
     }
+
+	public void QuitButtonClicked()
+	{
+		Application.Quit();
+	}
 }
