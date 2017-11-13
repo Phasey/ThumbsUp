@@ -419,7 +419,6 @@ GameObject:
   - component: {fileID: 114429329445429744}
   - component: {fileID: 114745772714355400}
   - component: {fileID: 114350601790253158}
-  - component: {fileID: 114100840979161874}
   - component: {fileID: 114739233117304310}
   m_Layer: 0
   m_Name: PlayerChar_001_Playable_001_Sweeper 1
@@ -2219,7 +2218,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5aeff40d2a5183045bee15612b3cc09e, type: 2}
+  - {fileID: 2100000, guid: 5398e9939694c7d43879a49a1146c94f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2251,7 +2250,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5aeff40d2a5183045bee15612b3cc09e, type: 2}
+  - {fileID: 2100000, guid: 5bd7280866f79d641a64c84882c1ef01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2315,7 +2314,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5aeff40d2a5183045bee15612b3cc09e, type: 2}
+  - {fileID: 2100000, guid: 5bd7280866f79d641a64c84882c1ef01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2406,19 +2405,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114100840979161874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1407408396396618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293df55d0be8ef14b99fbffacc537c6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathRad: 5
-  DeathTimer: 5
 --- !u!114 &114350601790253158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2506,8 +2492,8 @@ MonoBehaviour:
   dead: 0
   CoolDownTimer: 0.5
   healthBar: {fileID: 0}
-  animator: {fileID: 0}
-  body: {fileID: 0}
+  animator: {fileID: 95921342949215138}
+  body: {fileID: 54418787126173850}
 --- !u!136 &136625808305446534
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2534,7 +2520,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b9e28150c61f2244f9c9a31da0103426, type: 2}
+  - {fileID: 2100000, guid: 837ab13a1e3e4944cad97a414cb3de56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2625,7 +2611,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5aeff40d2a5183045bee15612b3cc09e, type: 2}
+  - {fileID: 2100000, guid: 99f51ed99821e6f409d212803d636987, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
