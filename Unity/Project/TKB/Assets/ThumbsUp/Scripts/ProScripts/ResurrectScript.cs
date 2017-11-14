@@ -13,7 +13,7 @@ public class ResurrectScript : MonoBehaviour {
     public float DeathTimer = 5f;
     private float actualTimer = 0f;
     public Image resbar = null;
-    public GameObject helpMe;
+    
 
     private Animator animator;
 
@@ -33,7 +33,7 @@ public class ResurrectScript : MonoBehaviour {
         {
             float dist = Vector3.Distance(Players[1].transform.position, Players[2].transform.position);
 
-            helpMe.SetActive(true);
+            
 
             if (dist < DeathRad)
             {

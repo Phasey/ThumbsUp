@@ -33,6 +33,7 @@ public class HealthScript : MonoBehaviour
 
 	public Animator animator;
 	public Rigidbody body;
+    public GameObject helpMe;
 
     public bool inSpecial;
 
@@ -89,8 +90,8 @@ public class HealthScript : MonoBehaviour
 		animator.SetBool("Dead", true);
 
 		body.constraints = RigidbodyConstraints.FreezeAll;
-        
 
+        helpMe.SetActive(true);
         // Gets Sweeper and Striker's Special components
         SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
         StrikerSpecial specialStriker = GetComponent<StrikerSpecial>();
