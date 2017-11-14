@@ -31,7 +31,7 @@ public class ResurrectScript : MonoBehaviour {
     {
         if (healthPlayer.dead)
         {
-            float dist = Vector3.Distance(Players[1].transform.position, Players[2].transform.position);
+            float dist = Vector3.Distance(Players[0].transform.position, Players[1].transform.position);
 
             
 
@@ -96,8 +96,7 @@ public class ResurrectScript : MonoBehaviour {
         // If there is a Player Attack then disable the component
         if (playAttack)
             playAttack.enabled = true;
-
-        helpMe.SetActive(true);
+		healthPlayer.helpMe.SetActive(false);
         animator.SetBool("Dead", false);
     }
    
