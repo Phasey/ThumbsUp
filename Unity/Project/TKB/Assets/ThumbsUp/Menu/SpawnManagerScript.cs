@@ -6,7 +6,9 @@ using UnityEngine;
 public enum CharacterType
 {
     SWEEPER,
-    STRIKER
+    SWEEPERALT,
+    STRIKER,
+    STRIKERALT
 }
 
 public class SpawnManagerScript : MonoBehaviour
@@ -17,33 +19,35 @@ public class SpawnManagerScript : MonoBehaviour
     public GameObject SpawnPoint1;
     public GameObject SpawnPoint2;
 
-    public GameObject Sweeper;
-    public GameObject Striker;
+    public GameObject SweeperR;
+    public GameObject StrikerB;
+    public GameObject SweeperB;
+    public GameObject StrikerR;
 
     // Use this for initialization
     void Awake()
     {
-        if (Player1 == CharacterType.SWEEPER)
+        if(Player1 == CharacterType.SWEEPER)
         {
 
-            GameObject p1 = Instantiate(Sweeper, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
+            GameObject p1 = Instantiate(SweeperR, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
             //Get PlayerMove component and set Controller to first
         }
-        else
+        if(Player1 == CharacterType.STRIKERALT)
         {
-            GameObject p1 = Instantiate(Striker, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
+            GameObject p1 = Instantiate(StrikerR, SpawnPoint1.transform.position, SpawnPoint1.transform.rotation);
 
         }
 
-        if (Player2 == CharacterType.SWEEPER)
+        if(Player2 == CharacterType.SWEEPERALT)
         {
 
-            GameObject p2 = Instantiate(Sweeper, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
+            GameObject p2 = Instantiate(SweeperB, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
             //Get PlayerMove component and set Controller to second
         }
-        else
+        if(Player2 == CharacterType.STRIKER)
         {
-            GameObject p2 = Instantiate(Striker, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
+            GameObject p2 = Instantiate(StrikerB, SpawnPoint2.transform.position, SpawnPoint2.transform.rotation);
 
         }
     }

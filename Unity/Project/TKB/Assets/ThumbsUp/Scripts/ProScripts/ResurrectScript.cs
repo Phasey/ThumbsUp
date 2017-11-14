@@ -13,7 +13,7 @@ public class ResurrectScript : MonoBehaviour {
     public float DeathTimer = 5f;
     private float actualTimer = 0f;
     public Image resbar = null;
-	public float dist;
+    public GameObject helpMe;
 
     private Animator animator;
 
@@ -23,6 +23,7 @@ public class ResurrectScript : MonoBehaviour {
         Players = GameObject.FindGameObjectsWithTag("Player");
         healthPlayer = GetComponent<HealthScript>();
         animator = GetComponent<Animator>();
+        helpMe = GetComponent<GameObject>();
     }
 	
 	// Update is called once per frame
@@ -31,6 +32,8 @@ public class ResurrectScript : MonoBehaviour {
         if (healthPlayer.dead)
         {
             float dist = Vector3.Distance(Players[1].transform.position, Players[2].transform.position);
+
+            helpMe.SetActive(true);
 
             if (dist < DeathRad)
             {
@@ -78,9 +81,6 @@ public class ResurrectScript : MonoBehaviour {
         healthPlayer.body.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         
 
-        //Players[0].transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        //Players[1].transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-
         // If there is a Striker Special then disable the component
         if (specialStriker)
             specialStriker.enabled = true;
@@ -97,6 +97,7 @@ public class ResurrectScript : MonoBehaviour {
         if (playAttack)
             playAttack.enabled = true;
 
+        helpMe.SetActive(true);
         animator.SetBool("Dead", false);
     }
    

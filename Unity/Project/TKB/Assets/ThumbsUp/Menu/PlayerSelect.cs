@@ -32,12 +32,12 @@ public class PlayerSelect : MonoBehaviour
 
     public void Player1Striker()
     {
-        SpawnManagerScript.Player1 = CharacterType.STRIKER;
+        SpawnManagerScript.Player1 = CharacterType.STRIKERALT;
     }
 
     public void Player2Sweeper()
     {
-        SpawnManagerScript.Player2 = CharacterType.SWEEPER;
+        SpawnManagerScript.Player2 = CharacterType.SWEEPERALT;
     }
 
     public void Player2Striker()
