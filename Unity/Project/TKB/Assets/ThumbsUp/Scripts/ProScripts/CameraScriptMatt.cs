@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Creates a class for the Camera Script 
-public class CameraScript : MonoBehaviour
+public class CameraScriptMatt : MonoBehaviour
 {
     // Vector3 allows are offset to be set when program starts
     public Vector3 offset;
