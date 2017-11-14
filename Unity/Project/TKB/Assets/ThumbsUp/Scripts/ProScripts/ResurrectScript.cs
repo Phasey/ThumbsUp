@@ -23,7 +23,7 @@ public class ResurrectScript : MonoBehaviour {
         Players = GameObject.FindGameObjectsWithTag("Player");
         healthPlayer = GetComponent<HealthScript>();
         animator = GetComponent<Animator>();
-        helpMe = GetComponent<GameObject>();
+       
     }
 	
 	// Update is called once per frame
