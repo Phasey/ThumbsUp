@@ -13,6 +13,7 @@ public class SweeperSpecial : MonoBehaviour
     public float radius = 5f;
     public float damage = 5f;
     public float coolDownTimerMax = 5f;
+	public AudioSource Spin;
 
     // Creates a public power bar so it can be set in unity
     public Slider powerBar;
@@ -87,6 +88,9 @@ public class SweeperSpecial : MonoBehaviour
             if (!coolDown)
             {
                 animator.SetBool("Special", true);
+			if (!Spin.isPlaying && !coolDown) {
+				Spin.Play ();
+			}
 
                 // Sets cool down bool to be true and sets timer to equal zero
                 coolDown = true;

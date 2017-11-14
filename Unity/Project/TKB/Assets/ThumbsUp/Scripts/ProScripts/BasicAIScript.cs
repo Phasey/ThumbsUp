@@ -54,6 +54,9 @@ public class BasicAIScript : MonoBehaviour
 
     public int CircleRange = 3;
 
+	public AudioSource growl;
+	public bool growled;
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -186,6 +189,12 @@ public class BasicAIScript : MonoBehaviour
 			// If so, make the NavMeshAgent seek Player 1
             GetComponent<NavMeshAgent>().destination = players[0].transform.position;
 			animator.SetBool ("Speed", true);
+			if (!growl.isPlaying && !growled) {
+				growl.Play ();
+				growled = true;
+			}
+
+
         }
 
 		// Checks if distance to Player 2 is less than the Agent's vision
@@ -194,6 +203,11 @@ public class BasicAIScript : MonoBehaviour
 			// If so, make the NavMeshAgent seek Player 2
             GetComponent<NavMeshAgent>().destination = players[1].transform.position;
 			animator.SetBool ("Speed", true);
+			if (!growl.isPlaying && !growled) {
+				growl.Play ();
+				growled = true;
+			}
+
         }
 
 		// If vision doesn't exceed distance to player 1 or 2

@@ -24,6 +24,8 @@ public class PlayerMove : MonoBehaviour
     private GameObject currentPickUp = null;
 
     public Animator animator;
+	public bool running;
+	public AudioSource footsteps;
 
 	//------------------------------------------------------------
 	// Function is called when script first runs
@@ -46,7 +48,18 @@ public class PlayerMove : MonoBehaviour
         Move();
         Rotate();
         PickUpBox();
+		Footsteps ();
     }
+
+	private void Footsteps()
+	{
+		if (running && !footsteps.isPlaying){
+			footsteps.Play ();
+		}
+		if (!running && footsteps.isPlaying){
+			footsteps.Stop();
+		}
+	}
 
 	//------------------------------------------------------------
 	// Function allows for the Striker to move
@@ -59,11 +72,14 @@ public class PlayerMove : MonoBehaviour
             float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
-            if (axisX != 0 || axisZ != 0)
-                animator.SetBool("Speed", true);
-
-            else
+			if (axisX != 0 || axisZ != 0) {
+				animator.SetBool ("Speed", true);
+				running = true;
+			}
+			else{
                 animator.SetBool("Speed", false);
+				running=false;
+			}
 
             // Creates a "new" Vector3 to allow movement
             Vector3 movement = new Vector3(axisX, 0, axisZ) * movementSpeed;
