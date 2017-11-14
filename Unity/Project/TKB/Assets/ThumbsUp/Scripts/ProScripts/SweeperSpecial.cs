@@ -79,22 +79,19 @@ public class SweeperSpecial : MonoBehaviour
     {
         // Bool checks if the right bumper has been pressed
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
-
-        //HealthScript healthScript = GetComponent<HealthScript>();
-
-        //bool specialInProgress = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
-
-        //if (healthScript)
-        //    healthScript.inSpecial = specialInProgress;
+        bool yButton = XCI.GetButtonDown(XboxButton.Y, Controller);
 
         // Checks if right bumper has been pressed down and sweeper is not in cool down
-        if (attackButton && !coolDown)
+        if (attackButton || yButton)
         {
-            animator.SetBool("Special", true);
+            if (!coolDown)
+            {
+                animator.SetBool("Special", true);
 
-            // Sets cool down bool to be true and sets timer to equal zero
-            coolDown = true;
-            coolDownTimer = 0f;
+                // Sets cool down bool to be true and sets timer to equal zero
+                coolDown = true;
+                coolDownTimer = 0f;
+            }
         }
         else
             animator.SetBool("Special", false);

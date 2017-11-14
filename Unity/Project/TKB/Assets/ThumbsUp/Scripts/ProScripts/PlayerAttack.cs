@@ -56,23 +56,22 @@ public class PlayerAttack : MonoBehaviour
     {
 		// Gets the Right Trigger button from Xbox controller
         float attackButton = XCI.GetAxis(XboxAxis.RightTrigger, Controller);
+        bool xButton = XCI.GetButtonDown(XboxButton.X, Controller);
 
         // Checks if trigger is down a little bit
-        if (attackButton > 0.15f && !coolDown)
+        if (attackButton > 0.15f || xButton)
         {
-            animator.SetBool("Attack", true);
+            if (!coolDown)
+            {
+                animator.SetBool("Attack", true);
 
-			if (!Swing.isPlaying && !coolDown) {
-				
-				Swing.Play ();
-			}
+                if (!Swing.isPlaying && !coolDown)
+                {
+                    Swing.Play();
+                }
 
-
-            // Gets the layer mask of an enemy and stores it in local int
-            //int layerMask = 1 << LayerMask.NameToLayer("Enemy");
-
-            coolDown = true;
-
+                coolDown = true;
+            }
         }
         else
             animator.SetBool("Attack", false);

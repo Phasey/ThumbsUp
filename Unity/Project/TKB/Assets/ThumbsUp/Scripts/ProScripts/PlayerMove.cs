@@ -68,18 +68,10 @@ public class PlayerMove : MonoBehaviour
             // Creates a "new" Vector3 to allow movement
             Vector3 movement = new Vector3(axisX, 0, axisZ) * movementSpeed;
 
-            // Equation used to allow Striker to move
-
-            //CameraScript cs = GetComponent<CameraScript>();
-
             rigidBody.MovePosition(rigidBody.position + movement * Time.deltaTime);
 
             // Sets the Striker's velocity to be zero
             rigidBody.velocity = Vector3.zero;
-
-            Vector3 directionVector = new Vector3(axisX, 0, axisZ);
-
-            transform.rotation = Quaternion.LookRotation(directionVector);
             
             if (axisX == 0f)
                 axisX = prevRotateX;
@@ -90,6 +82,15 @@ public class PlayerMove : MonoBehaviour
                 axisZ = prevRotateZ;
             else
                 prevRotateZ = axisZ;
+
+            if (axisX != 0 || axisZ != 0)
+            {
+                Vector3 directionVector = new Vector3(axisX, 0, axisZ);
+
+                transform.rotation = Quaternion.LookRotation(directionVector);
+            }
+
+            rigidBody.angularVelocity = Vector3.zero;
         }
     }
 
