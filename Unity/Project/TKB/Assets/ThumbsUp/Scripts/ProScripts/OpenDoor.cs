@@ -6,6 +6,7 @@ public class OpenDoor : MonoBehaviour
 {
     public List<GameObject> triggers;
     public GameObject closedDoor;
+    public GameObject DoorC;
 
     private int switchTotal;
 
@@ -21,6 +22,7 @@ public class OpenDoor : MonoBehaviour
         bool triggersDown = IsTriggered();
 
         closedDoor.SetActive(!triggersDown);
+        DoorC.SetActive(!triggersDown);
     }
 
     private bool IsTriggered()
