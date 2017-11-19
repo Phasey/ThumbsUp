@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/ThumbsUp/Scenes/Menu.unity
     guid: 1bae6d423c27a074a8a749af75fccad6
   - enabled: 1
-    path: Assets/ThumbsUp/Scenes/FirstLevelBeta.unity
-    guid: db819349c6ef29847b65c1c2a5f1cbd2
+    path: Assets/ThumbsUp/Scenes/SmallLevel.unity
+    guid: 3bd6e92e105779e479a06a3fe4f5a98f

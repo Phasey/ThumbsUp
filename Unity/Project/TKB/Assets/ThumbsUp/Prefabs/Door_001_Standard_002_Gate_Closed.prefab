@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720449525643268}
   - component: {fileID: 65687675911622016}
+  - component: {fileID: 114151482701170090}
   m_Layer: 0
   m_Name: Door_001_Standard_002_Gate_Closed
   m_TagString: Door
@@ -64,8 +65,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811384316007408}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -7.62, y: 0.0000007674098, z: 14.16}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 7.773261, y: -7.1269884, z: 12.631371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4408244271156432}
@@ -140,3 +141,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114151482701170090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811384316007408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d63f2c3a44b99947bc6d083418338b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggers:
+  - {fileID: 0}
+  - {fileID: 0}
+  closedDoor: {fileID: 1136329780945460}
