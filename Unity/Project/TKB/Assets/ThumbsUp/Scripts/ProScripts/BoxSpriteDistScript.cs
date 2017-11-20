@@ -28,7 +28,7 @@ public class BoxSpriteDistScript : MonoBehaviour
         {
             CubeSprite.SetActive(true);
         }
-        else if(Dist2 < BoxVision)
+        else if (Dist2 < BoxVision)
         {
             CubeSprite.SetActive(true);
         }
