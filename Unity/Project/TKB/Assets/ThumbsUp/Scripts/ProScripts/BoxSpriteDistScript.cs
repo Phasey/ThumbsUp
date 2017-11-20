@@ -11,8 +11,8 @@ public class BoxSpriteDistScript : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		
-	}
+        players = FindObjectsOfType<PlayerMove>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
