@@ -22,7 +22,8 @@ public class PlayerAttack : MonoBehaviour
     // Allows access to xbox controller buttons
     private XboxController Controller;
     public GameObject HitBox;
-    public GameObject particleSystem;
+    public GameObject BoneParticle;
+    public GameObject AxeParticle;
 
     public Animator animator;
 
@@ -65,6 +66,7 @@ public class PlayerAttack : MonoBehaviour
             if (!attacking)
             {
                 animator.SetBool("Attack", true);
+                AxeParticle.SetActive(true);
 
                 if (!Swing.isPlaying && !coolDown)
                 {
@@ -75,8 +77,10 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         else
+        {
             animator.SetBool("Attack", false);
-
+            AxeParticle.SetActive(false);
+        }
         //if (coolDown)
         //{
         //    timer += Time.deltaTime;
@@ -113,6 +117,8 @@ public class PlayerAttack : MonoBehaviour
 
         // Gets the enemy's BasicAIScript
         BasicAIScript AI = enemy.GetComponent<BasicAIScript>();
+
+        BoneParticle.SetActive(true);
 
         // Disables NavMeshAgent for enemy
         agent.enabled = false;
