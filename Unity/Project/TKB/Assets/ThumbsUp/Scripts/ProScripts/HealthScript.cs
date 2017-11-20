@@ -53,7 +53,7 @@ public class HealthScript : MonoBehaviour
 	void Update()
     {
         // Calls the flash function every frame
-        Flash();
+        //Flash();
 
         // Makes the value of the health bar equal the player's health
         healthBar.value = currentHealth;
