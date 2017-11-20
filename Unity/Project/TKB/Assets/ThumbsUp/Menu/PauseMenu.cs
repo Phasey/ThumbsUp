@@ -8,7 +8,7 @@ using XboxCtrlrInput;
 
 public class PauseMenu : MonoBehaviour
 {
-    public int sceneNumber = 0;
+    public int mainMenuScene = 0;
     public bool paused;
 
     //public GameObject pauseCanvas;
@@ -73,6 +73,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene(sceneNumber);
+        SceneManager.LoadScene(mainMenuScene);
     }
 }
