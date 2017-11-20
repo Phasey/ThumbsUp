@@ -8,20 +8,24 @@ using UnityEngine.EventSystems;
 
 public class StartScript : MonoBehaviour
 {
-    public int sceneNumber = 1;
+    public int levelScene = 1;
+    public int creditsScene = 2;
 
     private XboxController Controller;
 
     public EventSystem eventSystem;
 
-
-
-	public void StartButtonClicked()
+	public void Start()
     {
-        SceneManager.LoadScene(sceneNumber);
+        SceneManager.LoadScene(levelScene);
     }
 
-	public void QuitButtonClicked()
+    public void Credits()
+    {
+        SceneManager.LoadScene(creditsScene);
+    }
+
+	public void Quit()
 	{
 		Application.Quit();
 	}
