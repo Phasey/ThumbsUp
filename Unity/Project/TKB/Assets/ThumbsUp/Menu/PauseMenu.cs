@@ -9,8 +9,9 @@ using XboxCtrlrInput;
 public class PauseMenu : MonoBehaviour
 {
     public int sceneNumber = 0;
+    public bool paused;
 
-    public GameObject pauseCanvas;
+    //public GameObject pauseCanvas;
 
     private XboxController Controller;
 
@@ -23,6 +24,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         Resume();
+        paused = false;
     }
 
     //------------------------------------------------------------
@@ -34,28 +36,39 @@ public class PauseMenu : MonoBehaviour
         bool start = XCI.GetButtonDown(XboxButton.Start, Controller);
         bool back = XCI.GetButtonDown(XboxButton.Back, Controller);
 
-        if (start && !pauseCanvas.activeInHierarchy)
+        if (start && !gameObject.activeInHierarchy)
             Paused();
 
-        else if (start && pauseCanvas.activeInHierarchy)
+        else if (start && gameObject.activeInHierarchy)
             Resume();
 
-        else if (back && pauseCanvas.activeInHierarchy)
+        else if (back && gameObject.activeInHierarchy)
             Quit();
+    }
+
+    public void StartBtn()
+    {
+        if (!gameObject.activeInHierarchy)
+            Paused();
+
+        else if (gameObject.activeInHierarchy)
+            Resume();
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
-        pauseCanvas.SetActive(false);
+        gameObject.SetActive(false);
         eventSystem.SetSelectedGameObject(null);
+        paused = false;
     }
 
     public void Paused()
     {
         Time.timeScale = 0;
-        pauseCanvas.SetActive(true);
+        gameObject.SetActive(true);
         eventSystem.SetSelectedGameObject(resumeButton);
+        paused = true;
     }
 
     public void Quit()

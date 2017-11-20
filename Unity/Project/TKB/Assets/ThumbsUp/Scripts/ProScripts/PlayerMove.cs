@@ -27,11 +27,13 @@ public class PlayerMove : MonoBehaviour
 	public bool running;
 	public AudioSource footsteps;
 
-  
+    public GameObject pauseMenu;
 
-	//------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
+    private PauseMenu pauseScript;
+
+    //------------------------------------------------------------
+    // Function is called when script first runs
+    //------------------------------------------------------------
     void Awake()
     {
 		// Gets the Striker's Rigidbody and stores it in variable
@@ -42,15 +44,28 @@ public class PlayerMove : MonoBehaviour
 		prevRotateZ = 0f;
     }
 
+    //void Start()
+    //{
+    //    pauseScript = pauseMenu.GetComponent<PauseMenu>();
+    //}
+
 	//------------------------------------------------------------
 	// Function is called once every frame
 	//------------------------------------------------------------
     void Update()
     {
-        Move();
-        Rotate();
-        PickUpBox();
-		Footsteps ();
+        if (!pauseMenu.GetComponent<PauseMenu>().paused)
+        {
+            Move();
+            Rotate();
+            PickUpBox();
+            Footsteps();
+        }
+
+        bool start = XCI.GetButtonDown(XboxButton.Start, Controller);
+
+        if (start)
+            pauseMenu.GetComponent<PauseMenu>().StartBtn();
     }
 
 	private void Footsteps()
