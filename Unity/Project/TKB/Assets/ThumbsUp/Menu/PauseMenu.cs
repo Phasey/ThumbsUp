@@ -11,15 +11,15 @@ public class PauseMenu : MonoBehaviour
     public int mainMenuScene = 0;
     public bool paused;
 
-    //public GameObject pauseCanvas;
-
     private XboxController Controller;
 
     public GameObject resumeButton;
     public EventSystem eventSystem;
 
     //------------------------------------------------------------
-    // Function is called when script first runs
+    // Function is called when script first runs.
+    //
+    // Author: Matthew Le Nepveu.
     //------------------------------------------------------------
     void Awake()
     {
