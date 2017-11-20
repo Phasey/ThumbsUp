@@ -2958,7 +2958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 7
   maxSpeed: 10
-  Controller: 2
+  Controller: 1
   strikerDoingSpecial: 0
   animator: {fileID: 95921342949215138}
   running: 0
@@ -3020,7 +3020,8 @@ MonoBehaviour:
   coolDown: 1
   soundPlayed: 0
   HitBox: {fileID: 1130732455841316}
-  particleSystem: {fileID: 0}
+  particleSystem: {fileID: 1996595626642814, guid: 740f33c3303c7eb499349e9cf116909d,
+    type: 2}
   animator: {fileID: 95921342949215138}
 --- !u!114 &114745772714355400
 MonoBehaviour:
@@ -3033,8 +3034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714f616ec6cb0444adab72ded8a9db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 20
+  maxHealth: 100
+  currentHealth: 100
   FlashColour: {r: 0.9705882, g: 0.09277679, b: 0.09277679, a: 0}
   dead: 0
   CoolDownTimer: 0.5

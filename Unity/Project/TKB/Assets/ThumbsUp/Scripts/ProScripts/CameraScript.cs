@@ -27,7 +27,7 @@ public class CameraScript : MonoBehaviour
     void Awake()
     {
 		// Records the centre of the screen upon starting
-        centre = ((player2.position + player1.position + pathMarker.position) * 0.5f);
+        centre = ((player2.position + player1.position) * 0.5f);
 
         // Camera sets up behind players, depending on their location
         transform.position = centre + startOffset;
