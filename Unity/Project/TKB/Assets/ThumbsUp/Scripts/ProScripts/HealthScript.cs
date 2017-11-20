@@ -72,7 +72,7 @@ public class HealthScript : MonoBehaviour
             // Deducts health by the amount of damage taken
             currentHealth -= damage;
             ResetCoolDown();
-            Flash();
+            //Flash();
         }
 
         // If players health is zero or less and they aren't dead yet, then call Death function
