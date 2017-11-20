@@ -57,11 +57,12 @@ public class PlayerAttack : MonoBehaviour
 		// Gets the Right Trigger button from Xbox controller
         float attackButton = XCI.GetAxis(XboxAxis.RightTrigger, Controller);
         bool xButton = XCI.GetButtonDown(XboxButton.X, Controller);
+        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.IsInTransition(0);
 
         // Checks if trigger is down a little bit
         if (attackButton > 0.15f || xButton)
         {
-            if (!coolDown)
+            if (!attacking)
             {
                 animator.SetBool("Attack", true);
 
@@ -70,24 +71,24 @@ public class PlayerAttack : MonoBehaviour
                     Swing.Play();
                 }
 
-                coolDown = true;
+                //coolDown = true;
             }
         }
         else
             animator.SetBool("Attack", false);
 
-        if (coolDown)
-        {
-            timer += Time.deltaTime;
+        //if (coolDown)
+        //{
+        //    timer += Time.deltaTime;
 
-            if (timer >= coolDownMaxTime)
-            {
-                coolDown = false;
+        //    if (timer >= coolDownMaxTime)
+        //    {
+        //        coolDown = false;
 
-                timer = 0f;
+        //        timer = 0f;
 
-            }
-        }
+        //    }
+        //}
     }
 
     void OnTriggerEnter(Collider other)

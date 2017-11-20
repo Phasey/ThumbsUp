@@ -11,13 +11,14 @@ public class CameraScript : MonoBehaviour
 	// Allows the transforms for both players to be accessed
     public Transform player1;
     public Transform player2;
-    //public Transform pathMarker;
+    public Transform pathMarker;
 
     // Sets Vector3s for the centre and offset
     private Vector3 centre;
     private Vector3 offset;
 
-    public float minZoom = 0.0f;
+    public float minZoom = 15f;
+    public float maxZoom = 25f;
     public float zoomScale = 0.2f;
 
 	//------------------------------------------------------------
@@ -26,7 +27,7 @@ public class CameraScript : MonoBehaviour
     void Awake()
     {
 		// Records the centre of the screen upon starting
-        centre = ((player2.position + player1.position) * 0.5f);
+        centre = ((player2.position + player1.position + pathMarker.position) * 0.5f);
 
         // Camera sets up behind players, depending on their location
         transform.position = centre + startOffset;
@@ -57,6 +58,9 @@ public class CameraScript : MonoBehaviour
 
         if (camDist < minZoom)
             camDist = minZoom;
+
+        if (camDist > maxZoom)
+            camDist = maxZoom;
 
         // Records where the camera should be positioned every frame
         transform.position = centre + offset * camDist;

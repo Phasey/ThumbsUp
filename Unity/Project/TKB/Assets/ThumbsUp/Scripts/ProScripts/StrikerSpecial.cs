@@ -93,31 +93,38 @@ public class StrikerSpecial : MonoBehaviour
     private void Special()
     {
         // Bool checks if the right bumper has been pressed
+        float leftTrigger = XCI.GetAxis(XboxAxis.LeftTrigger, Controller);
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
+        bool yButton = XCI.GetButtonDown(XboxButton.Y, Controller);
 
         // Checks if right bumper has been pressed down and the striker is not in cool down mode
-        if (attackButton && !coolDown)
+        if (leftTrigger > 0.15f || attackButton || yButton)
         {
-            animator.SetBool("Special", true);
-			if (!Dash.isPlaying && !coolDown) {
-				Dash.Play ();
-			}
+            if (!coolDown)
+            {
+                animator.SetBool("Special", true);
 
-            // Sets the strikerSpecial bool to be true
-            strikerSpecial = true;
+                if (!Dash.isPlaying)
+                {
+                    Dash.Play();
+                }
 
-            // Sets the start position as the striker's current location
-            startPos = transform.position;
+                // Sets the strikerSpecial bool to be true
+                strikerSpecial = true;
 
-            // Predicts the end position where the striker will end their special
-            endPos = startPos + transform.forward * dist;
+                // Sets the start position as the striker's current location
+                startPos = transform.position;
 
-            // Calls Knockback function
-            Knockback();
+                // Predicts the end position where the striker will end their special
+                endPos = startPos + transform.forward * dist;
 
-            // Sets cool down bool to be true and cool down timer to equal zero
-            coolDown = true;
-            coolDownTimer = 0f;
+                // Calls Knockback function
+                Knockback();
+
+                // Sets cool down bool to be true and cool down timer to equal zero
+                coolDown = true;
+                coolDownTimer = 0f;
+            }
         }
         else
             animator.SetBool("Special", false);

@@ -79,46 +79,48 @@ public class SweeperSpecial : MonoBehaviour
     private void Special()
     {
         // Bool checks if the right bumper has been pressed
+        float leftTrigger = XCI.GetAxis(XboxAxis.LeftTrigger, Controller);
         bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
         bool yButton = XCI.GetButtonDown(XboxButton.Y, Controller);
+        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
 
         // Checks if right bumper has been pressed down and sweeper is not in cool down
-        if (attackButton || yButton)
+        if (leftTrigger > 0.15 || attackButton || yButton)
         {
-            if (!coolDown)
+            if (!attacking)
             {
                 animator.SetBool("Special", true);
-			if (!Spin.isPlaying && !coolDown) {
-				Spin.Play ();
-			}
+
+			    if (!Spin.isPlaying)
+                {
+				    Spin.Play();
+			    }
 
                 // Sets cool down bool to be true and sets timer to equal zero
-                coolDown = true;
-                coolDownTimer = 0f;
+                //coolDown = true;
+                //coolDownTimer = 0f;
             }
         }
         else
             animator.SetBool("Special", false);
 
         // Checks if cool down bool equals true
-        if (coolDown)
-        {
-            // Cool Down Timer is increased by deltaTime
-            coolDownTimer += Time.deltaTime;
+        //if (coolDown)
+        //{
+        //    // Cool Down Timer is increased by deltaTime
+        //    coolDownTimer += Time.deltaTime;
 
-            // If the timer exceeds or equals the max timer value, then set cool down back to false
-            if (coolDownTimer >= coolDownTimerMax)
-            {
-                coolDown = false;
-            }
-        }
+        //    // If the timer exceeds or equals the max timer value, then set cool down back to false
+        //    if (coolDownTimer >= coolDownTimerMax)
+        //    {
+        //        coolDown = false;
+        //    }
+        //}
 
         HealthScript healthScript = GetComponent<HealthScript>();
 
-        bool specialInProgress = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
-
         if (healthScript)
-            healthScript.inSpecial = specialInProgress;
+            healthScript.inSpecial = attacking;
     }
 
     void OnTriggerEnter(Collider other)
