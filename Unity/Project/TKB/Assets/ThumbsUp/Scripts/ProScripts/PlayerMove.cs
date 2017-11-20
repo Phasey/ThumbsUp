@@ -27,9 +27,7 @@ public class PlayerMove : MonoBehaviour
 	public bool running;
 	public AudioSource footsteps;
 
-    public GameObject Boxtrig;
-    public GameObject CubeSprite;
-    public float BOxVision = 5f;
+  
 
 	//------------------------------------------------------------
 	// Function is called when script first runs
@@ -166,16 +164,7 @@ public class PlayerMove : MonoBehaviour
     {
         // Bool gets if the A button on an Xbox controller is pushed down
         bool aButton = XCI.GetButtonDown(XboxButton.A, Controller);
-        float Dist = Vector3.Distance(Boxtrig.transform.position, transform.position);
 
-        if(Dist <= BOxVision)
-        {
-            CubeSprite.SetActive(true);
-        }
-        else if(Dist > BOxVision)
-        {
-            CubeSprite.SetActive(false);
-        }
 
         // Checks if the A button has been pressed down
         if (aButton)
