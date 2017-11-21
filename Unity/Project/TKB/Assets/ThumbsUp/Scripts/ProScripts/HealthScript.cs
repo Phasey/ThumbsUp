@@ -45,6 +45,7 @@ public class HealthScript : MonoBehaviour
 		// Sets current health to equal the max health upon startup
         currentHealth = maxHealth;
         healthBar.maxValue = maxHealth;
+        StartCoroutine(Damage());
     }
 	
 	//------------------------------------------------------------
@@ -71,9 +72,12 @@ public class HealthScript : MonoBehaviour
         {
             // Deducts health by the amount of damage taken
             currentHealth -= damage;
+            animator.SetBool("Damage", true);
+            StartCoroutine(Damage());
             ResetCoolDown();
+            
             //Flash();
-        }
+        } 
 
         // If players health is zero or less and they aren't dead yet, then call Death function
         if (currentHealth <= 0)
@@ -164,6 +168,11 @@ public class HealthScript : MonoBehaviour
     //------------------------------------------------------------
     // Function sets ActiveTime to equal CoolDownTimer float
     //------------------------------------------------------------
+    IEnumerator Damage()
+    {
+        yield return new WaitForSeconds(.5f);
+        animator.SetBool("Damage", false);
+    }
     private void ResetCoolDown()
     {
         FlashTime = CoolDownTimer;
