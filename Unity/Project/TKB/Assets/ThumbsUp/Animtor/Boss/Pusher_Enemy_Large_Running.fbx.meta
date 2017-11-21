@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 95425e940c3112b44908cdcb12ae8245
-timeCreated: 1510707548
+guid: f5dd3c48ed3843f48a36171bfd151982
+timeCreated: 1511224646
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -171,8 +171,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Running
       takeName: Running
-      firstFrame: 49
-      lastFrame: 72
+      firstFrame: 59
+      lastFrame: 92
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

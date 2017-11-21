@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8ce8c0c4918c11642bb0239f12857a87
-timeCreated: 1510707547
+guid: 7534a456cea86d64ea605d4403d302f0
+timeCreated: 1511224647
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -141,7 +141,7 @@ ModelImporter:
     4300002: Helmet1
     4300004: Enemy_Sword1
     4300006: Shoulderpad1
-    7400000: Take 001
+    7400000: Running
     9500000: //RootNode
     13700000: Pusher_Enemy
   materials:
