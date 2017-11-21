@@ -15,7 +15,7 @@ public class SweeperSpecial : MonoBehaviour
     public float coolDownTimerMax = 5f;
 	public AudioSource Spin;
 
-    // Creates a public power bar so it can be set in unity
+    // Creates a public powerbar so it can be set in unity
     public Slider powerBar;
 
     // Creates a public power bar colour so it can be set in unity

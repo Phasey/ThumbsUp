@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class StartScript : MonoBehaviour
 {
-    public int mainMenu = 0;
     public int levelScene = 1;
     public int creditsScene = 2;
 
@@ -16,22 +15,17 @@ public class StartScript : MonoBehaviour
 
     public EventSystem eventSystem;
 
-    void Awake()
-    {
-        SceneManager.LoadScene(mainMenu);
-    }
-
-	public void Start()
+	public void StartOnButtonClicked()
     {
         SceneManager.LoadScene(levelScene);
     }
 
-    public void Credits()
+    public void CreditOnButtonClicked()
     {
         SceneManager.LoadScene(creditsScene);
     }
 
-	public void Quit()
+	public void QuitOnButtonClicked()
 	{
 		Application.Quit();
 	}
