@@ -11,9 +11,6 @@ public class EndLevel : MonoBehaviour
     // Indicates the Closed Door as a GameObject
     public GameObject closedDoor;
 
-    // Indicates the Open Door as a GameObject
-    public GameObject openDoor;
-
     // Refers to the next level's scene number
     public int nextLevelScene;
 

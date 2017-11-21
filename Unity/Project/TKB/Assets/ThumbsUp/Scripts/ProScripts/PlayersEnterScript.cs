@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayersEnterScript : MonoBehaviour {
-
+public class PlayersEnterScript : MonoBehaviour
+{
     public GameObject[] Players;
     public GameObject DoorAfterEnter;
 
