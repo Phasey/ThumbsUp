@@ -11,7 +11,6 @@ public class CameraScript : MonoBehaviour
 	// Allows the transforms for both players to be accessed
     public Transform player1;
     public Transform player2;
-    public Transform pathMarker;
 
     // Sets Vector3s for the centre and offset
     private Vector3 centre;
