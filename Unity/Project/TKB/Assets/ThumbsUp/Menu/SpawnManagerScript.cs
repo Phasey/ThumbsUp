@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿//--------------------------------------------------------------------------------
+// Script is not being utilised in final game.
+//
+// Author: Liam Knights.
+//--------------------------------------------------------------------------------
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

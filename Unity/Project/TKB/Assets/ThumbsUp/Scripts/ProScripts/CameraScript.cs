@@ -12,17 +12,23 @@ public class CameraScript : MonoBehaviour
     public Transform player1;
     public Transform player2;
 
-    // Sets Vector3s for the centre and offset
-    private Vector3 centre;
-    private Vector3 offset;
-
+    // Indicates how closes the camera can be to centre on the z
     public float minZoom = 15f;
-    public float maxZoom = 25f;
+
+    // Makes sure the camera does not zoom too heavily
     public float zoomScale = 0.2f;
 
-	//------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
+    // Indicates the centre position the camera points at
+    private Vector3 centre;
+
+    // Refers to the camera's offset from the centre position 
+    private Vector3 offset;
+
+    //--------------------------------------------------------------------------------
+    // Function is called when script first runs.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
     void Awake()
     {
 		// Records the centre of the screen upon starting
@@ -36,14 +42,13 @@ public class CameraScript : MonoBehaviour
         offset.Normalize();
     }
 
-	//------------------------------------------------------------
-	// Function is called once every frame
-	//------------------------------------------------------------
+    //--------------------------------------------------------------------------------
+    // Function is called once every frame.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
     void Update()
     {
-        HealthScript p1 = player1.GetComponent<HealthScript>();
-        HealthScript p2 = player2.GetComponent<HealthScript>();
-
         // Local Vector3's store player 1 and 2's position for use in equations
         Vector3 player1Pos = player1.position;
         Vector3 player2Pos = player2.position;
@@ -51,15 +56,18 @@ public class CameraScript : MonoBehaviour
         // Records the centre of the screen for every frame
         centre = ((player2.position + player1.position) * 0.5f);
 
+        // Determines thye distance between player 1 and 2 and stores it in local float
         float dist = Vector3.Distance(player1Pos, player2Pos);
+
+        // Gets half the field of view used to determine the camera's angle
         float halfFOV = Camera.main.fieldOfView * 0.5f;
+
+        // Identifies the camera distance then stores in a local float
         float camDist = Mathf.Abs(Mathf.Tan(halfFOV)) * dist * zoomScale;
 
+        // Ensures the camera distance never goes below the minimum zoom value
         if (camDist < minZoom)
             camDist = minZoom;
-
-        if (camDist > maxZoom)
-            camDist = maxZoom;
 
         // Records where the camera should be positioned every frame
         transform.position = centre + offset * camDist;

@@ -8,24 +8,41 @@ using UnityEngine.EventSystems;
 
 public class StartScript : MonoBehaviour
 {
+    // Refers to the Main Level scene number
     public int levelScene = 1;
+
+    // Int refers to the Credits scene number
     public int creditsScene = 2;
 
-    private XboxController Controller;
-
+    // Refers to the Event System this script will use
     public EventSystem eventSystem;
 
-	public void StartOnButtonClicked()
+    //--------------------------------------------------------------------------------
+    // Function loads the Main Level scene when called.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
+    public void StartOnButtonClicked()
     {
         SceneManager.LoadScene(levelScene);
     }
 
+    //--------------------------------------------------------------------------------
+    // Loads the Credits scene when function is called.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
     public void CreditOnButtonClicked()
     {
         SceneManager.LoadScene(creditsScene);
     }
 
-	public void QuitOnButtonClicked()
+    //--------------------------------------------------------------------------------
+    // Quits the game when the function is called.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
+    public void QuitOnButtonClicked()
 	{
 		Application.Quit();
 	}

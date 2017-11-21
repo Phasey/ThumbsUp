@@ -5,33 +5,52 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
+    // Used to store an array of enemies from the game
     public GameObject[] enemies;
+
+    // Indicates the Closed Door as a GameObject
     public GameObject closedDoor;
+
+    // Indicates the Open Door as a GameObject
     public GameObject openDoor;
 
-    public int sceneNumber;
+    // Refers to the next level's scene number
+    public int nextLevelScene;
 
-	// Use this for initialization
-	void Awake()
+    //--------------------------------------------------------------------------------
+    // Function is called when script first runs.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
+    void Awake() {}
+
+    //--------------------------------------------------------------------------------
+    // Function is called once every frame.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
+    void Update()
     {
-        
-	}
-	
-	// Update is called once per frame
-	void Update()
-    {
+        // Finds all enemies in scene and stores in enemies array
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+        // Deletes the closed door if there are no enemies left in scene
         if (enemies.Length <= 0)
-        {
-            Instantiate(openDoor, closedDoor.transform.position, closedDoor.transform.rotation);
             Destroy(closedDoor);
-        }
 	}
 
+    //--------------------------------------------------------------------------------
+    // Function runs when a trigger is first detected.
+    //
+    // Param:
+    // 		other: Refers to object of which Agent is triggering.
+    //
+    // Author: Matthew Le Nepveu.
+    //--------------------------------------------------------------------------------
     void OnTriggerEnter(Collider other)
     {
+        // Runs next level's scene if a player collides with trigger
         if (other.tag == "Player")
-            SceneManager.LoadScene(sceneNumber);
+            SceneManager.LoadScene(nextLevelScene);
     }
 }

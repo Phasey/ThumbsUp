@@ -92,6 +92,7 @@ public class HealthScript : MonoBehaviour
 		body.constraints = RigidbodyConstraints.FreezeAll;
 
         helpMe.SetActive(true);
+
         // Gets Sweeper and Striker's Special components
         SweeperSpecial specialSweeper = GetComponent<SweeperSpecial>();
         StrikerSpecial specialStriker = GetComponent<StrikerSpecial>();
@@ -159,23 +160,6 @@ public class HealthScript : MonoBehaviour
             }
         }
     }
-
-	//------------------------------------------------------------
-	// Function runs when collision is first detected
-	//
-	// Param:
-	// 		other: Refers to object of which Agent is colliding
-	// 		with
-	//------------------------------------------------------------
-  //  private void OnCollisionEnter(Collision other)
-  //  {
-		//// If object collides with an enemy, then call Flash function and ResetCoolDown
-  //      if (other.gameObject.tag == "Enemy")
-  //      {
-            
-  //          Flash();
-  //      }
-  //  }
 
     //------------------------------------------------------------
     // Function sets ActiveTime to equal CoolDownTimer float
