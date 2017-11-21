@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ThumbsUp/Scenes/SmallLevel.unity
     guid: 3bd6e92e105779e479a06a3fe4f5a98f
+  - enabled: 1
+    path: Assets/ThumbsUp/Scenes/Credits.unity
+    guid: 0c0caf368abfc22439a085ca6b210985
