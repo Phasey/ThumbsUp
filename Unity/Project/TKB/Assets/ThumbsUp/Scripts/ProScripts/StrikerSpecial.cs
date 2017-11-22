@@ -102,8 +102,10 @@ public class StrikerSpecial : MonoBehaviour
         // Bool checks if the Y button has been pressed
         bool yButton = XCI.GetButtonDown(XboxButton.Y, Controller);
 
+        float leftTrigger = XCI.GetAxis(XboxAxis.LeftTrigger, Controller);
+
         // Checks if right bumper has been pressed down and the striker is not in cool down mode
-        if (attackButton || yButton)
+        if (leftTrigger > 0.15f || attackButton || yButton)
 		{
             if (!coolDown)
             {

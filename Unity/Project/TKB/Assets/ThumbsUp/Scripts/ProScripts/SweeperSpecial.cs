@@ -81,9 +81,10 @@ public class SweeperSpecial : MonoBehaviour
 		// Bool checks if the right bumper has been pressed
 		bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
 		bool yButton = XCI.GetButtonDown(XboxButton.Y, Controller);
+        float leftTrigger = XCI.GetAxis(XboxAxis.LeftTrigger, Controller);
 
-		// Checks if right bumper has been pressed down and sweeper is not in cool down
-		if (attackButton || yButton)
+        // Checks if right bumper has been pressed down and sweeper is not in cool down
+        if (leftTrigger > 0.15f || attackButton || yButton)
 		{
 			if (!coolDown)
 			{
