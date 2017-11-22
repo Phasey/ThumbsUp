@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------
+//Author: Liam Knights
+//---------------------------------------------------------------
+
 public class PlayersEnterScript : MonoBehaviour
 {
     public GameObject[] Players;

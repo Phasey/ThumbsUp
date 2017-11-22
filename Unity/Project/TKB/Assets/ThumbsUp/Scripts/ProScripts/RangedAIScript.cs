@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//---------------------------------------------------------------
+// Script is not being utilised in final game.
+//
+//Author: Liam Knights
+//---------------------------------------------------------------
+
 public class RangedAIScript : MonoBehaviour {
 
     // Initialises public floats for Designers to adjust
@@ -150,11 +156,13 @@ public class RangedAIScript : MonoBehaviour {
 
 
 
-
+    //shoots an arrow
     void AttackArrow()
     {
+        //checks if cooldown is false
         if (!CoolDown)
         {
+            //gets the arrow
             Rigidbody Arrow = (Rigidbody)Instantiate(ProjectedArrow, transform.position + transform.forward, transform.rotation);
             Arrow.AddForce(transform.forward * ArrowImpulse, ForceMode.Impulse);
 

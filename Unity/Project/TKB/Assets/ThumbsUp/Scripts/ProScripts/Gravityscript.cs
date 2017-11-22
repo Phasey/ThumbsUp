@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------
+// Script is not being utilised in final game.
+//
+//Author: Liam Knights
+//---------------------------------------------------------------
+
 public class Gravityscript : MonoBehaviour
 {
     public Rigidbody public1;

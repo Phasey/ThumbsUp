@@ -11,7 +11,7 @@ public class HealthScript : MonoBehaviour
     public float currentHealth;
 
 	// Both variables used to make players flash red when on low health
-    private Renderer rend;
+    public Renderer rend;
     public Color FlashColour;
 
 	// Creates booleans to check if players are being damaged or are alive
@@ -37,6 +37,8 @@ public class HealthScript : MonoBehaviour
 
     public bool inSpecial;
 
+   
+
     //------------------------------------------------------------
     // Function is called when script first runs
     //------------------------------------------------------------
@@ -54,7 +56,7 @@ public class HealthScript : MonoBehaviour
 	void Update()
     {
         // Calls the flash function every frame
-        //Flash();
+        Flash();
 
         // Makes the value of the health bar equal the player's health
         healthBar.value = currentHealth;
@@ -76,7 +78,7 @@ public class HealthScript : MonoBehaviour
             StartCoroutine(Damage());
             ResetCoolDown();
             
-            //Flash();
+            Flash();
         } 
 
         // If players health is zero or less and they aren't dead yet, then call Death function
@@ -135,12 +137,13 @@ public class HealthScript : MonoBehaviour
 		if(!CoolDown)
         {
             // Gets renderer component and stores it into rend
-            rend = GetComponentInChildren<Renderer>();
+            //rend = GetComponent<Renderer>();
 
+            rend.material.EnableKeyword("_EMISSION");
             // Sets the rend colour to be whatever the FlashColour is set to
-            rend.material.color = FlashColour;
+            rend.material.SetColor("_EmissionColor", FlashColour);
 
-			animator.SetBool("Damage", true);
+            animator.SetBool("Damage", true);
 
             CoolDown = true;
         }
@@ -154,11 +157,11 @@ public class HealthScript : MonoBehaviour
             // Checks if AttackTime gets to exactly 1
             if (FlashTime <= 0)
             {
-                rend = GetComponentInChildren<Renderer>();
+               // rend = GetComponent<Renderer>();
 
                 // Sets the rend colour to be whatever the FlashColour is set to
-                rend.material.color = Color.black;
-				animator.SetBool("Damage", false);
+                rend.material.DisableKeyword("_EMISSION");
+                animator.SetBool("Damage", false);
                 CoolDown = false;
                 isFlashing = false;
             }

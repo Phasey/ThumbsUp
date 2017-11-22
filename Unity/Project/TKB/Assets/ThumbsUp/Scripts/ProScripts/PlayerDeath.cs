@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//---------------------------------------------------------------
+//Author: Liam Knights
+//---------------------------------------------------------------
+
 // Creates a class for the Player Death Script 
 public class PlayerDeath : MonoBehaviour
 {
