@@ -16,15 +16,11 @@ public class EndLevel : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Awake() {}
 
     //--------------------------------------------------------------------------------
     // Function is called once every frame.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Update()
     {
@@ -41,8 +37,6 @@ public class EndLevel : MonoBehaviour
     //
     // Param:
     // 		other: Refers to object of which Agent is triggering.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void OnTriggerEnter(Collider other)
     {

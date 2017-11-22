@@ -87,37 +87,44 @@ public class StrikerSpecial : MonoBehaviour
 			powerBarColour.color = powerNotFullColour;
 	}
 
-	//------------------------------------------------------------
-	// Function allows Striker to use his regular attack
-	//------------------------------------------------------------
-	private void Special()
+    //--------------------------------------------------------------------------------
+    // Function allows Striker to use his regular attack
+    //--------------------------------------------------------------------------------
+    private void Special()
 	{
 		// Bool checks if the right bumper has been pressed
 		bool attackButton = XCI.GetButtonDown(XboxButton.RightBumper, Controller);
 
-		// Checks if right bumper has been pressed down and the striker is not in cool down mode
-		if (attackButton && !coolDown)
+        // Bool checks if the Y button has been pressed
+        bool yButton = XCI.GetButtonDown(XboxButton.Y, Controller);
+
+        // Checks if right bumper has been pressed down and the striker is not in cool down mode
+        if (attackButton || yButton)
 		{
-			animator.SetBool("Special", true);
-			if (!Dash.isPlaying && !coolDown) {
-				Dash.Play ();
-			}
+            if (!coolDown)
+            {
+                animator.SetBool("Special", true);
+                if (!Dash.isPlaying && !coolDown)
+                {
+                    Dash.Play();
+                }
 
-			// Sets the strikerSpecial bool to be true
-			strikerSpecial = true;
+                // Sets the strikerSpecial bool to be true
+                strikerSpecial = true;
 
-			// Sets the start position as the striker's current location
-			startPos = transform.position;
+                // Sets the start position as the striker's current location
+                startPos = transform.position;
 
-			// Predicts the end position where the striker will end their special
-			endPos = startPos + transform.forward * dist;
+                // Predicts the end position where the striker will end their special
+                endPos = startPos + transform.forward * dist;
 
-			// Calls Knockback function
-			Knockback();
+                // Calls Knockback function
+                Knockback();
 
-			// Sets cool down bool to be true and cool down timer to equal zero
-			coolDown = true;
-			coolDownTimer = 0f;
+                // Sets cool down bool to be true and cool down timer to equal zero
+                coolDown = true;
+                coolDownTimer = 0f;
+            }
 		}
 		else
 			animator.SetBool("Special", false);

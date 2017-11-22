@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 // Creates a class for the Camera Script 
 public class CameraScript : MonoBehaviour
 {
@@ -26,8 +30,6 @@ public class CameraScript : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Awake()
     {
@@ -44,8 +46,6 @@ public class CameraScript : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called once every frame.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Update()
     {
