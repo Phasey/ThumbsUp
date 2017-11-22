@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemy;

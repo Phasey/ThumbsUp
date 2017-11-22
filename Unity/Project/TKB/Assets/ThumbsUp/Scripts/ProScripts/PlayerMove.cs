@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 
-// Creates a class for the Striker Script 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 public class PlayerMove : MonoBehaviour 
 {
 	// Initialises public floats so Designers can adjust

@@ -5,6 +5,10 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using XboxCtrlrInput;
 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 // Creates a class for the Striker Special Script 
 public class StrikerSpecial : MonoBehaviour
 {

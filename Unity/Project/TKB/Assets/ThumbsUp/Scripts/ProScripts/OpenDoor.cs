@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 public class OpenDoor : MonoBehaviour
 {
     public List<GameObject> triggers;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//-----------------------------------------------------------------------------
+
 public class EndLevel : MonoBehaviour
 {
     // Used to store an array of enemies from the game

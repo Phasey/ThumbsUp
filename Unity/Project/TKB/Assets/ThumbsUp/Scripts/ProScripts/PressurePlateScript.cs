@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Creates a class for the Pressure Plate Script 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 public class PressurePlateScript : MonoBehaviour
 {
     // Bool used to check for a trigger

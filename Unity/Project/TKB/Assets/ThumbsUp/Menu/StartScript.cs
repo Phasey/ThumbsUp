@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using XboxCtrlrInput;
 using UnityEngine.EventSystems;
 
+//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//-----------------------------------------------------------------------------
+
 public class StartScript : MonoBehaviour
 {
     // Refers to the Main Level scene number
@@ -19,8 +23,6 @@ public class StartScript : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function loads the Main Level scene when called.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void StartOnButtonClicked()
     {
@@ -29,8 +31,6 @@ public class StartScript : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Loads the Credits scene when function is called.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void CreditOnButtonClicked()
     {
@@ -39,8 +39,6 @@ public class StartScript : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Quits the game when the function is called.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void QuitOnButtonClicked()
 	{

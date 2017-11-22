@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XboxCtrlrInput;
 
+//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//-----------------------------------------------------------------------------
+
 public class PauseMenu : MonoBehaviour
 {
     // Refers to the main menu's scene number
@@ -25,8 +29,6 @@ public class PauseMenu : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Awake()
     {
@@ -37,8 +39,6 @@ public class PauseMenu : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called once every frame.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Update()
     {
@@ -61,8 +61,6 @@ public class PauseMenu : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function determines whether the game is currently paused.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void StartBtn()
     {
@@ -77,8 +75,6 @@ public class PauseMenu : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Resumes the game when function is called.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void Resume()
     {
@@ -97,8 +93,6 @@ public class PauseMenu : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Pauses the game when function is called.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void Paused()
     {
@@ -117,8 +111,6 @@ public class PauseMenu : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Sends the player back to the Main Menu scene when function is called.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     public void Quit()
     {

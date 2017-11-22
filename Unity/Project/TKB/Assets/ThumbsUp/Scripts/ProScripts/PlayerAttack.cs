@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using XboxCtrlrInput;
 
-// Creates a class for the Striker Attack Script 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
+// Creates a class for the Player Attack Script 
 public class PlayerAttack : MonoBehaviour
 {
     public float hitForce = 50f;
