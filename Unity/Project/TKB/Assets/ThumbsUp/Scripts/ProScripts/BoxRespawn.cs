@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
 // Creates a class for the Box Respawn
 public class BoxRespawn : MonoBehaviour
 {
@@ -13,8 +17,6 @@ public class BoxRespawn : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Awake()
     {
@@ -24,8 +26,6 @@ public class BoxRespawn : MonoBehaviour
 
     //--------------------------------------------------------------------------------
     // Function is called once every frame.
-    //
-    // Author: Matthew Le Nepveu.
     //--------------------------------------------------------------------------------
     void Update()
     {

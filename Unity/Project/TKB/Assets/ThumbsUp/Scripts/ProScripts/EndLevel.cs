@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 // Author: Matthew Le Nepveu.
 //-----------------------------------------------------------------------------
 
+// Creates a class for the End Level Script 
 public class EndLevel : MonoBehaviour
 {
     // Used to store an array of enemies from the game

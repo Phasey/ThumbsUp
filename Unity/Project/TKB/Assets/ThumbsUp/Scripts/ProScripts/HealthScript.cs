@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Creates a class for the Health Script 
+//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu. Edited by: Liam Knights.
+//-----------------------------------------------------------------------------
+
+// Creates a class for the Health Script
 public class HealthScript : MonoBehaviour
 {
 	// Creates public integers for both the max health and current health
@@ -17,21 +21,25 @@ public class HealthScript : MonoBehaviour
 	// Creates booleans to check if players are being damaged or are alive
     public bool dead;
 
-    //sets the cooldown timer for use in attacking
+    // Sets the cooldown timer for use in attacking
     public float CoolDownTimer = 0.5f;
 
     // Initialises CoolDown boolean to be false
     private bool CoolDown = false;
 
+	// Bool checks if player is flashing
     private bool isFlashing = false;
 
-    // Sets AttackTime variable to be private
+    // Sets FlashTime variable to be private 
     private float FlashTime = 0.0f;
 
     // Gets access to the health bar so health bar value can decrease according to health
     public Slider healthBar;
 
+	// Used so Death Animations can be placed on player's
 	public Animator animator;
+
+	// Used to allow Rigidbody's to be put on player's
 	public Rigidbody body;
     public GameObject helpMe;
 
@@ -176,6 +184,7 @@ public class HealthScript : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         animator.SetBool("Damage", false);
     }
+
     private void ResetCoolDown()
     {
         FlashTime = CoolDownTimer;
