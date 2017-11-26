@@ -106,7 +106,7 @@ public class PlayerAttack : MonoBehaviour
         //}
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.IsInTransition(0);
 
@@ -165,9 +165,11 @@ public class PlayerAttack : MonoBehaviour
         {
             agent.enabled = true;
             rb.isKinematic = true;
-
-            AI.ResetFlashCoolDown();
-            AI.Flash();
+            if (AI.IsBoss)
+            {
+                AI.ResetFlashCoolDown();
+                AI.Flash();
+            }
         }
     }
 }
