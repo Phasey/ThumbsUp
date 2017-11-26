@@ -27,6 +27,8 @@ public class BasicAIScript : MonoBehaviour
     // Sets AttackTime variable to be private
     private float FlashTime = 0.0f;
 
+    private bool FlashCoolDown = false;
+
     // Gets access to a RigidBody
     Rigidbody rigidBody;
 
@@ -68,7 +70,7 @@ public class BasicAIScript : MonoBehaviour
 	public AudioSource growl;
 	public bool growled;
 
-    public bool IsBoss = true;
+    public bool IsBoss = false;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -283,7 +285,7 @@ public class BasicAIScript : MonoBehaviour
         if (!isFlashing)
             return;
 
-        if (!CoolDown)
+        if (!FlashCoolDown)
         {
             // Gets renderer component and stores it into rend
             //rend = GetComponent<Renderer>();
@@ -292,13 +294,13 @@ public class BasicAIScript : MonoBehaviour
             // Sets the rend colour to be whatever the FlashColour is set to
             rend.material.SetColor("_EmissionColor", FlashColour);
 
-           
 
-            CoolDown = true;
+
+            FlashCoolDown = true;
         }
 
         // Checks if CoolDown boolean is true
-        if (CoolDown)
+        if (FlashCoolDown)
         {
             // If so, it decreases AttackTime by real time is seconds
             FlashTime -= Time.deltaTime;
@@ -310,8 +312,8 @@ public class BasicAIScript : MonoBehaviour
 
                 // Sets the rend colour to be whatever the FlashColour is set to
                 rend.material.DisableKeyword("_EMISSION");
-                
-                CoolDown = false;
+
+                FlashCoolDown = false;
                 isFlashing = false;
             }
         }
