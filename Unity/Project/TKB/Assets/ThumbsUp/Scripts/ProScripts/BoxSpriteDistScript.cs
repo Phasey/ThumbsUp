@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //---------------------------------------------------------------
-//Author: Liam Knights
+//Author: Liam Knights.
 //---------------------------------------------------------------
 public class BoxSpriteDistScript : MonoBehaviour
 {

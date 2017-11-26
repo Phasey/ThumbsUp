@@ -5,6 +5,11 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using XboxCtrlrInput;
 
+//---------------------------------------------------------------
+//Author: Liam Knights. Edited by: Matthew Le Nepveu.
+//---------------------------------------------------------------
+
+
 public class SweeperSpecial : MonoBehaviour
 {
 	// Sets and initiases public floats so the designers can adjust them

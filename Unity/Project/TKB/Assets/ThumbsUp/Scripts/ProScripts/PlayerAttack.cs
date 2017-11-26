@@ -142,11 +142,11 @@ public class PlayerAttack : MonoBehaviour
         // Decreases the enemies health by how much damage was dealt
         AI.enemyHealth -= damage;
 
-        if(AI.IsBoss)
-        {
-            AI.ResetFlashCoolDown();
-            AI.Flash();
-        }
+        //if(AI.IsBoss)
+        //{
+        //    AI.ResetFlashCoolDown();
+        //    AI.Flash();
+        //}
 
         // Checks if enemies health is equal to or goes below zero
         if (AI.enemyHealth <= 0)

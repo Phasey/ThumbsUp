@@ -65,11 +65,14 @@ public class BasicAIScript : MonoBehaviour
     // Determines how long an enemy will be visible before disappearing
     public float deadTime = 2f;
 
+    //range that the enemies can travel between each other 
     public int CircleRange = 3;
 
+    //the growl for the enemies
 	public AudioSource growl;
 	public bool growled;
 
+    //if the enemy is a boss this eneables flashing
     public bool IsBoss = false;
 
     //------------------------------------------------------------
@@ -290,12 +293,13 @@ public class BasicAIScript : MonoBehaviour
             // Gets renderer component and stores it into rend
             //rend = GetComponent<Renderer>();
 
+            //ensables the emission for the renderer
             rend.material.EnableKeyword("_EMISSION");
             // Sets the rend colour to be whatever the FlashColour is set to
             rend.material.SetColor("_EmissionColor", FlashColour);
 
 
-
+            //sets the flash cooldown to true
             FlashCoolDown = true;
         }
 
