@@ -73,7 +73,7 @@ public class BasicAIScript : MonoBehaviour
 	public bool growled;
 
     //if the enemy is a boss this eneables flashing
-   // public bool IsBoss = false;
+    public bool IsBoss = false;
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -151,7 +151,7 @@ public class BasicAIScript : MonoBehaviour
 			}
 		}
 
-       
+        Flash();
     }
 
     //------------------------------------------------------------
@@ -282,49 +282,49 @@ public class BasicAIScript : MonoBehaviour
     }
 
 
-    //public void Flash()
-    //{
-    //    // Ignores following code if the flash time is less than zero
-    //    if (!isFlashing)
-    //        return;
+    public void Flash()
+    {
+        // Ignores following code if the flash time is less than zero
+        if (!isFlashing)
+            return;
 
-    //    if (!FlashCoolDown)
-    //    {
-    //        // Gets renderer component and stores it into rend
-    //        //rend = GetComponent<Renderer>();
+        if (!FlashCoolDown)
+        {
+            // Gets renderer component and stores it into rend
+            //rend = GetComponent<Renderer>();
 
-    //        //ensables the emission for the renderer
-    //        rend.material.EnableKeyword("_EMISSION");
-    //        // Sets the rend colour to be whatever the FlashColour is set to
-    //        rend.material.SetColor("_EmissionColor", FlashColour);
+            //ensables the emission for the renderer
+            rend.material.EnableKeyword("_EMISSION");
+            // Sets the rend colour to be whatever the FlashColour is set to
+            rend.material.SetColor("_EmissionColor", FlashColour);
 
 
-    //        //sets the flash cooldown to true
-    //        FlashCoolDown = true;
-    //    }
+            //sets the flash cooldown to true
+            FlashCoolDown = true;
+        }
 
-    //    // Checks if CoolDown boolean is true
-    //    if (FlashCoolDown)
-    //    {
-    //        // If so, it decreases AttackTime by real time is seconds
-    //        FlashTime -= Time.deltaTime;
+        // Checks if CoolDown boolean is true
+        if (FlashCoolDown)
+        {
+            // If so, it decreases AttackTime by real time is seconds
+            FlashTime -= Time.deltaTime;
 
-    //        // Checks if AttackTime gets to exactly 1
-    //        if (FlashTime <= 0)
-    //        {
-    //            // rend = GetComponent<Renderer>();
+            // Checks if AttackTime gets to exactly 1
+            if (FlashTime <= 0)
+            {
+                // rend = GetComponent<Renderer>();
 
-    //            // Sets the rend colour to be whatever the FlashColour is set to
-    //            rend.material.DisableKeyword("_EMISSION");
+                // Sets the rend colour to be whatever the FlashColour is set to
+                rend.material.DisableKeyword("_EMISSION");
 
-    //            FlashCoolDown = false;
-    //            isFlashing = false;
-    //        }
-    //    }
-    //}
-    //public void ResetFlashCoolDown()
-    //{
-    //    FlashTime = CoolDownTimer;
-    //    isFlashing = true;
-    //}
+                FlashCoolDown = false;
+                isFlashing = false;
+            }
+        }
+    }
+    public void ResetFlashCoolDown()
+    {
+        FlashTime = CoolDownTimer;
+        isFlashing = true;
+    }
 }

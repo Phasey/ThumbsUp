@@ -159,6 +159,9 @@ public class PlayerAttack : MonoBehaviour
         {
             agent.enabled = true;
             rb.isKinematic = true;
+
+            AI.ResetFlashCoolDown();
+            AI.Flash();
         }
     }
 }
