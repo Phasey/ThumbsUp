@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using XboxCtrlrInput;
 
 //--------------------------------------------------------------------------------
-// Author: Matthew Le Nepveu.
+// Author: Matthew Le Nepveu. Edited by: Liam Knights.
 //--------------------------------------------------------------------------------
 
 // Creates a class for the Player Attack Script 
@@ -19,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     public float particleTimer = 5f;
 	public AudioSource Swing;
     //public float animationSpeed = 1.5f;
+    private bool wasTriggerDown = false;
 
     private float timer = 0f;
     public bool coolDown;
@@ -30,8 +31,6 @@ public class PlayerAttack : MonoBehaviour
     public GameObject AxeParticle;
 
     public Animator animator;
-
-
 
     //------------------------------------------------------------
     // Function is called when script first runs
@@ -62,44 +61,52 @@ public class PlayerAttack : MonoBehaviour
 		// Gets the Right Trigger button from Xbox controller
         float attackButton = XCI.GetAxis(XboxAxis.RightTrigger, Controller);
         bool xButton = XCI.GetButtonDown(XboxButton.X, Controller);
-        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.IsInTransition(0);
+        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");// && !animator.IsInTransition(0);
 
         // Checks if trigger is down a little bit
-        if (attackButton > 0.15f || xButton)
+        if ((attackButton > 0.15f && !wasTriggerDown) || xButton)
         {
+            wasTriggerDown = true;
+
             if (!attacking)
             {
                 animator.SetBool("Attack", true);
                 AxeParticle.SetActive(true);
-
+                
                 if (!Swing.isPlaying && !coolDown)
                 {
                     Swing.Play();
                 }
 
-                coolDown = true;
+                //coolDown = true;
             }
         }
         else
         {
-            animator.SetBool("Attack", false);
-            AxeParticle.SetActive(false);
-        }
+            if (attackButton < 0.15f)
+                wasTriggerDown = false;
 
-        if (coolDown)
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= coolDownMaxTime)
+            if (attacking)
             {
-                coolDown = false;
-
-                timer = 0f;
+                animator.SetBool("Attack", false);
+                AxeParticle.SetActive(false);
             }
         }
+
+        //if (coolDown)
+        //{
+        //    timer += Time.deltaTime;
+
+        //    if (timer >= coolDownMaxTime)
+        //    {
+        //        coolDown = false;
+
+        //        timer = 0f;
+        //    }
+        //}
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.IsInTransition(0);
 
@@ -114,7 +121,6 @@ public class PlayerAttack : MonoBehaviour
 
         // Gets the Rigidbody of the enemy
         Rigidbody rb = enemy.GetComponent<Rigidbody>();
-
 
         // Gets the NavMeshAgent of the enemy
         NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
