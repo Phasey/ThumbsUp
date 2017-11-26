@@ -151,7 +151,7 @@ public class BasicAIScript : MonoBehaviour
 			}
 		}
 
-        Flash();
+       
     }
 
     //------------------------------------------------------------
