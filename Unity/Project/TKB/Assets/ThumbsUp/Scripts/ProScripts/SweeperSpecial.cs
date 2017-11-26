@@ -89,8 +89,10 @@ public class SweeperSpecial : MonoBehaviour
 			if (!coolDown)
 			{
 				animator.SetBool("Special", true);
-				if (!Spin.isPlaying && !coolDown) {
-					Spin.Play ();
+
+				if (!Spin.isPlaying && !coolDown)
+                {
+					Spin.Play();
 				}
 
 				// Sets cool down bool to be true and sets timer to equal zero

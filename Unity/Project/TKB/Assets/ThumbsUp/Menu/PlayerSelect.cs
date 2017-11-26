@@ -1,13 +1,14 @@
-﻿//--------------------------------------------------------------------------------
-// Script is not being utilised in final game.
-//
-// Author: Liam Knights.
-//--------------------------------------------------------------------------------
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 using UnityEngine.UI;
+
+//--------------------------------------------------------------------------------
+// Script is not being utilised in final game.
+//
+// Author: Liam Knights.
+//--------------------------------------------------------------------------------
 
 public class PlayerSelect : MonoBehaviour
 {

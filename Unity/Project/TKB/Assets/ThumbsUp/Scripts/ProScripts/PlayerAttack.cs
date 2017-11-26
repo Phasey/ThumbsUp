@@ -77,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
                     Swing.Play();
                 }
 
-                //coolDown = true;
+                coolDown = true;
             }
         }
         else
@@ -85,18 +85,18 @@ public class PlayerAttack : MonoBehaviour
             animator.SetBool("Attack", false);
             AxeParticle.SetActive(false);
         }
-        //if (coolDown)
-        //{
-        //    timer += Time.deltaTime;
 
-        //    if (timer >= coolDownMaxTime)
-        //    {
-        //        coolDown = false;
+        if (coolDown)
+        {
+            timer += Time.deltaTime;
 
-        //        timer = 0f;
+            if (timer >= coolDownMaxTime)
+            {
+                coolDown = false;
 
-        //    }
-        //}
+                timer = 0f;
+            }
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -130,7 +130,6 @@ public class PlayerAttack : MonoBehaviour
         // Disables Kinematic for the enemies Rigidbody
         rb.isKinematic = false;
 
-
         // Direction Vector3 used for direction enemy will be knocked back
         Vector3 direction = enemy.transform.position - transform.position;
 
@@ -142,7 +141,6 @@ public class PlayerAttack : MonoBehaviour
 
         // Decreases the enemies health by how much damage was dealt
         AI.enemyHealth -= damage;
-
 
         // Checks if enemies health is equal to or goes below zero
         if (AI.enemyHealth <= 0)

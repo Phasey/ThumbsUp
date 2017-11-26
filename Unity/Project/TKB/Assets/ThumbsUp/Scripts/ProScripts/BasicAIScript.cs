@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//---------------------------------------------------------------
-//Author: Liam Knights
-//---------------------------------------------------------------
+//--------------------------------------------------------------------------------
+// Author: Liam Knights.
+//--------------------------------------------------------------------------------
 
 // Creates a class for the Basic AI Script 
 public class BasicAIScript : MonoBehaviour
@@ -19,13 +19,6 @@ public class BasicAIScript : MonoBehaviour
 	public GameObject boneParticle;
 	public bool attacking;
 
-    public Renderer rend;
-    public Color FlashColour;
-
-    private bool isFlashing = false;
-
-    // Sets AttackTime variable to be private
-    private float FlashTime = 0.0f;
 
     // Gets access to a RigidBody
     Rigidbody rigidBody;
@@ -68,9 +61,9 @@ public class BasicAIScript : MonoBehaviour
 	public AudioSource growl;
 	public bool growled;
 
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     // Function is called when script first runs
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     void Awake()
     {
         // Code inside runs if the enemy is not dead
@@ -82,10 +75,6 @@ public class BasicAIScript : MonoBehaviour
             // Gets a NavMeshAgent component and stores it into Agent
             Agent = GetComponent<NavMeshAgent>();
 
-
-
-
-
             // Does not allow Agent to automatically brake
             Agent.autoBraking = false;
         }
@@ -95,11 +84,11 @@ public class BasicAIScript : MonoBehaviour
     {
         players = FindObjectsOfType<PlayerMove>();
     }
-	
-	//------------------------------------------------------------
-	// Function is called once every frame
-	//------------------------------------------------------------
-	void Update()
+
+    //--------------------------------------------------------------------------------
+    // Function is called once every frame
+    //--------------------------------------------------------------------------------
+    void Update()
     {
         // Code inside runs if the enemy is not dead
         if (!dead)
@@ -143,13 +132,11 @@ public class BasicAIScript : MonoBehaviour
 				}
 			}
 		}
-
-        Flash();
     }
 
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     // Function calculates the next point for NavMeshAgent to go
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     void NextPoint()
     {
         // Code inside runs if the enemy is not dead
@@ -185,9 +172,9 @@ public class BasicAIScript : MonoBehaviour
         }
     }
 
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     // Function makes the Agent seek the closest player
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     void Seek()
     {
 		// Calculates distance to Player 1's position
@@ -236,13 +223,13 @@ public class BasicAIScript : MonoBehaviour
         }
     }
 
-	//------------------------------------------------------------
-	// Function runs when collision is first detected
-	//
-	// Param:
-	// 		other: Refers to object of which Agent is colliding
-	// 		with
-	//------------------------------------------------------------
+    //--------------------------------------------------------------------------------
+    // Function runs when collision is first detected
+    //
+    // Param:
+    // 		other: Refers to object of which Agent is colliding
+    // 		with
+    //--------------------------------------------------------------------------------
     private void OnCollisionStay(Collision other)
     {
         // Code inside runs if the enemy is not dead
@@ -266,57 +253,11 @@ public class BasicAIScript : MonoBehaviour
         }
     }
 
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     // Function sets ActiveTime to equal CoolDownTimer float
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
     private void ResetCoolDown()
     {
 		AttackTime = CoolDownTimer;
-    }
-
-
-    private void Flash()
-    {
-        // Ignores following code if the flash time is less than zero
-        if (!isFlashing)
-            return;
-
-        if (!CoolDown)
-        {
-            // Gets renderer component and stores it into rend
-            //rend = GetComponent<Renderer>();
-
-            rend.material.EnableKeyword("_EMISSION");
-            // Sets the rend colour to be whatever the FlashColour is set to
-            rend.material.SetColor("_EmissionColor", FlashColour);
-
-           
-
-            CoolDown = true;
-        }
-
-        // Checks if CoolDown boolean is true
-        if (CoolDown)
-        {
-            // If so, it decreases AttackTime by real time is seconds
-            FlashTime -= Time.deltaTime;
-
-            // Checks if AttackTime gets to exactly 1
-            if (FlashTime <= 0)
-            {
-                // rend = GetComponent<Renderer>();
-
-                // Sets the rend colour to be whatever the FlashColour is set to
-                rend.material.DisableKeyword("_EMISSION");
-                
-                CoolDown = false;
-                isFlashing = false;
-            }
-        }
-    }
-    private void ResetFlashCoolDown()
-    {
-        FlashTime = CoolDownTimer;
-        isFlashing = true;
     }
 }
