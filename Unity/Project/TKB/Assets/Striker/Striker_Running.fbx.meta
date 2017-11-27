@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 5e1ec998b2e0ca54e977688ad1808765
+timeCreated: 1509929669
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: LStriker_Control_Clavical
+    100002: LStriker_Control_Elbow
+    100004: LStriker_Control_Feet
+    100006: LStriker_Control_Knee
+    100008: LStriker_Control_Wrist
+    100010: LStriker_Ik_Arm
+    100012: LStriker_Ik_Leg
+    100014: LStriker_Joint_Ankle
+    100016: LStriker_Joint_Clavical
+    100018: LStriker_Joint_Elbow
+    100020: LStriker_Joint_Feet
+    100022: LStriker_Joint_Hand1
+    100024: LStriker_Joint_Hand2
+    100026: LStriker_Joint_Hand3
+    100028: LStriker_Joint_Hand4
+    100030: LStriker_Joint_Hip
+    100032: LStriker_Joint_Knee
+    100034: LStriker_Joint_Point1
+    100036: LStriker_Joint_Point2
+    100038: LStriker_Joint_Point3
+    100040: LStriker_Joint_Point4
+    100042: LStriker_Joint_Shoulder
+    100044: LStriker_Joint_Thumb1
+    100046: LStriker_Joint_Thumb2
+    100048: LStriker_Joint_Thumb3
+    100050: LStriker_Joint_Thumb4
+    100052: LStriker_Joint_Wrist
+    100054: RStriker_Control_Clavical
+    100056: RStriker_Control_Elbow
+    100058: RStriker_Control_Feet
+    100060: RStriker_Control_Knee
+    100062: RStriker_Control_Wrist
+    100064: RStriker_Ik_Arm
+    100066: RStriker_Ik_Leg
+    100068: RStriker_Joint_Ankle
+    100070: RStriker_Joint_Clavical
+    100072: RStriker_Joint_Elbow
+    100074: RStriker_Joint_Feet
+    100076: RStriker_Joint_Hand1
+    100078: RStriker_Joint_Hand2
+    100080: RStriker_Joint_Hand3
+    100082: RStriker_Joint_Hand4
+    100084: RStriker_Joint_Hip
+    100086: RStriker_Joint_Knee
+    100088: RStriker_Joint_Point1
+    100090: RStriker_Joint_Point2
+    100092: RStriker_Joint_Point3
+    100094: RStriker_Joint_Point4
+    100096: RStriker_Joint_Shoulder
+    100098: RStriker_Joint_Thumb1
+    100100: RStriker_Joint_Thumb2
+    100102: RStriker_Joint_Thumb3
+    100104: RStriker_Joint_Thumb4
+    100106: RStriker_Joint_Wrist
+    100108: Striker_Control_Backbone
+    100110: Striker_Control_Chest
+    100112: Striker_Control_Global
+    100114: Striker_Control_Head
+    100116: Striker_Control_Pelvis
+    100118: Striker_Control_Root
+    100120: Striker_Ik_Group
+    100122: Striker_Joint_HeadTop
+    100124: Striker_Joint_NeckTop
+    100126: Striker_Joint_Pelvis
+    100128: Striker_Joint_Spine1
+    100130: Striker_Joint_Spine3
+    100132: Striker_Joint_Spine4
+    100134: Striker_Joint_SpineRoot
+    100136: Striker_Player
+    100138: Striker_Ponytail
+    100140: //RootNode
+    100142: Striker_Skirt
+    100144: Striker_Sword
+    400000: LStriker_Control_Clavical
+    400002: LStriker_Control_Elbow
+    400004: LStriker_Control_Feet
+    400006: LStriker_Control_Knee
+    400008: LStriker_Control_Wrist
+    400010: LStriker_Ik_Arm
+    400012: LStriker_Ik_Leg
+    400014: LStriker_Joint_Ankle
+    400016: LStriker_Joint_Clavical
+    400018: LStriker_Joint_Elbow
+    400020: LStriker_Joint_Feet
+    400022: LStriker_Joint_Hand1
+    400024: LStriker_Joint_Hand2
+    400026: LStriker_Joint_Hand3
+    400028: LStriker_Joint_Hand4
+    400030: LStriker_Joint_Hip
+    400032: LStriker_Joint_Knee
+    400034: LStriker_Joint_Point1
+    400036: LStriker_Joint_Point2
+    400038: LStriker_Joint_Point3
+    400040: LStriker_Joint_Point4
+    400042: LStriker_Joint_Shoulder
+    400044: LStriker_Joint_Thumb1
+    400046: LStriker_Joint_Thumb2
+    400048: LStriker_Joint_Thumb3
+    400050: LStriker_Joint_Thumb4
+    400052: LStriker_Joint_Wrist
+    400054: RStriker_Control_Clavical
+    400056: RStriker_Control_Elbow
+    400058: RStriker_Control_Feet
+    400060: RStriker_Control_Knee
+    400062: RStriker_Control_Wrist
+    400064: RStriker_Ik_Arm
+    400066: RStriker_Ik_Leg
+    400068: RStriker_Joint_Ankle
+    400070: RStriker_Joint_Clavical
+    400072: RStriker_Joint_Elbow
+    400074: RStriker_Joint_Feet
+    400076: RStriker_Joint_Hand1
+    400078: RStriker_Joint_Hand2
+    400080: RStriker_Joint_Hand3
+    400082: RStriker_Joint_Hand4
+    400084: RStriker_Joint_Hip
+    400086: RStriker_Joint_Knee
+    400088: RStriker_Joint_Point1
+    400090: RStriker_Joint_Point2
+    400092: RStriker_Joint_Point3
+    400094: RStriker_Joint_Point4
+    400096: RStriker_Joint_Shoulder
+    400098: RStriker_Joint_Thumb1
+    400100: RStriker_Joint_Thumb2
+    400102: RStriker_Joint_Thumb3
+    400104: RStriker_Joint_Thumb4
+    400106: RStriker_Joint_Wrist
+    400108: Striker_Control_Backbone
+    400110: Striker_Control_Chest
+    400112: Striker_Control_Global
+    400114: Striker_Control_Head
+    400116: Striker_Control_Pelvis
+    400118: Striker_Control_Root
+    400120: Striker_Ik_Group
+    400122: Striker_Joint_HeadTop
+    400124: Striker_Joint_NeckTop
+    400126: Striker_Joint_Pelvis
+    400128: Striker_Joint_Spine1
+    400130: Striker_Joint_Spine3
+    400132: Striker_Joint_Spine4
+    400134: Striker_Joint_SpineRoot
+    400136: Striker_Player
+    400138: Striker_Ponytail
+    400140: //RootNode
+    400142: Striker_Skirt
+    400144: Striker_Sword
+    2300000: Striker_Sword
+    3300000: Striker_Sword
+    4300000: Striker_Player
+    4300002: Striker_Skirt
+    4300004: Striker_Ponytail
+    4300006: Striker_Sword
+    7400000: Running
+    9500000: //RootNode
+    13700000: Striker_Player
+    13700002: Striker_Ponytail
+    13700004: Striker_Skirt
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Running
+      takeName: Running
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

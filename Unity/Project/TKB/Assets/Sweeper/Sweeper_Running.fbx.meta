@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: 82369bbba5793f343be49b19f0b13705
+timeCreated: 1509935801
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: LSweeper_Control_Clavical
+    100002: LSweeper_Control_Elbow
+    100004: LSweeper_Control_Feet
+    100006: LSweeper_Control_Knee
+    100008: LSweeper_Control_Wrist
+    100010: LSweeper_Ik_Arm
+    100012: LSweeper_Ik_Leg
+    100014: LSweeper_Joint_Ankle
+    100016: LSweeper_Joint_Clavical
+    100018: LSweeper_Joint_Elbow
+    100020: LSweeper_Joint_Feet
+    100022: LSweeper_Joint_Hand1
+    100024: LSweeper_Joint_Hand2
+    100026: LSweeper_Joint_Hand3
+    100028: LSweeper_Joint_Hand4
+    100030: LSweeper_Joint_Hip
+    100032: LSweeper_Joint_Knee
+    100034: LSweeper_Joint_Point1
+    100036: LSweeper_Joint_Point2
+    100038: LSweeper_Joint_Point3
+    100040: LSweeper_Joint_Point4
+    100042: LSweeper_Joint_Shoulder
+    100044: LSweeper_Joint_Thumb1
+    100046: LSweeper_Joint_Thumb2
+    100048: LSweeper_Joint_Thumb3
+    100050: LSweeper_Joint_Thumb4
+    100052: LSweeper_Joint_Wrist
+    100054: LSweeper_Shoulderpad
+    100056: RSweeper_Control_Clavical
+    100058: RSweeper_Control_Elbow
+    100060: RSweeper_Control_Feet
+    100062: RSweeper_Control_Knee
+    100064: RSweeper_Control_Wrist
+    100066: RSweeper_Ik_Arm
+    100068: RSweeper_Ik_Leg
+    100070: RSweeper_Joint_Ankle
+    100072: RSweeper_Joint_Clavical
+    100074: RSweeper_Joint_Elbow
+    100076: RSweeper_Joint_Feet
+    100078: RSweeper_Joint_Hand1
+    100080: RSweeper_Joint_Hand2
+    100082: RSweeper_Joint_Hand3
+    100084: RSweeper_Joint_Hand4
+    100086: RSweeper_Joint_Hip
+    100088: RSweeper_Joint_Knee
+    100090: RSweeper_Joint_Point1
+    100092: RSweeper_Joint_Point2
+    100094: RSweeper_Joint_Point3
+    100096: RSweeper_Joint_Point4
+    100098: RSweeper_Joint_Shoulder
+    100100: RSweeper_Joint_Thumb1
+    100102: RSweeper_Joint_Thumb2
+    100104: RSweeper_Joint_Thumb3
+    100106: RSweeper_Joint_Thumb4
+    100108: RSweeper_Joint_Wrist
+    100110: RSweeper_Shoulderpad
+    100112: Sweeper_Axe
+    100114: Sweeper_Control_Backbone
+    100116: Sweeper_Control_Chest
+    100118: Sweeper_Control_Global
+    100120: Sweeper_Control_Head
+    100122: Sweeper_Control_Pelvis
+    100124: Sweeper_Control_Root
+    100126: Sweeper_Ik_group
+    100128: Sweeper_Joint_HeadTop
+    100130: Sweeper_Joint_NeckTop
+    100132: Sweeper_Joint_Pelvis
+    100134: Sweeper_Joint_Spine1
+    100136: Sweeper_Joint_Spine2
+    100138: Sweeper_Joint_Spine3
+    100140: Sweeper_Joint_SpineRoot
+    100142: Sweeper_Player
+    100144: //RootNode
+    100146: Sweeper_Skirt
+    400000: LSweeper_Control_Clavical
+    400002: LSweeper_Control_Elbow
+    400004: LSweeper_Control_Feet
+    400006: LSweeper_Control_Knee
+    400008: LSweeper_Control_Wrist
+    400010: LSweeper_Ik_Arm
+    400012: LSweeper_Ik_Leg
+    400014: LSweeper_Joint_Ankle
+    400016: LSweeper_Joint_Clavical
+    400018: LSweeper_Joint_Elbow
+    400020: LSweeper_Joint_Feet
+    400022: LSweeper_Joint_Hand1
+    400024: LSweeper_Joint_Hand2
+    400026: LSweeper_Joint_Hand3
+    400028: LSweeper_Joint_Hand4
+    400030: LSweeper_Joint_Hip
+    400032: LSweeper_Joint_Knee
+    400034: LSweeper_Joint_Point1
+    400036: LSweeper_Joint_Point2
+    400038: LSweeper_Joint_Point3
+    400040: LSweeper_Joint_Point4
+    400042: LSweeper_Joint_Shoulder
+    400044: LSweeper_Joint_Thumb1
+    400046: LSweeper_Joint_Thumb2
+    400048: LSweeper_Joint_Thumb3
+    400050: LSweeper_Joint_Thumb4
+    400052: LSweeper_Joint_Wrist
+    400054: LSweeper_Shoulderpad
+    400056: RSweeper_Control_Clavical
+    400058: RSweeper_Control_Elbow
+    400060: RSweeper_Control_Feet
+    400062: RSweeper_Control_Knee
+    400064: RSweeper_Control_Wrist
+    400066: RSweeper_Ik_Arm
+    400068: RSweeper_Ik_Leg
+    400070: RSweeper_Joint_Ankle
+    400072: RSweeper_Joint_Clavical
+    400074: RSweeper_Joint_Elbow
+    400076: RSweeper_Joint_Feet
+    400078: RSweeper_Joint_Hand1
+    400080: RSweeper_Joint_Hand2
+    400082: RSweeper_Joint_Hand3
+    400084: RSweeper_Joint_Hand4
+    400086: RSweeper_Joint_Hip
+    400088: RSweeper_Joint_Knee
+    400090: RSweeper_Joint_Point1
+    400092: RSweeper_Joint_Point2
+    400094: RSweeper_Joint_Point3
+    400096: RSweeper_Joint_Point4
+    400098: RSweeper_Joint_Shoulder
+    400100: RSweeper_Joint_Thumb1
+    400102: RSweeper_Joint_Thumb2
+    400104: RSweeper_Joint_Thumb3
+    400106: RSweeper_Joint_Thumb4
+    400108: RSweeper_Joint_Wrist
+    400110: RSweeper_Shoulderpad
+    400112: Sweeper_Axe
+    400114: Sweeper_Control_Backbone
+    400116: Sweeper_Control_Chest
+    400118: Sweeper_Control_Global
+    400120: Sweeper_Control_Head
+    400122: Sweeper_Control_Pelvis
+    400124: Sweeper_Control_Root
+    400126: Sweeper_Ik_group
+    400128: Sweeper_Joint_HeadTop
+    400130: Sweeper_Joint_NeckTop
+    400132: Sweeper_Joint_Pelvis
+    400134: Sweeper_Joint_Spine1
+    400136: Sweeper_Joint_Spine2
+    400138: Sweeper_Joint_Spine3
+    400140: Sweeper_Joint_SpineRoot
+    400142: Sweeper_Player
+    400144: //RootNode
+    400146: Sweeper_Skirt
+    2300000: LSweeper_Shoulderpad
+    2300002: RSweeper_Shoulderpad
+    2300004: Sweeper_Axe
+    3300000: LSweeper_Shoulderpad
+    3300002: RSweeper_Shoulderpad
+    3300004: Sweeper_Axe
+    4300000: Sweeper_Player
+    4300002: Sweeper_Skirt
+    4300004: Sweeper_Axe
+    4300006: LSweeper_Shoulderpad
+    4300008: RSweeper_Shoulderpad
+    7400000: Running
+    9500000: //RootNode
+    13700000: Sweeper_Player
+    13700002: Sweeper_Skirt
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Running
+      takeName: Running
+      firstFrame: 1
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

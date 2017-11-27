@@ -1849,7 +1849,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1407408396396618}
   m_LocalRotation: {x: -0, y: 0.48734027, z: -0, w: 0.8732122}
-  m_LocalPosition: {x: -11.663054, y: 0, z: 0.74}
+  m_LocalPosition: {x: -9.7, y: 0, z: 0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4259699330282494}
@@ -3054,7 +3054,8 @@ MonoBehaviour:
   HitBox: {fileID: 1130732455841316}
   BoneParticle: {fileID: 1996595626642814, guid: 740f33c3303c7eb499349e9cf116909d,
     type: 2}
-  AxeParticle: {fileID: 1725450472888992}
+  AxeParticle: {fileID: 1896740402469042, guid: 64821749b9b78514493cca6e1ac8d43f,
+    type: 2}
   animator: {fileID: 95921342949215138}
 --- !u!114 &114745772714355400
 MonoBehaviour:
@@ -3069,6 +3070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  rend: {fileID: 137386933254763024}
   FlashColour: {r: 0.9705882, g: 0.09277679, b: 0.09277679, a: 0}
   dead: 0
   CoolDownTimer: 0.5
