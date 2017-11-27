@@ -81,6 +81,6 @@ public class OpenDoor : MonoBehaviour
 	{
 		yield return new WaitForSeconds(4f);
 		closedDoor.SetActive(false);
-		animator.enabled = false;
+		animator = GetComponent<Animator>();
 	}
 }
