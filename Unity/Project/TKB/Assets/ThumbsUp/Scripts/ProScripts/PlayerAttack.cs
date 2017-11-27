@@ -19,10 +19,14 @@ public class PlayerAttack : MonoBehaviour
     public float particleTimer = 5f;
     public float minSwingVolume = 0.9f;
     public float maxSwingVolume = 1f;
+    public float minSwingPitch = 1f;
+    public float maxSwingPitch = 1.5f;
 	public AudioSource Swing;
     private bool wasTriggerDown = false;
 
     private float volumeValue;
+    private float pitchValue;
+
     public bool coolDown;
 	public bool soundPlayed;
     // Allows access to xbox controller buttons
@@ -42,7 +46,6 @@ public class PlayerAttack : MonoBehaviour
         Controller = move.Controller;
 
         coolDown = false;
-        //animator.speed = animationSpeed;
     }
 
 	//------------------------------------------------------------
@@ -55,11 +58,13 @@ public class PlayerAttack : MonoBehaviour
 
         // Makes the volume a random number between min and max volume floats
         volumeValue = Random.Range(minSwingVolume, maxSwingVolume);
+
+        pitchValue = Random.Range(minSwingPitch, maxSwingPitch);
     }
 
-	//------------------------------------------------------------
-	// Function allows Striker to use his regular attack
-	//------------------------------------------------------------
+    //------------------------------------------------------------
+    // Function allows Striker to use his regular attack
+    //------------------------------------------------------------
     private void Attack()
     {
 		// Gets the Right Trigger button from Xbox controller
@@ -79,6 +84,7 @@ public class PlayerAttack : MonoBehaviour
                 
                 if (!Swing.isPlaying)
                 {
+                    Swing.pitch = pitchValue;
                     Swing.volume = volumeValue;
                     Swing.Play();
                 }

@@ -14,6 +14,8 @@ public class PlayerMove : MonoBehaviour
 	public float maxSpeed = 10f;
     public float minStepsVolume = 0.9f;
     public float maxStepsVolume = 1f;
+    public float minStepsPitch = 1f;
+    public float maxStepsPitch = 1.5f;
 
     // Used to get the Striker's Rigidbody
     private Rigidbody rigidBody;
@@ -26,6 +28,7 @@ public class PlayerMove : MonoBehaviour
 	private float prevRotateZ;
 
     private float volumeValue;
+    private float pitchValue;
 
     public bool strikerDoingSpecial = false;
     private GameObject currentPickUp = null;
@@ -70,12 +73,15 @@ public class PlayerMove : MonoBehaviour
             pauseMenu.GetComponent<PauseMenu>().StartBtn();
 
         volumeValue = Random.Range(minStepsVolume, maxStepsVolume);
+
+        pitchValue = Random.Range(minStepsPitch, maxStepsPitch);
     }
 
 	private void Footsteps()
 	{
 		if (running && !footsteps.isPlaying)
         {
+            footsteps.pitch = pitchValue;
             footsteps.volume = volumeValue;
 			footsteps.Play();
 		}

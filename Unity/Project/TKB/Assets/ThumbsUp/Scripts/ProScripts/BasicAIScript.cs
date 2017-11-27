@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //---------------------------------------------------------------
-// Author: Liam Knights
+// Author: Liam Knights. Edited by: Matthew Le Nepveu.
 //---------------------------------------------------------------
 
 // Creates a class for the Basic AI Script 
@@ -17,6 +17,8 @@ public class BasicAIScript : MonoBehaviour
     public float enemyDamage = 5f;
     public float minAttackVolume = 0.9f;
     public float maxAttackVolume = 1f;
+    public float minAttackPitch = 1f;
+    public float maxAttackPitch = 1.5f;
 	public Animator animator;
 	public GameObject boneParticle;
 	public bool attacking;
@@ -30,6 +32,7 @@ public class BasicAIScript : MonoBehaviour
     private float FlashTime = 0.0f;
 
     private float volumeValue;
+    private float pitchValue;
 
     private bool FlashCoolDown = false;
 
@@ -82,7 +85,7 @@ public class BasicAIScript : MonoBehaviour
     void Awake()
     {
         // Code inside runs if the enemy is not dead
-        if(!dead)
+        if (!dead)
         {
             // Gets a RigidBody component and stores it into rigidBody
             rigidBody = GetComponent<Rigidbody>();
@@ -152,6 +155,8 @@ public class BasicAIScript : MonoBehaviour
         Flash();
 
         volumeValue = Random.Range(minAttackVolume, maxAttackVolume);
+
+        pitchValue = Random.Range(minAttackPitch, maxAttackPitch);
     }
 
     //------------------------------------------------------------
@@ -208,6 +213,7 @@ public class BasicAIScript : MonoBehaviour
 
 			if (!growl.isPlaying && !growled)
             {
+                growl.pitch = pitchValue;
                 growl.volume = volumeValue;
 				growl.Play();
 				growled = true;
@@ -223,6 +229,7 @@ public class BasicAIScript : MonoBehaviour
 
 			if (!growl.isPlaying && !growled)
             {
+                growl.pitch = pitchValue;
                 growl.volume = volumeValue;
                 growl.Play ();
 				growled = true;

@@ -20,6 +20,8 @@ public class SweeperSpecial : MonoBehaviour
 	public float coolDownTimerMax = 5f;
     public float minSpecialVolume = 0.9f;
     public float maxSpecialVolume = 1f;
+    public float minSpecialPitch = 1f;
+    public float maxSpecialPitch = 1.5f;
 	public AudioSource Spin;
 
 	// Creates a public power bar so it can be set in unity
@@ -36,6 +38,7 @@ public class SweeperSpecial : MonoBehaviour
 	private bool coolDown = false;
 	private float coolDownTimer;
     private float volumeValue;
+    private float pitchValue;
 
 	// Allows access to xbox controller buttons
 	private XboxController Controller;
@@ -81,6 +84,8 @@ public class SweeperSpecial : MonoBehaviour
 			powerBarColour.color = powerNotFullColour;
 
         volumeValue = Random.Range(minSpecialVolume, maxSpecialVolume);
+
+        pitchValue = Random.Range(minSpecialPitch, maxSpecialPitch);
     }
 
 	//------------------------------------------------------------
@@ -102,6 +107,7 @@ public class SweeperSpecial : MonoBehaviour
 
 				if (!Spin.isPlaying && !coolDown)
                 {
+                    Spin.pitch = pitchValue;
                     Spin.volume = volumeValue;
 					Spin.Play();
 				}
