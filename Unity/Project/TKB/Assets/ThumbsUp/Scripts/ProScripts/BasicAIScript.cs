@@ -56,7 +56,10 @@ public class BasicAIScript : MonoBehaviour
     
     // Sets the cooldown timer for use in attacking
     public float CoolDownTimer = 2f;
-		
+
+    // Sets the cooldown timer for use in flash
+    public float FlashCoolDownTimer = 2f;
+
     // Initialises CoolDown boolean to be false
     private bool CoolDown = false;
 
@@ -329,7 +332,7 @@ public class BasicAIScript : MonoBehaviour
     }
     public void ResetFlashCoolDown()
     {
-        FlashTime = CoolDownTimer;
+        FlashTime = FlashCoolDownTimer;
         isFlashing = true;
     }
 }
