@@ -190,6 +190,9 @@ public class SweeperSpecial : MonoBehaviour
 		{
 			agent.enabled = true;
 			rb.isKinematic = true;
-		}
+
+            AI.ResetFlashCoolDown();
+            AI.Flash();
+        }
 	}
 }
