@@ -12,8 +12,8 @@ using XboxCtrlrInput;
 // Creates a class for the Striker Special Script 
 public class StrikerSpecial : MonoBehaviour
 {
-	// Sets and initiases public floats so the designers can adjust them
-	public float hitForce = 10f;
+    // Sets and initialises public floats so the designers can adjust them
+    public float hitForce = 10f;
 	public float specialTimer = 0.5f;
 	public float coolDownTimerMax = 5f;
 	public float dist = 25;
@@ -31,18 +31,25 @@ public class StrikerSpecial : MonoBehaviour
 	// Creates a public power bar colour so it can be set in unity
 	public Image powerBarColour;
 
-	// Initialises the colour for when power bar is both full and not full
-	public Color powerFullColour = Color.yellow;
+    // Where the audio for the dash is stored and is adjusted below
+    public AudioSource Dash;
+
+    // Initialises the colour for when power bar is both full and not full
+    public Color powerFullColour = Color.yellow;
 	public Color powerNotFullColour = Color.blue;
 
-	// Sets and initialises private bools
-	private bool strikerSpecial = false;
+    // Accesses the components and variables to adjust from the animator
+    private Animator animator;
+
+    // Sets and initialises private bools
+    private bool strikerSpecial = false;
 	private bool coolDown = false;
 
-	// Sets private floats
+	// Sets private floats for the cool down
 	private float resetTimer;
     private float coolDownTimer;
 
+    // Used to set random values for the volume and pitch
     private float volumeValue;
     private float pitchValue;
 
@@ -53,15 +60,12 @@ public class StrikerSpecial : MonoBehaviour
 	// Allows access to xbox controller buttons
 	private XboxController Controller;
 
-	private Animator animator;
-	public AudioSource Dash;
-
-	//------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
-	void Awake()
+    //--------------------------------------------------------------------------------
+    // Function is called when script first runs
+    //--------------------------------------------------------------------------------
+    void Awake()
 	{
-		// Gets the Player Move component
+		// Gets the Player Move component and the animator
 		PlayerMove move = GetComponent<PlayerMove>();
 		animator = GetComponent<Animator>();
 
@@ -78,10 +82,10 @@ public class StrikerSpecial : MonoBehaviour
 		powerBar.value = coolDownTimerMax;
 	}
 
-	//------------------------------------------------------------
-	// Function is called once every frame
-	//------------------------------------------------------------
-	void Update()
+    //--------------------------------------------------------------------------------
+    // Function is called once every frame
+    //--------------------------------------------------------------------------------
+    void Update()
 	{
 		// Calls Special function every frame
 		Special();
@@ -97,8 +101,10 @@ public class StrikerSpecial : MonoBehaviour
 		else
 			powerBarColour.color = powerNotFullColour;
 
+        // Determines a random volume to make each effect sound slightly different
         volumeValue = Random.Range(minSpecialVolume, maxSpecialVolume);
 
+        // Determines a random pitch to make each effect sound slightly different
         pitchValue = Random.Range(minSpecialPitch, maxSpecialPitch);
     }
 
@@ -115,13 +121,16 @@ public class StrikerSpecial : MonoBehaviour
 
         float leftTrigger = XCI.GetAxis(XboxAxis.LeftTrigger, Controller);
 
-        // Checks if right bumper has been pressed down and the striker is not in cool down mode
+        // Checks if right bumpe, Y button or left trigger has been pressed
         if (leftTrigger > 0.15f || attackButton || yButton)
 		{
+            // Runs code in braces if Striker is not in cool down mode
             if (!coolDown)
             {
+                // Sets the Special bool from the animator to be true
                 animator.SetBool("Special", true);
 
+                // Code below runs if dash sound is not playing and player is not in cooldown
                 if (!Dash.isPlaying && !coolDown)
                 {
                     Dash.pitch = pitchValue;
@@ -146,6 +155,8 @@ public class StrikerSpecial : MonoBehaviour
                 coolDownTimer = 0f;
             }
 		}
+
+        // Otherwise if none of the above buttons is pressed special in animator is false
 		else
 			animator.SetBool("Special", false);
 
