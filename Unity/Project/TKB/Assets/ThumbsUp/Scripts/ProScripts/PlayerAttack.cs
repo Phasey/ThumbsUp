@@ -67,6 +67,8 @@ public class PlayerAttack : MonoBehaviour
 
         // Initialises cool down bool to false on awake
         coolDown = false;
+        //sets the particle effect to false so it doesnt play
+        AxeParticle.SetActive(false);
     }
 
     //--------------------------------------------------------------------------------
@@ -76,6 +78,7 @@ public class PlayerAttack : MonoBehaviour
     {
 		// Calls StrikerAttack function every frame
         Attack();
+        
 
         // Makes the volume a random number between min and max volume floats
         volumeValue = Random.Range(minSwingVolume, maxSwingVolume);
@@ -139,10 +142,12 @@ public class PlayerAttack : MonoBehaviour
                 // Initialises Attack bool to false in animator
                 animator.SetBool("Attack", false);
 
-                // Disallows any weapon particles
-                AxeParticle.SetActive(false);
+                
+               
             }
         }
+        //turns off the particle effect
+        ResetAxe();
     }
 
     //--------------------------------------------------------------------------------
@@ -215,5 +220,15 @@ public class PlayerAttack : MonoBehaviour
             AI.ResetFlashCoolDown();
             AI.Flash();
         }
+    }
+
+    //--------------------------------------------------------------------------------
+    // Function created to turn off the particle effect 
+    //--------------------------------------------------------------------------------
+    private void ResetAxe()
+    {
+        // Disallows any weapon particles
+        AxeParticle.SetActive(false);
+
     }
 }
