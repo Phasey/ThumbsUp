@@ -71,7 +71,6 @@
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\EndLevel.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\Gravityscript.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\HealthScript.cs" />
-     <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\HealthSlider.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\OpenDoor.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PlayerAttack.cs" />
      <Compile Include="Assets\ThumbsUp\Scripts\ProScripts\PlayerDeath.cs" />

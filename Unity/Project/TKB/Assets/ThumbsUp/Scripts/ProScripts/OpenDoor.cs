@@ -10,6 +10,7 @@ public class OpenDoor : MonoBehaviour
 {
     public List<GameObject> triggers;
     public GameObject closedDoor;
+	public Animator animator;
 
 	// Use this for initialization
 	void Awake()
@@ -21,7 +22,11 @@ public class OpenDoor : MonoBehaviour
     {
         bool triggersDown = IsTriggered();
 
-        closedDoor.SetActive(!triggersDown);
+		if (triggersDown) {
+			animator.SetBool ("Open", true);
+			StartCoroutine (Open ());
+		}
+        
     }
 
     private bool IsTriggered()
@@ -34,4 +39,10 @@ public class OpenDoor : MonoBehaviour
 
         return true;
     }
+	IEnumerator Open()
+	{
+		yield return new WaitForSeconds(4f);
+		closedDoor.SetActive(false);
+
+	}
 }
