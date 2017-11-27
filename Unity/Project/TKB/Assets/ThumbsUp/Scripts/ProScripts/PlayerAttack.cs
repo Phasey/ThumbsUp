@@ -152,11 +152,10 @@ public class PlayerAttack : MonoBehaviour
         {
             agent.enabled = true;
             rb.isKinematic = true;
-            if (AI.IsBoss)
-            {
+            
                 AI.ResetFlashCoolDown();
                 AI.Flash();
-            }
+            
         }
     }
 }
