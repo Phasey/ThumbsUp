@@ -99,13 +99,20 @@ public class PlayerMove : MonoBehaviour
     //--------------------------------------------------------------------------------
     private void Footsteps()
 	{
+        // Code in braces runs if players are running and audio isn't playing
 		if (running && !footsteps.isPlaying)
         {
+            // Sets the pitch of footsteps to equal the random pitch value
             footsteps.pitch = pitchValue;
+
+            // Random volume value is applied to the footsteps audio
             footsteps.volume = volumeValue;
+
+            // Plays audio for the footsteps
 			footsteps.Play();
 		}
 
+        // Stops playing audio for footsteps if player isn't running and audio is playing
 		if (!running && footsteps.isPlaying)
 			footsteps.Stop();
 	}
@@ -115,49 +122,69 @@ public class PlayerMove : MonoBehaviour
     //--------------------------------------------------------------------------------
     private void Move()
     {
+        // If statement runs if striker isn't doing special
         if (!strikerDoingSpecial)
         {
             // Both floats get direction of the Xbox controller's left stick
             float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
+            // Checks if left control stick is not in the centre
 			if (axisX != 0 || axisZ != 0)
             {
+                // Sets speed bool in animator to be true
 				animator.SetBool("Speed", true);
+
+                // Running bool is set to true
 				running = true;
 			}
 
+            // Otherwise runs code below if the left control stick is in the centre
 			else
             {
+                // Speed bool from animator is reset to false
                 animator.SetBool("Speed", false);
-				running=false;
+
+                // Running bool is set back to false
+				running = false;
 			}
 
             // Creates a "new" Vector3 to allow movement
             Vector3 movement = new Vector3(axisX, 0, axisZ) * movementSpeed;
 
+            // Applies movement physics to the player's Rigidbody
             rigidBody.MovePosition(rigidBody.position + movement * Time.deltaTime);
 
             // Sets the Striker's velocity to be zero
             rigidBody.velocity = Vector3.zero;
             
+            // Sets axisX to equal previous Rotation's X value if axisX is zero
             if (axisX == 0f)
                 axisX = prevRotateX;
+
+            // Otherwise the previous Rotation X records the axisX
             else
                 prevRotateX = axisX;
 
+            // Sets axisZ to equal previous Rotation's Z value if axisZ is zero
             if (axisZ == 0f)
                 axisZ = prevRotateZ;
+
+            // Otherwise the previous Rotation Z records the axisZ
             else
                 prevRotateZ = axisZ;
 
+            // Runs code in braces if the left control stick is not in the centre
             if (axisX != 0 || axisZ != 0)
             {
+                // Creates a "new" direction Vector3 of the left control sticks direction
                 Vector3 directionVector = new Vector3(axisX, 0, axisZ);
 
+                // Makes the player look in direction of the directionVector
                 transform.rotation = Quaternion.LookRotation(directionVector);
             }
 
+            // Angular velocity of player is set to be a zero Vector
             rigidBody.angularVelocity = Vector3.zero;
         }
     }
