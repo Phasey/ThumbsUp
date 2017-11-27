@@ -1717,7 +1717,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953977781930488}
   m_LocalRotation: {x: -0, y: 0.70710874, z: -0, w: -0.7071049}
-  m_LocalPosition: {x: 1.03, y: -0.0050423145, z: 3.06}
+  m_LocalPosition: {x: -0.602, y: -0.0050423145, z: 3.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4304519887035700}
@@ -1947,7 +1947,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511703891401280}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1979,7 +1979,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1147390158486472}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2011,7 +2011,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773179113288724}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2213,17 +2213,25 @@ MonoBehaviour:
   vision: 10
   enemyHealth: 1
   enemyDamage: 5
+  minAttackVolume: 0.9
+  maxAttackVolume: 1
+  minAttackPitch: 1
+  maxAttackPitch: 1.5
   animator: {fileID: 95702098589410606}
   boneParticle: {fileID: 1643394147562364}
   attacking: 0
+  rend: {fileID: 0}
+  FlashColour: {r: 0, g: 0, b: 0, a: 0}
   enemy: {fileID: 1953977781930488}
   Points: []
   CoolDownTimer: 2
+  FlashCoolDownTimer: 2
   dead: 0
   deadTime: 2
   CircleRange: 3
   growl: {fileID: 82229730147657374}
   growled: 0
+  IsBoss: 0
 --- !u!137 &137271353171612568
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2231,7 +2239,7 @@ SkinnedMeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1612980697108642}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1

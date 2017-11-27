@@ -22,7 +22,7 @@ public class OpenDoor : MonoBehaviour
 
 	public GameObject door;
 
-	private bool doorGone = false;
+	public bool doorDone = false;
 
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
@@ -40,14 +40,15 @@ public class OpenDoor : MonoBehaviour
         // Checks if local bool is true before running code in braces
 		if (triggersDown)
         {
-			if (!doorGone) {
+			if (!doorDone) {
 				// Sets Open bool in animator to be true
 				animator.SetBool ("Open", true);
-				bool doorGone = true;
+				doorDone = true;
+                AudioSource.PlayClipAtPoint(doorOpen, new Vector3(3, 2, 3));
 			}
 
             // Sets the Open Door to be true
-			AudioSource.PlayClipAtPoint(doorOpen, new Vector3(3, 2, 3));
+			
 
             // Yields a result from Open function at the same time as Open
             StartCoroutine(Open());
