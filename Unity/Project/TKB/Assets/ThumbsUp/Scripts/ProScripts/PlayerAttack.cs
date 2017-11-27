@@ -67,8 +67,7 @@ public class PlayerAttack : MonoBehaviour
 
         // Initialises cool down bool to false on awake
         coolDown = false;
-        //sets the particle effect to false so it doesnt play
-        AxeParticle.SetActive(false);
+        
     }
 
     //--------------------------------------------------------------------------------
