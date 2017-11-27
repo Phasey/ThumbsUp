@@ -1420,13 +1420,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1407532936923810}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.13853721, y: -0.00084806426, z: 0.06638144}
+  m_LocalRotation: {x: -0.05760385, y: 0.05760389, z: 0.7047566, w: 0.70475656}
+  m_LocalPosition: {x: -0.13854276, y: -0.0008476878, z: 0.06637875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4834077449929588}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.345, y: 0, z: 90.00001}
 --- !u!4 &4442601223401626
 Transform:
   m_ObjectHideFlags: 1
@@ -1631,7 +1631,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665568771385450}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 39.38, y: 0.01, z: -6.78}
+  m_LocalPosition: {x: 41.38, y: 0.01, z: -3.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4749865925714130}
@@ -2054,6 +2054,10 @@ MonoBehaviour:
   vision: 10
   enemyHealth: 1000
   enemyDamage: 20
+  minAttackVolume: 0.9
+  maxAttackVolume: 1
+  minAttackPitch: 1
+  maxAttackPitch: 1.5
   animator: {fileID: 95698990008198054}
   boneParticle: {fileID: 1996595626642814, guid: 740f33c3303c7eb499349e9cf116909d,
     type: 2}
@@ -2062,9 +2066,10 @@ MonoBehaviour:
   FlashColour: {r: 0.52205884, g: 0.13051471, b: 0.13051471, a: 0}
   enemy: {fileID: 1665568771385450}
   Points: []
-  CoolDownTimer: 0.8
+  CoolDownTimer: 2
+  FlashCoolDownTimer: 0.8
   dead: 0
-  deadTime: 2
+  deadTime: 0.8
   CircleRange: 3
   growl: {fileID: 0}
   growled: 0
@@ -2082,7 +2087,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9aea5f5a7d6255b4aa779b0c7f874246, type: 2}
+  - {fileID: 2100000, guid: 19d84bf791c71044491c46fd5faa357d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
