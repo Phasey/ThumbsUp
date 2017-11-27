@@ -41,27 +41,32 @@ public class HealthScript : MonoBehaviour
 
 	// Used to allow Rigidbody's to be put on player's
 	public Rigidbody body;
+
+    // Used to place a "!" above a dead player
     public GameObject helpMe;
 
+    // Bool is used to specify if a player is using their special or not
     public bool inSpecial;
 
-   
-
-    //------------------------------------------------------------
+    //-----------------------------------------------------------------------------
     // Function is called when script first runs
-    //------------------------------------------------------------
+    //-----------------------------------------------------------------------------
     void Awake()
     {
 		// Sets current health to equal the max health upon startup
         currentHealth = maxHealth;
+
+        // Assigns the max health to the health bar
         healthBar.maxValue = maxHealth;
+
+        // Yields a result from Damage function at the same time as Damage
         StartCoroutine(Damage());
     }
-	
-	//------------------------------------------------------------
-	// Function is called once every frame
-	//------------------------------------------------------------
-	void Update()
+
+    //-----------------------------------------------------------------------------
+    // Function is called once every frame
+    //-----------------------------------------------------------------------------
+    void Update()
     {
         // Calls the flash function every frame
         Flash();
@@ -70,22 +75,30 @@ public class HealthScript : MonoBehaviour
         healthBar.value = currentHealth;
     }
 
-	//------------------------------------------------------------
-	// Function allows players to take damage
-	//
-	// Param:
-	// 		damage: Refers to how much damage the players take
-	//------------------------------------------------------------
+    //-----------------------------------------------------------------------------
+    // Function allows players to take damage
+    //
+    // Param:
+    // 		damage: Refers to how much damage the players take
+    //-----------------------------------------------------------------------------
     public void TakeDamage(float damage)
     {
+        // Code below runs if not in Cool Down and Special not in use
         if (!CoolDown && !inSpecial)
         {
             // Deducts health by the amount of damage taken
             currentHealth -= damage;
+
+            // Sets damage bool in animator to be true
             animator.SetBool("Damage", true);
+
+            // Yields a result from Damage function at the same time as Damage
             StartCoroutine(Damage());
+
+            // Calls Reset Cool Down function to reset variables
             ResetCoolDown();
             
+            // Calls Flash function to execute flashing on enemies
             Flash();
         } 
 
@@ -94,17 +107,21 @@ public class HealthScript : MonoBehaviour
             Death();
     }
 
-	//------------------------------------------------------------
-	// Function limits actions for player when called
-	//------------------------------------------------------------
+    //-----------------------------------------------------------------------------
+    // Function limits actions for player when called
+    //-----------------------------------------------------------------------------
     private void Death()
     {
         // Dead bool is set to true
         dead = true;
+
+        // Animator Dead bool is set to true
 		animator.SetBool("Dead", true);
 
+        // Freezes all body constraints on dead player
 		body.constraints = RigidbodyConstraints.FreezeAll;
 
+        // Adds the "!" above the dead player
         helpMe.SetActive(true);
 
         // Gets Sweeper and Striker's Special components
@@ -113,7 +130,6 @@ public class HealthScript : MonoBehaviour
 
         // Gets Player Move and Player Attack components
         PlayerMove PlayMove = GetComponent<PlayerMove>();
-
         PlayerAttack playAttack = GetComponent<PlayerAttack>();
 
         // If there is a Striker Special then disable the component
@@ -133,26 +149,25 @@ public class HealthScript : MonoBehaviour
             playAttack.enabled = false;
     }
 
-	//------------------------------------------------------------
-	// Function allows player to flash red when on low health
-	//------------------------------------------------------------
+    //-----------------------------------------------------------------------------
+    // Function allows player to flash red when on low health
+    //-----------------------------------------------------------------------------
     private void Flash()
     {
         // Ignores following code if the flash time is less than zero
         if (!isFlashing)
             return;
 
-		if(!CoolDown)
+        // Code in braces runs if cool down is not active
+		if (!CoolDown)
         {
-            // Gets renderer component and stores it into rend
-            //rend = GetComponent<Renderer>();
-
+            // Sets a Shader Keyword to change the colour
             rend.material.EnableKeyword("_EMISSION");
-            // Sets the rend colour to be whatever the FlashColour is set to
+            
+            // Sets the colour to be the Flash Colour
             rend.material.SetColor("_EmissionColor", FlashColour);
 
-            //animator.SetBool("Damage", true);
-
+            // Sets Cool Down variable to be true
             CoolDown = true;
         }
 
@@ -165,26 +180,28 @@ public class HealthScript : MonoBehaviour
             // Checks if AttackTime gets to exactly 1
             if (FlashTime <= 0)
             {
-               // rend = GetComponent<Renderer>();
-
-                // Sets the rend colour to be whatever the FlashColour is set to
+                // Disables a Shader Keyword so it can be reused again
                 rend.material.DisableKeyword("_EMISSION");
-               //animator.SetBool("Damage", false);
+
+                // Sets Cool Down and isFlashing to be false
                 CoolDown = false;
                 isFlashing = false;
             }
         }
     }
 
-    //------------------------------------------------------------
-    // Function sets ActiveTime to equal CoolDownTimer float
-    //------------------------------------------------------------
+    //-----------------------------------------------------------------------------
+    // Function waits 0.5 seconds until it sets damage bool to false.
+    //-----------------------------------------------------------------------------
     IEnumerator Damage()
     {
         yield return new WaitForSeconds(.5f);
         animator.SetBool("Damage", false);
     }
 
+    //-----------------------------------------------------------------------------
+    // Function resets Flash Time and isFlashing variables.
+    //-----------------------------------------------------------------------------
     private void ResetCoolDown()
     {
         FlashTime = CoolDownTimer;

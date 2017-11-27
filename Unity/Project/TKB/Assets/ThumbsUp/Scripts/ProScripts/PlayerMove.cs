@@ -17,6 +17,21 @@ public class PlayerMove : MonoBehaviour
     public float minStepsPitch = 1f;
     public float maxStepsPitch = 1.5f;
 
+    // Indicates if striker is performing special and sets to false at awake
+    public bool strikerDoingSpecial = false;
+
+    // Bool determines if players are running or not
+    public bool running;
+
+    // Used to access the animator and its variables
+    public Animator animator;
+
+    // AudioSource used for the players footsteps when they move
+    public AudioSource footsteps;
+
+    // Represents the pause menu canvas that will be edited
+    public GameObject pauseMenu;
+
     // Used to get the Striker's Rigidbody
     private Rigidbody rigidBody;
 
@@ -27,23 +42,19 @@ public class PlayerMove : MonoBehaviour
 	private float prevRotateX;
 	private float prevRotateZ;
 
+    // Floats used to adjust pitch and volume by a random number every frame
     private float volumeValue;
     private float pitchValue;
 
-    public bool strikerDoingSpecial = false;
+    // Used to determine the player's picked up object and sets to null on awake
     private GameObject currentPickUp = null;
 
-    public Animator animator;
-	public bool running;
-	public AudioSource footsteps;
-
-    public GameObject pauseMenu;
-
+    // Variables used to access componments of the Pause Menu script
     private PauseMenu pauseScript;
 
-    //------------------------------------------------------------
-    // Function is called when script first runs
-    //------------------------------------------------------------
+    //--------------------------------------------------------------------------------
+    // Function is called when script first runs.
+    //--------------------------------------------------------------------------------
     void Awake()
     {
 		// Gets the Striker's Rigidbody and stores it in variable
@@ -54,30 +65,39 @@ public class PlayerMove : MonoBehaviour
 		prevRotateZ = 0f;
     }
 
-	//------------------------------------------------------------
-	// Function is called once every frame
-	//------------------------------------------------------------
+    //--------------------------------------------------------------------------------
+    // Function is called once every frame.
+    //--------------------------------------------------------------------------------
     void Update()
     {
+        // If statement runs if game is not paused
         if (!pauseMenu.GetComponent<PauseMenu>().paused)
         {
+            // Calls all functions from the script but Awake
             Move();
             Rotate();
             PickUpBox();
             Footsteps();
         }
 
+        // Bool checks if start button has been pressed
         bool start = XCI.GetButtonDown(XboxButton.Start, Controller);
 
+        // Runs code in StartBtn function from Pause Script if start is pressed
         if (start)
             pauseMenu.GetComponent<PauseMenu>().StartBtn();
 
+        // Determines a random value for the volume of footsteps
         volumeValue = Random.Range(minStepsVolume, maxStepsVolume);
 
+        // Pitch of footsteps randomised and stored in pitch float
         pitchValue = Random.Range(minStepsPitch, maxStepsPitch);
     }
 
-	private void Footsteps()
+    //--------------------------------------------------------------------------------
+    // Function checks when to play audio footsteps and when to stop it.
+    //--------------------------------------------------------------------------------
+    private void Footsteps()
 	{
 		if (running && !footsteps.isPlaying)
         {
@@ -87,14 +107,12 @@ public class PlayerMove : MonoBehaviour
 		}
 
 		if (!running && footsteps.isPlaying)
-        {
 			footsteps.Stop();
-		}
 	}
 
-	//------------------------------------------------------------
-	// Function allows for the Striker to move
-	//------------------------------------------------------------
+    //--------------------------------------------------------------------------------
+    // Function allows for the Striker to move
+    //--------------------------------------------------------------------------------
     private void Move()
     {
         if (!strikerDoingSpecial)
@@ -161,8 +179,8 @@ public class PlayerMove : MonoBehaviour
                 // If so, set the rotation x to be the previous frame's rotation x
                 rotateAxisX = prevRotateX;
 
+            // Otherwise store current rotate x into the previous frame rotate x
             else
-                // Otherwise store current rotate x into the previous frame rotate x
                 prevRotateX = rotateAxisX;
 
             // Checks if the right stick is at default position on the y axis
@@ -170,8 +188,8 @@ public class PlayerMove : MonoBehaviour
                 // If so, set the rotation z to be the previous frame's rotation z
                 rotateAxisZ = prevRotateZ;
 
+            // Otherwise store current rotate z into the previous frame rotate z
             else
-                // Otherwise store current rotate z into the previous frame rotate z
                 prevRotateZ = rotateAxisZ;
 
             // Checks if either rotate x isn't zero or rotate z isn't zero
@@ -196,7 +214,6 @@ public class PlayerMove : MonoBehaviour
     {
         // Bool gets if the A button on an Xbox controller is pushed down
         bool aButton = XCI.GetButtonDown(XboxButton.A, Controller);
-
 
         // Checks if the A button has been pressed down
         if (aButton)
