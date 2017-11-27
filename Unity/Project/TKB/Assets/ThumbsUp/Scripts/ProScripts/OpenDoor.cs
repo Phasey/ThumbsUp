@@ -11,10 +11,12 @@ public class OpenDoor : MonoBehaviour
     public List<GameObject> triggers;
     public GameObject closedDoor;
 	public Animator animator;
+	public GameObject doorOpen;
 
 	// Use this for initialization
 	void Awake()
     {
+		
     }
 	
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class OpenDoor : MonoBehaviour
 
 		if (triggersDown) {
 			animator.SetBool ("Open", true);
+			doorOpen.SetActive (true);
 			StartCoroutine (Open ());
 		}
         
