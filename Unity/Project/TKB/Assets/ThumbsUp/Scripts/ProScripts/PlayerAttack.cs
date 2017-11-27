@@ -159,6 +159,7 @@ public class PlayerAttack : MonoBehaviour
         {
             // If so, set the dead bool in AI script to be true for enemy 
             AI.dead = true;
+            rb.detectCollisions = false;
         }
 
         else
