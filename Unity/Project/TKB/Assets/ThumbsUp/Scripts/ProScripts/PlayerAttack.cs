@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject BoneParticle;
 
     // Adds particles to the weapons when attacking
-    public GameObject AxeParticle;
+    public ParticleSystem AxeParticle;
 
     // Accesses the animator to adjust its variables
     public Animator animator;
@@ -113,7 +113,7 @@ public class PlayerAttack : MonoBehaviour
                 animator.SetBool("Attack", true);
 
                 // Axe Particles are set to active
-                AxeParticle.SetActive(true);
+                AxeParticle.Play();
                 
                 // Code runs if swing audio is not playing
                 if (!Swing.isPlaying)
@@ -227,7 +227,7 @@ public class PlayerAttack : MonoBehaviour
     private void ResetAxe()
     {
         // Disallows any weapon particles
-        AxeParticle.SetActive(false);
+        AxeParticle.Stop();
 
     }
 }
