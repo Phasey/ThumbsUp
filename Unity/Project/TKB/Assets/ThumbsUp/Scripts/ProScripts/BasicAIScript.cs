@@ -214,28 +214,31 @@ public class BasicAIScript : MonoBehaviour
             GetComponent<NavMeshAgent>().destination = players[0].transform.position;
 			animator.SetBool ("Speed", true);
 
-			if (!growl.isPlaying && !growled)
-            {
-                growl.pitch = pitchValue;
-                growl.volume = volumeValue;
-				growl.Play();
-				growled = true;
+			//if the enemy has an audio source on them then play the sound
+			if (enemy.GetComponent<AudioSource> () != null) {
+				if (!growl.isPlaying && !growled) {
+					growl.pitch = pitchValue;
+					growl.volume = volumeValue;
+					growl.Play ();
+					growled = true;
+				}
 			}
         }
-
+		
 		// Checks if distance to Player 2 is less than the Agent's vision
         else if (Dist2 < vision)
         {
 			// If so, make the NavMeshAgent seek Player 2
             GetComponent<NavMeshAgent>().destination = players[1].transform.position;
 			animator.SetBool ("Speed", true);
-
-			if (!growl.isPlaying && !growled)
-            {
-                growl.pitch = pitchValue;
-                growl.volume = volumeValue;
-                growl.Play ();
-				growled = true;
+			//if the enemy has an audio source on them then play the sound
+			if (enemy.GetComponent<AudioSource> () != null) {
+				if (!growl.isPlaying && !growled) {
+					growl.pitch = pitchValue;
+					growl.volume = volumeValue;
+					growl.Play ();
+					growled = true;
+				}
 			}
 
         }

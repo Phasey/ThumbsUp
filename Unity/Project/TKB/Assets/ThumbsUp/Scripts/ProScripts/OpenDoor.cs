@@ -15,10 +15,14 @@ public class OpenDoor : MonoBehaviour
     public GameObject closedDoor;
 	
     // GameObject used for the Open Door prefab
-	public GameObject doorOpen;
+	public AudioClip doorOpen;
 
     // Initialized to access the Animator
     public Animator animator;
+
+	public GameObject door;
+
+	private bool doorGone = false;
 
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
@@ -36,11 +40,14 @@ public class OpenDoor : MonoBehaviour
         // Checks if local bool is true before running code in braces
 		if (triggersDown)
         {
-            // Sets Open bool in animator to be true
-			animator.SetBool("Open", true);
+			if (!doorGone) {
+				// Sets Open bool in animator to be true
+				animator.SetBool ("Open", true);
+				bool doorGone = true;
+			}
 
             // Sets the Open Door to be true
-			doorOpen.SetActive(true);
+			AudioSource.PlayClipAtPoint(doorOpen, new Vector3(3, 2, 3));
 
             // Yields a result from Open function at the same time as Open
             StartCoroutine(Open());
@@ -74,5 +81,6 @@ public class OpenDoor : MonoBehaviour
 	{
 		yield return new WaitForSeconds(4f);
 		closedDoor.SetActive(false);
+		animator.enabled = false;
 	}
 }
