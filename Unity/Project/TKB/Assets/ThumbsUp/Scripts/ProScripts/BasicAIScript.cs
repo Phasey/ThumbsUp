@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //---------------------------------------------------------------
-//Author: Liam Knights
+// Author: Liam Knights
 //---------------------------------------------------------------
 
 // Creates a class for the Basic AI Script 
@@ -15,6 +15,8 @@ public class BasicAIScript : MonoBehaviour
     public float vision = 10f;
     public float enemyHealth = 1f;
     public float enemyDamage = 5f;
+    public float minAttackVolume = 0.9f;
+    public float maxAttackVolume = 1f;
 	public Animator animator;
 	public GameObject boneParticle;
 	public bool attacking;
@@ -27,6 +29,8 @@ public class BasicAIScript : MonoBehaviour
     // Sets AttackTime variable to be private
     private float FlashTime = 0.0f;
 
+    private float volumeValue;
+
     private bool FlashCoolDown = false;
 
     // Gets access to a RigidBody
@@ -37,9 +41,6 @@ public class BasicAIScript : MonoBehaviour
 
     // Accesses the AI as a game object
     public GameObject enemy;
-
-    //public GameObject sweeperObject;
-    //public GameObject strikerObject;
 
     // Gets the transform of points on the navmesh
     public Transform[] Points;
@@ -89,10 +90,6 @@ public class BasicAIScript : MonoBehaviour
             // Gets a NavMeshAgent component and stores it into Agent
             Agent = GetComponent<NavMeshAgent>();
 
-
-
-
-
             // Does not allow Agent to automatically brake
             Agent.autoBraking = false;
         }
@@ -134,6 +131,7 @@ public class BasicAIScript : MonoBehaviour
                 Destroy(enemy);
             }
         }
+
 		if (CoolDown)
 		{
 			// If so, it decreases AttackTime by real time is seconds
@@ -152,6 +150,8 @@ public class BasicAIScript : MonoBehaviour
 		}
 
         Flash();
+
+        volumeValue = Random.Range(minAttackVolume, maxAttackVolume);
     }
 
     //------------------------------------------------------------
@@ -166,8 +166,6 @@ public class BasicAIScript : MonoBehaviour
             if (Points.Length != 0)
             {
                 Vector3 destpos = Points[Dest].position;
-
-
 
                 int angle = Random.Range(0, 360);
                 // Agents destination refers to indexed point in points array
@@ -184,8 +182,6 @@ public class BasicAIScript : MonoBehaviour
                 {
                     // Dest equals the Dest + 1 then the modulus of length in points 
                     Dest = (Dest + 1) % Points.Length;
-
-
                     return;
                 }
             }
@@ -209,12 +205,13 @@ public class BasicAIScript : MonoBehaviour
 			// If so, make the NavMeshAgent seek Player 1
             GetComponent<NavMeshAgent>().destination = players[0].transform.position;
 			animator.SetBool ("Speed", true);
-			if (!growl.isPlaying && !growled) {
-				growl.Play ();
+
+			if (!growl.isPlaying && !growled)
+            {
+                growl.volume = volumeValue;
+				growl.Play();
 				growled = true;
 			}
-
-
         }
 
 		// Checks if distance to Player 2 is less than the Agent's vision
@@ -223,8 +220,11 @@ public class BasicAIScript : MonoBehaviour
 			// If so, make the NavMeshAgent seek Player 2
             GetComponent<NavMeshAgent>().destination = players[1].transform.position;
 			animator.SetBool ("Speed", true);
-			if (!growl.isPlaying && !growled) {
-				growl.Play ();
+
+			if (!growl.isPlaying && !growled)
+            {
+                growl.volume = volumeValue;
+                growl.Play ();
 				growled = true;
 			}
 
@@ -290,11 +290,9 @@ public class BasicAIScript : MonoBehaviour
 
         if (!FlashCoolDown)
         {
-            // Gets renderer component and stores it into rend
-            //rend = GetComponent<Renderer>();
-
             //ensables the emission for the renderer
             rend.material.EnableKeyword("_EMISSION");
+
             // Sets the rend colour to be whatever the FlashColour is set to
             rend.material.SetColor("_EmissionColor", FlashColour);
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using XboxCtrlrInput;
 
 //---------------------------------------------------------------
-//Author: Liam Knights. Edited by: Matthew Le Nepveu.
+// Author: Liam Knights. Edited by: Matthew Le Nepveu.
 //---------------------------------------------------------------
 
 
@@ -18,6 +18,8 @@ public class SweeperSpecial : MonoBehaviour
 	public float radius = 5f;
 	public float damage = 5f;
 	public float coolDownTimerMax = 5f;
+    public float minSpecialVolume = 0.9f;
+    public float maxSpecialVolume = 1f;
 	public AudioSource Spin;
 
 	// Creates a public power bar so it can be set in unity
@@ -33,6 +35,7 @@ public class SweeperSpecial : MonoBehaviour
 	// Sets both a private bool to be false and a private float
 	private bool coolDown = false;
 	private float coolDownTimer;
+    private float volumeValue;
 
 	// Allows access to xbox controller buttons
 	private XboxController Controller;
@@ -76,7 +79,9 @@ public class SweeperSpecial : MonoBehaviour
 		// Else, make the powerbar's colour equal the not full colour
 		else
 			powerBarColour.color = powerNotFullColour;
-	}
+
+        volumeValue = Random.Range(minSpecialVolume, maxSpecialVolume);
+    }
 
 	//------------------------------------------------------------
 	// Function allows Striker to use his regular attack
@@ -97,6 +102,7 @@ public class SweeperSpecial : MonoBehaviour
 
 				if (!Spin.isPlaying && !coolDown)
                 {
+                    Spin.volume = volumeValue;
 					Spin.Play();
 				}
 

@@ -17,11 +17,12 @@ public class PlayerAttack : MonoBehaviour
     public float damage = 50;
     public float attackTime = 0f;
     public float particleTimer = 5f;
+    public float minSwingVolume = 0.9f;
+    public float maxSwingVolume = 1f;
 	public AudioSource Swing;
-    //public float animationSpeed = 1.5f;
     private bool wasTriggerDown = false;
 
-    private float timer = 0f;
+    private float volumeValue;
     public bool coolDown;
 	public bool soundPlayed;
     // Allows access to xbox controller buttons
@@ -51,6 +52,9 @@ public class PlayerAttack : MonoBehaviour
     {
 		// Calls StrikerAttack function every frame
         Attack();
+
+        // Makes the volume a random number between min and max volume floats
+        volumeValue = Random.Range(minSwingVolume, maxSwingVolume);
     }
 
 	//------------------------------------------------------------
@@ -61,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
 		// Gets the Right Trigger button from Xbox controller
         float attackButton = XCI.GetAxis(XboxAxis.RightTrigger, Controller);
         bool xButton = XCI.GetButtonDown(XboxButton.X, Controller);
-        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");// && !animator.IsInTransition(0);
+        bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
 
         // Checks if trigger is down a little bit
         if ((attackButton > 0.15f && !wasTriggerDown) || xButton)
@@ -73,14 +77,14 @@ public class PlayerAttack : MonoBehaviour
                 animator.SetBool("Attack", true);
                 AxeParticle.SetActive(true);
                 
-                if (!Swing.isPlaying && !coolDown)
+                if (!Swing.isPlaying)
                 {
+                    Swing.volume = volumeValue;
                     Swing.Play();
                 }
-
-                //coolDown = true;
             }
         }
+
         else
         {
             if (attackButton < 0.15f)
@@ -92,18 +96,6 @@ public class PlayerAttack : MonoBehaviour
                 AxeParticle.SetActive(false);
             }
         }
-
-        //if (coolDown)
-        //{
-        //    timer += Time.deltaTime;
-
-        //    if (timer >= coolDownMaxTime)
-        //    {
-        //        coolDown = false;
-
-        //        timer = 0f;
-        //    }
-        //}
     }
 
     void OnTriggerStay(Collider other)
@@ -147,12 +139,6 @@ public class PlayerAttack : MonoBehaviour
 
         // Decreases the enemies health by how much damage was dealt
         AI.enemyHealth -= damage;
-
-        //if(AI.IsBoss)
-        //{
-        //    AI.ResetFlashCoolDown();
-        //    AI.Flash();
-        //}
 
         // Checks if enemies health is equal to or goes below zero
         if (AI.enemyHealth <= 0)

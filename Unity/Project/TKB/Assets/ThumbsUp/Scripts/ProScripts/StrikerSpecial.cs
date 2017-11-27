@@ -20,6 +20,8 @@ public class StrikerSpecial : MonoBehaviour
 	public float width = 5;
 	public float upForce = 0.5f;
 	public float speedIncrease = 30;
+    public float minSpecialVolume = 0.9f;
+    public float maxSpecialVolume = 1f;
 
 	// Creates a public power bar so it can be set in unity
 	public Slider powerBar;
@@ -37,7 +39,9 @@ public class StrikerSpecial : MonoBehaviour
 
 	// Sets private floats
 	private float resetTimer;
-	private float coolDownTimer;
+    private float coolDownTimer;
+
+    private float volumeValue;
 
 	// Sets two Vector3s to determine striker's position at start and end of special
 	private Vector3 startPos;
@@ -89,7 +93,9 @@ public class StrikerSpecial : MonoBehaviour
 		// Else, make the power bar's colour equal the not full colour
 		else
 			powerBarColour.color = powerNotFullColour;
-	}
+
+        volumeValue = Random.Range(minSpecialVolume, maxSpecialVolume);
+    }
 
     //--------------------------------------------------------------------------------
     // Function allows Striker to use his regular attack
@@ -110,8 +116,10 @@ public class StrikerSpecial : MonoBehaviour
             if (!coolDown)
             {
                 animator.SetBool("Special", true);
+
                 if (!Dash.isPlaying && !coolDown)
                 {
+                    Dash.volume = volumeValue;
                     Dash.Play();
                 }
 

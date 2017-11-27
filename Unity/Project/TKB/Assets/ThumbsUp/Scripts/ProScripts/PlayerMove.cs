@@ -12,8 +12,10 @@ public class PlayerMove : MonoBehaviour
 	// Initialises public floats so Designers can adjust
 	public float movementSpeed = 10f;
 	public float maxSpeed = 10f;
+    public float minStepsVolume = 0.9f;
+    public float maxStepsVolume = 1f;
 
-	// Used to get the Striker's Rigidbody
+    // Used to get the Striker's Rigidbody
     private Rigidbody rigidBody;
 
 	// Allows access to xbox controller buttons
@@ -22,6 +24,8 @@ public class PlayerMove : MonoBehaviour
 	// Creates two private floats that record the previous x and z rotation
 	private float prevRotateX;
 	private float prevRotateZ;
+
+    private float volumeValue;
 
     public bool strikerDoingSpecial = false;
     private GameObject currentPickUp = null;
@@ -47,11 +51,6 @@ public class PlayerMove : MonoBehaviour
 		prevRotateZ = 0f;
     }
 
-    //void Start()
-    //{
-    //    pauseScript = pauseMenu.GetComponent<PauseMenu>();
-    //}
-
 	//------------------------------------------------------------
 	// Function is called once every frame
 	//------------------------------------------------------------
@@ -69,14 +68,20 @@ public class PlayerMove : MonoBehaviour
 
         if (start)
             pauseMenu.GetComponent<PauseMenu>().StartBtn();
+
+        volumeValue = Random.Range(minStepsVolume, maxStepsVolume);
     }
 
 	private void Footsteps()
 	{
-		if (running && !footsteps.isPlaying){
-			footsteps.Play ();
+		if (running && !footsteps.isPlaying)
+        {
+            footsteps.volume = volumeValue;
+			footsteps.Play();
 		}
-		if (!running && footsteps.isPlaying){
+
+		if (!running && footsteps.isPlaying)
+        {
 			footsteps.Stop();
 		}
 	}
@@ -92,11 +97,14 @@ public class PlayerMove : MonoBehaviour
             float axisX = XCI.GetAxisRaw(XboxAxis.LeftStickX, Controller);
             float axisZ = XCI.GetAxisRaw(XboxAxis.LeftStickY, Controller);
 
-			if (axisX != 0 || axisZ != 0) {
-				animator.SetBool ("Speed", true);
+			if (axisX != 0 || axisZ != 0)
+            {
+				animator.SetBool("Speed", true);
 				running = true;
 			}
-			else{
+
+			else
+            {
                 animator.SetBool("Speed", false);
 				running=false;
 			}
