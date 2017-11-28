@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
-
-//--------------------------------------------------------------------------------
-// Author: Matthew Le Nepveu.
-//--------------------------------------------------------------------------------
 
 public class PlayerMove : MonoBehaviour 
 {

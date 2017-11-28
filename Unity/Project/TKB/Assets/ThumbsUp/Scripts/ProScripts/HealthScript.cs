@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu. Edited by: Liam Knights.
+//-----------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-//-----------------------------------------------------------------------------
-// Author: Matthew Le Nepveu. Edited by: Liam Knights.
-//-----------------------------------------------------------------------------
 
 // Creates a class for the Health Script
 public class HealthScript : MonoBehaviour

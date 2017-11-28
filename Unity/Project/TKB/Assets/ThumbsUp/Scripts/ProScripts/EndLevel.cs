@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//-----------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-//-----------------------------------------------------------------------------
-// Author: Matthew Le Nepveu.
-//-----------------------------------------------------------------------------
 
 // Creates a class for the End Level Script 
 public class EndLevel : MonoBehaviour

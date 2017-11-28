@@ -7,8 +7,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-
 // Creates a class for the Basic AI Script 
 public class BasicAIScript : MonoBehaviour
 {

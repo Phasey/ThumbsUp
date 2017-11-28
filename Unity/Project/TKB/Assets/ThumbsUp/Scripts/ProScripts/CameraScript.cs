@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-//--------------------------------------------------------------------------------
+﻿//--------------------------------------------------------------------------------
 // Author: Matthew Le Nepveu.
 //--------------------------------------------------------------------------------
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 // Creates a class for the Camera Script 
 public class CameraScript : MonoBehaviour

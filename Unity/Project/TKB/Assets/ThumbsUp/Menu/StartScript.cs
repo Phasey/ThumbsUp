@@ -1,14 +1,14 @@
-﻿using System.Collections;
+﻿//-----------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//-----------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XboxCtrlrInput;
 using UnityEngine.EventSystems;
-
-//-----------------------------------------------------------------------------
-// Author: Matthew Le Nepveu.
-//-----------------------------------------------------------------------------
 
 public class StartScript : MonoBehaviour
 {

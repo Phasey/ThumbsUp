@@ -1,13 +1,13 @@
-﻿using System.Collections;
+﻿//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using XboxCtrlrInput;
-
-//--------------------------------------------------------------------------------
-// Author: Matthew Le Nepveu.
-//--------------------------------------------------------------------------------
 
 // Creates a class for the Striker Special Script 
 public class StrikerSpecial : MonoBehaviour

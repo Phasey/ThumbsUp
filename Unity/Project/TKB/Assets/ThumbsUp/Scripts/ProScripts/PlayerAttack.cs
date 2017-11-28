@@ -1,12 +1,12 @@
-﻿using System.Collections;
+﻿//--------------------------------------------------------------------------------
+// Author: Matthew Le Nepveu.
+//--------------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using XboxCtrlrInput;
-
-//--------------------------------------------------------------------------------
-// Author: Matthew Le Nepveu.
-//--------------------------------------------------------------------------------
 
 // Creates a class for the Player Attack Script 
 public class PlayerAttack : MonoBehaviour
