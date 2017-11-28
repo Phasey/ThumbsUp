@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject BoneParticle;
 
     // Adds particles to the weapons when attacking
-    public ParticleSystem AxeParticle;
+    public GameObject AxeParticle;
 
     // Accesses the animator to adjust its variables
     public Animator animator;
@@ -50,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
 
     // Bool used to check if a sound has been player or not
 	public bool soundPlayed;
+
 
     // Allows access to xbox controller buttons
     private XboxController Controller;
@@ -112,9 +113,8 @@ public class PlayerAttack : MonoBehaviour
                 // Sets Attack bool in animator to be true
                 animator.SetBool("Attack", true);
 
-                // Axe Particles are set to active
-                AxeParticle.Play();
-                
+               
+
                 // Code runs if swing audio is not playing
                 if (!Swing.isPlaying)
                 {
@@ -141,12 +141,15 @@ public class PlayerAttack : MonoBehaviour
                 // Initialises Attack bool to false in animator
                 animator.SetBool("Attack", false);
 
-                
                
+
             }
         }
-        //turns off the particle effect
-        ResetAxe();
+
+        // Axe Particles are set to active
+        AxeParticle.SetActive(attacking);
+
+
     }
 
     //--------------------------------------------------------------------------------
@@ -221,13 +224,4 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    //--------------------------------------------------------------------------------
-    // Function created to turn off the particle effect 
-    //--------------------------------------------------------------------------------
-    private void ResetAxe()
-    {
-        // Disallows any weapon particles
-        AxeParticle.Stop();
-
-    }
 }
