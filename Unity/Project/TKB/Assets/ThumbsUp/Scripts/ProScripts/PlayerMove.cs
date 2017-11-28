@@ -52,6 +52,12 @@ public class PlayerMove : MonoBehaviour
     // Variables used to access componments of the Pause Menu script
     private PauseMenu pauseScript;
 
+    // Used to access components from the Sweeper Special script
+    private SweeperSpecial sweeperSpecial;
+
+    // Used to access components from the Striker Special script
+    private StrikerSpecial strikerSpecial;
+
     //--------------------------------------------------------------------------------
     // Function is called when script first runs.
     //--------------------------------------------------------------------------------
@@ -60,8 +66,14 @@ public class PlayerMove : MonoBehaviour
 		// Gets the Striker's Rigidbody and stores it in variable
         rigidBody = GetComponent<Rigidbody>();
 
-		// Sets previous rotation x and z to both be zero
-		prevRotateX = 0f;
+        // Gets components from the Sweeper Special script
+        sweeperSpecial = GetComponent<SweeperSpecial>();
+
+        // Gets component from the Striker Special script
+        strikerSpecial = GetComponent<StrikerSpecial>();
+
+        // Sets previous rotation x and z to both be zero
+        prevRotateX = 0f;
 		prevRotateZ = 0f;
     }
 
@@ -281,6 +293,17 @@ public class PlayerMove : MonoBehaviour
                     // Gets the box collider of the box and disables it
                     BoxCollider bc = currentPickUp.GetComponent<BoxCollider>();
                     bc.enabled = false;
+
+                    // Disables any use of attack whilst a box is picked up
+                    GetComponent<PlayerAttack>().enabled = false;
+
+                    // Disables functions from Sweeper Special if it exists
+                    if (sweeperSpecial)
+                        sweeperSpecial.enabled = false;
+
+                    // Disables functions from Striker Special if it exists
+                    if (strikerSpecial)
+                        strikerSpecial.enabled = false;
                 }
             }
 
@@ -302,6 +325,17 @@ public class PlayerMove : MonoBehaviour
 
                 // Sets currentPickUp to be null
                 currentPickUp = null;
+
+                // Reenables attack if no box is picked up
+                GetComponent<PlayerAttack>().enabled = true;
+
+                // Reenables functions from Sweeper Special if it exists
+                if (sweeperSpecial)
+                    sweeperSpecial.enabled = true;
+
+                // Reenables functions from Striker Special if it exists
+                if (strikerSpecial)
+                    strikerSpecial.enabled = true;
             }
         }
     }
