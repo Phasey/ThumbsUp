@@ -51,7 +51,6 @@ public class PlayerAttack : MonoBehaviour
     // Bool used to check if a sound has been player or not
 	public bool soundPlayed;
 
-
     // Allows access to xbox controller buttons
     private XboxController Controller;
 
@@ -67,8 +66,7 @@ public class PlayerAttack : MonoBehaviour
         Controller = move.Controller;
 
         // Initialises cool down bool to false on awake
-        coolDown = false;
-        
+        coolDown = false;       
     }
 
     //--------------------------------------------------------------------------------
@@ -78,7 +76,6 @@ public class PlayerAttack : MonoBehaviour
     {
 		// Calls StrikerAttack function every frame
         Attack();
-        
 
         // Makes the volume a random number between min and max volume floats
         volumeValue = Random.Range(minSwingVolume, maxSwingVolume);
@@ -113,8 +110,6 @@ public class PlayerAttack : MonoBehaviour
                 // Sets Attack bool in animator to be true
                 animator.SetBool("Attack", true);
 
-               
-
                 // Code runs if swing audio is not playing
                 if (!Swing.isPlaying)
                 {
@@ -140,16 +135,11 @@ public class PlayerAttack : MonoBehaviour
             {
                 // Initialises Attack bool to false in animator
                 animator.SetBool("Attack", false);
-
-               
-
             }
         }
 
         // Axe Particles are set to active
         AxeParticle.SetActive(attacking);
-
-
     }
 
     //--------------------------------------------------------------------------------

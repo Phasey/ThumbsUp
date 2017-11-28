@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//---------------------------------------------------------------
-//Author: Liam Knights
-//---------------------------------------------------------------
+//--------------------------------------------------------------------------------
+// Author: Liam Knights
+//--------------------------------------------------------------------------------
 
 // Creates a class for the Player Death Script 
 public class PlayerDeath : MonoBehaviour
 {
+    // Scene number can be adjusted for final build so it sends player back to right scene
+    public int sceneNumber = 0;
+
     // Initialises two new GameObjects for both players
     public GameObject Player1;
     public GameObject Player2;
@@ -31,7 +34,7 @@ public class PlayerDeath : MonoBehaviour
         // If both players are dead, then load the menu screen
         if (P1Health.dead && P2Health.dead)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(sceneNumber);
         }
 	}
 }
