@@ -36,6 +36,7 @@ public class PlayerDeath : MonoBehaviour
         // If both players are dead, then load the menu screen
         if (P1Health.dead && P2Health.dead)
         {
+            //loads whatever scene is placed in scene number
             SceneManager.LoadScene(sceneNumber);
         }
 	}

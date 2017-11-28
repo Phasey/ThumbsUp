@@ -333,9 +333,14 @@ public class BasicAIScript : MonoBehaviour
             }
         }
     }
+
+    //used to set the flash so it can be sued again
     public void ResetFlashCoolDown()
     {
+        //resets the cooldowntimer for the flash
         FlashTime = FlashCoolDownTimer;
+
+        //sets is flashing back to true
         isFlashing = true;
     }
 }
