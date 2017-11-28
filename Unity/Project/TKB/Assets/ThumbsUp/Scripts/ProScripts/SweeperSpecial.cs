@@ -46,11 +46,14 @@ public class SweeperSpecial : MonoBehaviour
 	private XboxController Controller;
 
 	private Animator animator;
+    
+    //gets the axe particle for the special
+    public GameObject AxeParticle;
 
-	//------------------------------------------------------------
-	// Function is called when script first runs
-	//------------------------------------------------------------
-	void Awake()
+    //------------------------------------------------------------
+    // Function is called when script first runs
+    //------------------------------------------------------------
+    void Awake()
 	{
 		// Gets the Player Move component
 		PlayerMove move = GetComponent<PlayerMove>();
@@ -142,11 +145,10 @@ public class SweeperSpecial : MonoBehaviour
 		if (healthScript)
 			healthScript.inSpecial = specialInProgress;
 
-        //gets the player attack so that it can access axe particle for its special attack
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+        
         
         // Axe Particles are set to active
-        playerAttack.AxeParticle.SetActive(specialInProgress);
+       AxeParticle.SetActive(specialInProgress);
     }
 
     void OnTriggerEnter(Collider other)
