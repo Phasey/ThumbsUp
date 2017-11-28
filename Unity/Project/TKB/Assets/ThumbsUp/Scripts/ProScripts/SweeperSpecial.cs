@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿//---------------------------------------------------------------
+// Author: Liam Knights. Edited by: Matthew Le Nepveu.
+//---------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using XboxCtrlrInput;
 
-//---------------------------------------------------------------
-// Author: Liam Knights. Edited by: Matthew Le Nepveu.
-//---------------------------------------------------------------
+
 
 
 public class SweeperSpecial : MonoBehaviour

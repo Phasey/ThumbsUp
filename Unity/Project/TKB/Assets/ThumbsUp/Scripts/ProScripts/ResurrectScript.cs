@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿//---------------------------------------------------------------
+//Author: Liam Knights
+//---------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//---------------------------------------------------------------
-//Author: Liam Knights
-//---------------------------------------------------------------
 
 public class ResurrectScript : MonoBehaviour {
 

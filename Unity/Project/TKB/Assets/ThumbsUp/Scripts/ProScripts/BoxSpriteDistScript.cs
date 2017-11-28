@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿//---------------------------------------------------------------
+//Author: Liam Knights.
+//---------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//---------------------------------------------------------------
-//Author: Liam Knights.
-//---------------------------------------------------------------
+
 public class BoxSpriteDistScript : MonoBehaviour
 {
     //createss a players obejects

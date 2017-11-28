@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿//---------------------------------------------------------------
+// Author: Liam Knights. Edited by: Matthew Le Nepveu.
+//---------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//---------------------------------------------------------------
-// Author: Liam Knights. Edited by: Matthew Le Nepveu.
-//---------------------------------------------------------------
+
 
 // Creates a class for the Basic AI Script 
 public class BasicAIScript : MonoBehaviour
