@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 7216b2a5dd8d5ca42b778cb90b5bff95
+timeCreated: 1511829700
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Enemy_Control_Backbone
+    100002: Enemy_Control_Chest
+    100004: Enemy_Control_Global
+    100006: Enemy_Control_Head
+    100008: Enemy_Control_Pelvis
+    100010: Enemy_Control_Root
+    100012: Enemy_Control_Wrist
+    100014: Enemy_Ik_group
+    100016: Enemy_Joint_Head
+    100018: Enemy_Joint_Neck
+    100020: Enemy_Joint_Pelvis
+    100022: Enemy_Joint_Root
+    100024: Enemy_Joint_Spine1
+    100026: Enemy_Joint_Spine2
+    100028: Enemy_Joint_Spine3
+    100030: Enemy_Sword1
+    100032: Helmet1
+    100034: LEnemy_Control_Elbow
+    100036: LEnemy_Control_Feet
+    100038: LEnemy_Control_Knee
+    100040: LEnemy_Control_Shoulder
+    100042: LEnemy_Ik_Leg
+    100044: LEnemy_Joint_Ankle
+    100046: LEnemy_Joint_Elbow
+    100048: LEnemy_Joint_Feet
+    100050: LEnemy_Joint_Finger1
+    100052: LEnemy_Joint_Finger2
+    100054: LEnemy_Joint_Finger3
+    100056: LEnemy_Joint_Hand1
+    100058: LEnemy_Joint_Hand2
+    100060: LEnemy_Joint_Hand3
+    100062: LEnemy_Joint_Hip
+    100064: LEnemy_Joint_Knee
+    100066: LEnemy_Joint_Shoulder
+    100068: LEnemy_Joint_Thumb_1
+    100070: LEnemy_Joint_Thumb_2
+    100072: LEnemy_Joint_Thumb_3
+    100074: LEnemy_Joint_Wrist
+    100076: //RootNode
+    100078: Pusher_Enemy_x
+    100080: REnemy_Control_Elbow
+    100082: REnemy_Control_Feet
+    100084: REnemy_Control_Knee
+    100086: REnemy_Control_Shoulder
+    100088: REnemy_Control_Wrist
+    100090: REnemy_Ik_Leg
+    100092: REnemy_Joint_Ankle
+    100094: REnemy_Joint_Elbow
+    100096: REnemy_Joint_Feet
+    100098: REnemy_Joint_Finger1
+    100100: REnemy_Joint_Finger2
+    100102: REnemy_Joint_Finger3
+    100104: REnemy_Joint_Hand1
+    100106: REnemy_Joint_Hand2
+    100108: REnemy_Joint_Hand3
+    100110: REnemy_Joint_Hip
+    100112: REnemy_Joint_Knee
+    100114: REnemy_Joint_Shoulder
+    100116: REnemy_Joint_Thumb_1
+    100118: REnemy_Joint_Thumb_2
+    100120: REnemy_Joint_Thumb_3
+    100122: REnemy_Joint_Wrist
+    100124: Shoulderpad1
+    400000: Enemy_Control_Backbone
+    400002: Enemy_Control_Chest
+    400004: Enemy_Control_Global
+    400006: Enemy_Control_Head
+    400008: Enemy_Control_Pelvis
+    400010: Enemy_Control_Root
+    400012: Enemy_Control_Wrist
+    400014: Enemy_Ik_group
+    400016: Enemy_Joint_Head
+    400018: Enemy_Joint_Neck
+    400020: Enemy_Joint_Pelvis
+    400022: Enemy_Joint_Root
+    400024: Enemy_Joint_Spine1
+    400026: Enemy_Joint_Spine2
+    400028: Enemy_Joint_Spine3
+    400030: Enemy_Sword1
+    400032: Helmet1
+    400034: LEnemy_Control_Elbow
+    400036: LEnemy_Control_Feet
+    400038: LEnemy_Control_Knee
+    400040: LEnemy_Control_Shoulder
+    400042: LEnemy_Ik_Leg
+    400044: LEnemy_Joint_Ankle
+    400046: LEnemy_Joint_Elbow
+    400048: LEnemy_Joint_Feet
+    400050: LEnemy_Joint_Finger1
+    400052: LEnemy_Joint_Finger2
+    400054: LEnemy_Joint_Finger3
+    400056: LEnemy_Joint_Hand1
+    400058: LEnemy_Joint_Hand2
+    400060: LEnemy_Joint_Hand3
+    400062: LEnemy_Joint_Hip
+    400064: LEnemy_Joint_Knee
+    400066: LEnemy_Joint_Shoulder
+    400068: LEnemy_Joint_Thumb_1
+    400070: LEnemy_Joint_Thumb_2
+    400072: LEnemy_Joint_Thumb_3
+    400074: LEnemy_Joint_Wrist
+    400076: //RootNode
+    400078: Pusher_Enemy_x
+    400080: REnemy_Control_Elbow
+    400082: REnemy_Control_Feet
+    400084: REnemy_Control_Knee
+    400086: REnemy_Control_Shoulder
+    400088: REnemy_Control_Wrist
+    400090: REnemy_Ik_Leg
+    400092: REnemy_Joint_Ankle
+    400094: REnemy_Joint_Elbow
+    400096: REnemy_Joint_Feet
+    400098: REnemy_Joint_Finger1
+    400100: REnemy_Joint_Finger2
+    400102: REnemy_Joint_Finger3
+    400104: REnemy_Joint_Hand1
+    400106: REnemy_Joint_Hand2
+    400108: REnemy_Joint_Hand3
+    400110: REnemy_Joint_Hip
+    400112: REnemy_Joint_Knee
+    400114: REnemy_Joint_Shoulder
+    400116: REnemy_Joint_Thumb_1
+    400118: REnemy_Joint_Thumb_2
+    400120: REnemy_Joint_Thumb_3
+    400122: REnemy_Joint_Wrist
+    400124: Shoulderpad1
+    2300000: Enemy_Sword1
+    2300002: Helmet1
+    2300004: Shoulderpad1
+    3300000: Enemy_Sword1
+    3300002: Helmet1
+    3300004: Shoulderpad1
+    4300000: Pusher_Enemy_x
+    4300002: Helmet1
+    4300004: Enemy_Sword1
+    4300006: Shoulderpad1
+    7400000: Death
+    9500000: //RootNode
+    13700000: Pusher_Enemy_x
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
