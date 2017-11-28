@@ -248,7 +248,7 @@ MonoBehaviour:
 
     Programmers:
 
-    Matthew La Nepveu
+    Matthew Le Nepveu
 
     Liam Knight
 
@@ -262,6 +262,8 @@ MonoBehaviour:
     Paul Bowers
 
     Ben Nulls
+
+    Richard Stern
 
 
     Third Party Help:
@@ -301,7 +303,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 202, y: -673}
-  m_SizeDelta: {x: 400, y: 900}
+  m_SizeDelta: {x: 400, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &901342280
 GameObject:
@@ -572,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   credits: {fileID: 592080933}
-  Timer: 13.5
+  Timer: 14
   sceneNumber: 0
 --- !u!114 &1248180659
 MonoBehaviour:

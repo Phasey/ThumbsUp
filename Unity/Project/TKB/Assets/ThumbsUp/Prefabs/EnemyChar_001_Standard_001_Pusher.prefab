@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4286548150963396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4981063707064396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Control_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4941253974191338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Thumb_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4307836969923616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Finger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4845858623288362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Control_Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4406996989137064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Spine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4938728830423440}
   - component: {fileID: 33422542428507762}
   - component: {fileID: 23479462733654578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shoulderpad1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4698637741621354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Control_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4902274139692536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4880921603127196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4480120394257006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Finger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 4366029235637834}
   - component: {fileID: 33072536935051314}
   - component: {fileID: 23085258766847774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Sword1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4062079799878228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4401970125757266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Control_Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4347722975340454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4905196337233252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4003032934225998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Hand3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4881629298701088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4307076419426024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4204144159744462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4926184908714126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Finger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4303129554466668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4519871600130650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Hand1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4223330732378622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Hand2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4256892978694326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Thumb_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4998917385094148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4772380138540524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Finger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4935834357307828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Hand2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4535965361630226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Ik_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4734582966811318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Control_Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4102215128363734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4255536699606190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Control_Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4286621744461088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Ik_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4121300220314788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Control_Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,9 +550,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4762377499090554}
   - component: {fileID: 95641964517160436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pusher_Enemy_Small
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,7 +565,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4793596129665458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4316746407315246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4519231425429958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4593644750689566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,8 +641,24 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4816620690393834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Hand1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1601533864519854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4838132253488932}
+  - component: {fileID: 119348617918156216}
+  m_Layer: 8
+  m_Name: BlobShadowProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +672,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4718928646061964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +687,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4200863669209722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Thumb_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +702,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572994278537324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Backbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +717,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4708358744005662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +749,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4071712413595442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +764,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4106831217884230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Control_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +779,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4630569336538422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Control_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +794,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4685163468019040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Joint_Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +825,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4244902397636944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +840,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4557586753679934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Ik_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +855,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4162669883832768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Hand3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +870,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4667799387120542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Thumb_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +885,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4943144230573804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +900,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4861251682463168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Thumb_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +915,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4139865061205280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +930,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4151294420236350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +947,7 @@ GameObject:
   - component: {fileID: 4992328897918042}
   - component: {fileID: 33050961608502110}
   - component: {fileID: 23666053356769342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Helmet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +962,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4991367291485020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LEnemy_Joint_Finger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +977,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4979294932190672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Finger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +992,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4467921665387378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Thumb_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698295594682836}
   - component: {fileID: 137636654154487342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pusher_Enemy_x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1023,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4016736752374006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Control_Global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1058,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4223973247085842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: REnemy_Joint_Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1591,6 +1607,7 @@ Transform:
   - {fileID: 4762377499090554}
   - {fileID: 4920074132452386}
   - {fileID: 4079406373836814}
+  - {fileID: 4838132253488932}
   - {fileID: 4770499298220676}
   - {fileID: 4986807190475002}
   m_Father: {fileID: 0}
@@ -1706,7 +1723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4667819316468268}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4772380138540524
 Transform:
@@ -1748,6 +1765,19 @@ Transform:
   - {fileID: 4935834357307828}
   m_Father: {fileID: 4307076419426024}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4838132253488932
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601533864519854}
+  m_LocalRotation: {x: 0.75157696, y: 0, z: 0, w: 0.6596455}
+  m_LocalPosition: {x: -0, y: 1.846, z: 0.188}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4667819316468268}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4845858623288362
 Transform:
@@ -1954,7 +1984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4667819316468268}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4991367291485020
 Transform:
@@ -2292,6 +2322,24 @@ MonoBehaviour:
   growl: {fileID: 82229730147657374}
   growled: 0
   IsBoss: 0
+--- !u!119 &119348617918156216
+Projector:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601533864519854}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.1
+  m_FarClipPlane: 50
+  m_FieldOfView: 30
+  m_AspectRatio: 1
+  m_Orthographic: 0
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!119 &119693597009654424
 Projector:
   m_ObjectHideFlags: 1
@@ -2335,7 +2383,7 @@ SkinnedMeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928441732149946}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
