@@ -139,9 +139,15 @@ public class SweeperSpecial : MonoBehaviour
 
 		if (healthScript)
 			healthScript.inSpecial = specialInProgress;
-	}
 
-	void OnTriggerEnter(Collider other)
+        //gets the player attack so that it can access axe particle for its special attack
+        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+        
+        // Axe Particles are set to active
+        playerAttack.AxeParticle.SetActive(specialInProgress);
+    }
+
+    void OnTriggerEnter(Collider other)
 	{
 		bool attacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Special") && !animator.IsInTransition(0);
 
